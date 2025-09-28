@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Welcome to Embedded Development
+# Introduction to Embedded Development
 
 Welcome to Phuc's comprehensive guide for embedded Linux and GPU development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
 
@@ -38,7 +38,7 @@ We'll set up a complete development environment including:
 
 If you encounter issues:
 
-1. Check the [Troubleshooting Guide](../getting-started/troubleshooting.md)
+1. Check the [Troubleshooting Guide](./troubleshooting.md)
 2. Search existing [GitHub Issues](https://github.com/nguyentrongphuc552003/phucscareembedded/issues)
 3. Join our community discussions
 
