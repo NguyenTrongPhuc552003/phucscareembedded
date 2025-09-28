@@ -40,6 +40,7 @@ const sidebars = {
       label: 'GPU Development',
       items: [
         'gpu-development/mali-gpu',
+        'gpu-development/opencl-programming',
       ],
     },
     {
