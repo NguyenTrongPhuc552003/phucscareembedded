@@ -25,6 +25,7 @@ const sidebars = {
         'getting-started/introduction',
         'getting-started/hardware-setup',
         'getting-started/development-environment',
+        'getting-started/troubleshooting',
       ],
     },
     {
@@ -33,6 +34,8 @@ const sidebars = {
       items: [
         'embedded-linux/kernel-development',
         'embedded-linux/device-drivers',
+        'embedded-linux/bootloader',
+        'embedded-linux/filesystem',
       ],
     },
     {
@@ -49,6 +52,8 @@ const sidebars = {
       items: [
         'c-cpp-programming/embedded-c',
         'c-cpp-programming/cpp-best-practices',
+        'c-cpp-programming/memory-management',
+        'c-cpp-programming/debugging-techniques',
       ],
     },
     {

@@ -23,3 +23,13 @@ slorber:
     linkedin: sebastienlorber
     github: slorber
     newsletter: https://thisweekinreact.com
+
+phuc:
+  name: Phuc Nguyen
+  title: Embedded Systems Engineer
+  url: https://github.com/nguyentrongphuc552003
+  image_url: https://github.com/nguyentrongphuc552003.png
+  page: true
+  socials:
+    github: nguyentrongphuc552003
+    linkedin: phuc-nguyen-embedded

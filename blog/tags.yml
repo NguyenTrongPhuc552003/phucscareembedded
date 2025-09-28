@@ -17,3 +17,38 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+embedded-linux:
+  label: Embedded Linux
+  permalink: /embedded-linux
+  description: Embedded Linux development topics
+
+kernel-development:
+  label: Kernel Development
+  permalink: /kernel-development
+  description: Linux kernel development topics
+
+tutorial:
+  label: Tutorial
+  permalink: /tutorial
+  description: Step-by-step tutorials
+
+hardware-review:
+  label: Hardware Review
+  permalink: /hardware-review
+  description: Hardware reviews and comparisons
+
+rock5b:
+  label: Rock 5B+
+  permalink: /rock5b
+  description: Rock 5B+ development board topics
+
+raspberry-pi:
+  label: Raspberry Pi
+  permalink: /raspberry-pi
+  description: Raspberry Pi development board topics
+
+comparison:
+  label: Comparison
+  permalink: /comparison
+  description: Product and technology comparisons
