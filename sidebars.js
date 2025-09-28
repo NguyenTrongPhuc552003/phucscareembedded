@@ -63,6 +63,7 @@ const sidebars = {
       label: 'Rock 5B+ Setup',
       items: [
         'rock-5b-setup/hardware-overview',
+        'rock-5b-setup/os-installation',
       ],
     },
   ],
