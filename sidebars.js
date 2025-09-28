@@ -48,6 +48,7 @@ const sidebars = {
       label: 'C/C++ Programming',
       items: [
         'c-cpp-programming/embedded-c',
+        'c-cpp-programming/cpp-best-practices',
       ],
     },
     {
