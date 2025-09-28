@@ -28,3 +28,239 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* Fix navbar items spacing and positioning */
+.navbar__items {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Ensure search bar doesn't overlap other items */
+.navbar__item--search {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* GitHub link spacing */
+.navbar__item--github {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Language dropdown spacing */
+.navbar__item--localeDropdown {
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Dark mode toggle spacing */
+.navbar__toggle {
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Enhanced Search Field Styling */
+.DocSearch-Button {
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--ifm-color-emphasis-200);
+  --docsearch-key-gradient: linear-gradient(-26.5deg, var(--ifm-color-emphasis-200) 0%, var(--ifm-color-emphasis-100) 100%);
+  --docsearch-key-shadow: inset 0 -2px 0 0 var(--ifm-color-emphasis-200), inset 0 0 1px 1px var(--ifm-color-emphasis-100), 0 2px 2px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: var(--docsearch-searchbox-shadow);
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+  height: 40px;
+  margin: 0;
+  padding: 0 12px;
+  transition: all var(--ifm-transition-fast) ease;
+  max-width: 200px;
+  min-width: 150px;
+  position: relative;
+  z-index: 1;
+}
+
+.DocSearch-Button:hover {
+  --docsearch-searchbox-shadow: inset 0 0 0 2px var(--ifm-color-primary);
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--docsearch-searchbox-shadow);
+}
+
+.DocSearch-Button-Key {
+  align-items: center;
+  background: var(--docsearch-key-gradient);
+  border-radius: 3px;
+  box-shadow: var(--docsearch-key-shadow);
+  color: var(--ifm-color-emphasis-500);
+  display: flex;
+  height: 18px;
+  justify-content: center;
+  margin-right: 0.4em;
+  padding: 0 0.2em;
+  position: relative;
+  top: -1px;
+  width: 20px;
+}
+
+.DocSearch-Button-Placeholder {
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+/* Dark Mode Toggle Enhancement */
+[data-theme='dark'] .navbar__toggle {
+  color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .navbar__toggle:hover {
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* Collapse Sidebar Button Styling */
+.theme-doc-sidebar-container .menu__list-item-collapsible>.menu__link::after {
+  content: '';
+  background: var(--ifm-menu-link-sublist-icon) 50% / 2rem 2rem;
+  filter: var(--ifm-menu-link-sublist-icon-filter);
+  height: 1.2rem;
+  transform: rotate(180deg);
+  transition: transform var(--ifm-transition-fast) linear;
+  width: 1.2rem;
+}
+
+.theme-doc-sidebar-container .menu__list-item-collapsible.menu__list-item--collapsed>.menu__link::after {
+  transform: rotate(0deg);
+}
+
+/* Language Dropdown Styling */
+.navbar__item--localeDropdown .dropdown__menu {
+  min-width: 200px;
+}
+
+.navbar__item--localeDropdown .dropdown__link {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.navbar__item--localeDropdown .dropdown__link::after {
+  content: '🌐';
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+/* GitHub Link Styling */
+.header-github-link {
+  color: var(--ifm-color-emphasis-600);
+  transition: color var(--ifm-transition-fast) ease;
+}
+
+.header-github-link:hover {
+  color: var(--ifm-color-primary);
+}
+
+.header-github-link::before {
+  content: '';
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='currentColor' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  background-size: 20px 20px;
+  content: '';
+  display: flex;
+  height: 20px;
+  width: 20px;
+}
+
+/* Announcement Bar Styling */
+.announcementBar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.announcementBar a {
+  color: white;
+  text-decoration: underline;
+}
+
+.announcementBar a:hover {
+  color: #f0f0f0;
+}
+
+/* Enhanced Sidebar Styling */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.theme-doc-sidebar-container .menu__list {
+  padding: 0.5rem 0;
+}
+
+.theme-doc-sidebar-container .menu__link {
+  border-radius: 6px;
+  margin: 0.125rem 0;
+  padding: 0.5rem 1rem;
+  transition: all var(--ifm-transition-fast) ease;
+}
+
+.theme-doc-sidebar-container .menu__link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+}
+
+.theme-doc-sidebar-container .menu__link--active {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.theme-doc-sidebar-container .menu__link--active:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: white;
+}
+
+/* Table of Contents Styling */
+.table-of-contents {
+  border-left: 2px solid var(--ifm-color-emphasis-200);
+  padding-left: 1rem;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  transition: color var(--ifm-transition-fast) ease;
+}
+
+.table-of-contents__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 996px) {
+  .DocSearch-Button {
+    max-width: 150px;
+    min-width: 120px;
+  }
+  
+  .navbar__item--localeDropdown {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .DocSearch-Button {
+    max-width: 120px;
+    min-width: 100px;
+  }
+  
+  .announcementBar {
+    font-size: 0.9rem;
+    padding: 0.25rem 0;
+  }
+}

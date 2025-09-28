@@ -37,7 +37,65 @@ const config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'vi', 'zh-Hans', 'es', 'fr', 'de', 'ja', 'ko'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+        calendar: 'gregory',
+        path: 'en',
+      },
+      vi: {
+        label: 'Tiếng Việt',
+        direction: 'ltr',
+        htmlLang: 'vi-VN',
+        calendar: 'gregory',
+        path: 'vi',
+      },
+      'zh-Hans': {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-CN',
+        calendar: 'gregory',
+        path: 'zh-Hans',
+      },
+      es: {
+        label: 'Español',
+        direction: 'ltr',
+        htmlLang: 'es-ES',
+        calendar: 'gregory',
+        path: 'es',
+      },
+      fr: {
+        label: 'Français',
+        direction: 'ltr',
+        htmlLang: 'fr-FR',
+        calendar: 'gregory',
+        path: 'fr',
+      },
+      de: {
+        label: 'Deutsch',
+        direction: 'ltr',
+        htmlLang: 'de-DE',
+        calendar: 'gregory',
+        path: 'de',
+      },
+      ja: {
+        label: '日本語',
+        direction: 'ltr',
+        htmlLang: 'ja-JP',
+        calendar: 'gregory',
+        path: 'ja',
+      },
+      ko: {
+        label: '한국어',
+        direction: 'ltr',
+        htmlLang: 'ko-KR',
+        calendar: 'gregory',
+        path: 'ko',
+      },
+    },
   },
 
   presets: [
@@ -80,7 +138,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       colorMode: {
-        respectPrefersColorScheme: true,
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
       navbar: {
         title: 'Phuc\'s Embedded Guide',
@@ -88,6 +148,7 @@ const config = {
           alt: 'Embedded Development Logo',
           src: 'img/logo.svg',
         },
+        hideOnScroll: false,
         items: [
           {
             type: 'docSidebar',
@@ -95,10 +156,29 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                to: 'https://github.com/nguyentrongphuc552003/phucscareembedded',
+                label: 'Help us translate',
+              },
+            ],
+          },
           {
             href: 'https://github.com/nguyentrongphuc552003/phucscareembedded',
-            label: 'GitHub',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
+          },
+          {
+            type: 'search',
             position: 'right',
           },
         ],
@@ -160,6 +240,44 @@ const config = {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
         additionalLanguages: ['bash', 'makefile', 'cmake', 'yaml', 'json'],
+      },
+
+      // Search configuration
+      algolia: {
+        // The application ID provided by Algolia
+        appId: 'YOUR_APP_ID',
+        // Public API key: it is safe to commit it
+        apiKey: 'YOUR_SEARCH_API_KEY',
+        indexName: 'phucscareembedded',
+        // Optional: see doc section below
+        contextualSearch: true,
+        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful for our use case with MCP.
+        externalUrlRegex: 'external\\.com|domain\\.com',
+        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple sites using different subdomains or domains.
+        replaceSearchResultPathname: {
+          from: '/docs/', // or as RegExp: /\/docs\//
+          to: '/',
+        },
+        // Optional: Algolia search parameters
+        searchParameters: {},
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: 'search',
+      },
+
+      // Announcement bar
+      announcementBar: {
+        id: 'support_us',
+        content:
+          '⭐ If you like this project, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/nguyentrongphuc552003/phucscareembedded">GitHub</a> and follow us on Twitter!',
+        backgroundColor: '#fafbfc',
+        textColor: '#091E42',
+        isCloseable: true,
+      },
+
+      // Table of contents
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 5,
       },
     }),
 };
