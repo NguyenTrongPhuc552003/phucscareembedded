@@ -52,3 +52,73 @@ comparison:
   label: Comparison
   permalink: /comparison
   description: Product and technology comparisons
+
+gpu-development:
+  label: GPU Development
+  permalink: /gpu-development
+  description: GPU programming and development topics
+
+performance:
+  label: Performance
+  permalink: /performance
+  description: Performance optimization and tuning
+
+project-showcase:
+  label: Project Showcase
+  permalink: /project-showcase
+  description: Real-world embedded projects and case studies
+
+iot:
+  label: IoT
+  permalink: /iot
+  description: Internet of Things development topics
+
+smart-home:
+  label: Smart Home
+  permalink: /smart-home
+  description: Smart home automation and control systems
+
+embedded-systems:
+  label: Embedded Systems
+  permalink: /embedded-systems
+  description: Embedded systems development topics
+
+productivity:
+  label: Productivity
+  permalink: /productivity
+  description: Development productivity and workflow topics
+
+industry-update:
+  label: Industry Update
+  permalink: /industry-update
+  description: Industry news and technology trends
+
+edge-computing:
+  label: Edge Computing
+  permalink: /edge-computing
+  description: Edge computing and distributed systems
+
+trends:
+  label: Trends
+  permalink: /trends
+  description: Technology trends and future developments
+
+opencl:
+  label: OpenCL
+  permalink: /opencl
+  description: OpenCL programming and GPU computing
+
+tool-review:
+  label: Tool Review
+  permalink: /tool-review
+  description: Development tools and software reviews
+
+ide:
+  label: IDE
+  permalink: /ide
+  description: Integrated Development Environment topics
+
+embedded-development:
+  label: Embedded Development
+  permalink: /embedded-development
+  description: Embedded systems development topics
