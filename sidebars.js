@@ -32,6 +32,7 @@ const sidebars = {
       label: 'Embedded Linux',
       items: [
         'embedded-linux/kernel-development',
+        'embedded-linux/device-drivers',
       ],
     },
     {
