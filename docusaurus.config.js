@@ -132,6 +132,29 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        // ... Your options.
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        // Simplified language support for better compatibility
+        language: ["en"],
+        indexDocs: true,
+        indexBlog: true,
+        indexPages: false,
+        docsRouteBasePath: "/docs",
+        blogRouteBasePath: "/blog",
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 50,
+        // Enable search in development mode
+        searchBarShortcut: true,
+        searchBarShortcutHint: true,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -242,27 +265,20 @@ const config = {
         additionalLanguages: ['bash', 'makefile', 'cmake', 'yaml', 'json'],
       },
 
-      // Search configuration
+      // Search configuration - Using local search
+      // For production, you can set up Algolia DocSearch:
+      // 1. Apply for DocSearch at https://docsearch.algolia.com/apply/
+      // 2. Replace the configuration below with your Algolia credentials
+      /*
       algolia: {
-        // The application ID provided by Algolia
         appId: 'YOUR_APP_ID',
-        // Public API key: it is safe to commit it
         apiKey: 'YOUR_SEARCH_API_KEY',
         indexName: 'phucscareembedded',
-        // Optional: see doc section below
         contextualSearch: true,
-        // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful for our use case with MCP.
-        externalUrlRegex: 'external\\.com|domain\\.com',
-        // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple sites using different subdomains or domains.
-        replaceSearchResultPathname: {
-          from: '/docs/', // or as RegExp: /\/docs\//
-          to: '/',
-        },
-        // Optional: Algolia search parameters
         searchParameters: {},
-        // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
       },
+      */
 
       // Announcement bar
       announcementBar: {
