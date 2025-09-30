@@ -45,7 +45,7 @@ Let's create a simple "Hello World" kernel module:
 #include <linux/kernel.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("A simple hello world kernel module");
 MODULE_VERSION("0.1");
 
@@ -119,7 +119,7 @@ Let's break down the key components of our kernel module:
 ### Module Information
 ```c
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("A simple hello world kernel module");
 MODULE_VERSION("0.1");
 ```
@@ -175,7 +175,7 @@ Let's create a more practical example - a GPIO control module:
 #define GPIO_PIN 18
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("GPIO control kernel module");
 MODULE_VERSION("0.1");
 

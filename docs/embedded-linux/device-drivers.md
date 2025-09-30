@@ -91,7 +91,7 @@ cd kernel
 #define CLASS_NAME "simple_char_class"
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("A simple character driver");
 MODULE_VERSION("0.1");
 
@@ -250,7 +250,7 @@ sudo rmmod simple_char_driver
 #define GPIO_PIN 18  // GPIO2_A2 on Rock 5B+
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("Rock 5B+ GPIO Driver");
 MODULE_VERSION("0.1");
 
@@ -419,7 +419,7 @@ sudo rmmod gpio_driver
 #define IRQ_NUMBER 49  // GPIO interrupt number
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("Interrupt-driven GPIO driver");
 MODULE_VERSION("0.1");
 
@@ -585,7 +585,7 @@ module_exit(interrupt_driver_exit);
 #define I2C_ADDRESS 0x48
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("I2C sensor driver");
 MODULE_VERSION("0.1");
 

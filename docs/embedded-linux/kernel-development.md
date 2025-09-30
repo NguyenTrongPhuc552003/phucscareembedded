@@ -87,7 +87,7 @@ make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- dtbs
 #include <linux/kernel.h>
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
+MODULE_AUTHOR("Phuc Nguyen");
 MODULE_DESCRIPTION("A simple kernel module");
 MODULE_VERSION("0.1");
 

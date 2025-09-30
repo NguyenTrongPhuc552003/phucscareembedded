@@ -166,7 +166,7 @@ code --install-extension ms-vscode.remote-ssh
 
 ```bash
 # Set up Git
-git config --global user.name "Your Name"
+git config --global user.name "Phuc Nguyen"
 git config --global user.email "your.email@example.com"
 
 # Set up SSH keys
