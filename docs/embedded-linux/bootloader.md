@@ -22,7 +22,7 @@ This guide covers bootloader development for embedded Linux systems, focusing on
 ├─────────────────────────────────────┤
 │           Init Process              │
 ├─────────────────────────────────────┤
-│           User Space                 │
+│           User Space                │
 └─────────────────────────────────────┘
 ```
 
