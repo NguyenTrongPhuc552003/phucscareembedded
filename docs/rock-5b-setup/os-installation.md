@@ -504,7 +504,7 @@ sudo unattended-upgrade --dry-run
 ## Next Steps
 
 - [Peripheral Setup](./peripheral-setup.md)
-- [Troubleshooting](./troubleshooting.md)
+- [Troubleshooting](../getting-started/troubleshooting.md)
 - [Hardware Overview](./hardware-overview.md)
 
 ## Resources
