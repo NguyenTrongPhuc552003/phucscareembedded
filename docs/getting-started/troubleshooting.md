@@ -1,78 +1,84 @@
----
-sidebar_position: 4
----
+# Troubleshooting Guide for Rock 5B+ Development
 
-# Troubleshooting Guide
+Common issues and solutions for Rock 5B+ embedded development projects.
 
-This comprehensive troubleshooting guide covers common issues and solutions for embedded development on the Rock 5B+ platform.
+## Introduction
+
+This guide covers common troubleshooting scenarios you might encounter when developing on the Rock 5B+ platform. From hardware setup issues to software configuration problems, we'll provide solutions to get your development back on track.
 
 ## Hardware Issues
 
-### 1. Board Won't Boot
+### 1. Power Supply Problems
 
 **Symptoms:**
-- No display output
-- No LED indicators
-- Board appears dead
+- Board doesn't boot
+- Random shutdowns
+- Unstable performance
 
 **Solutions:**
 ```bash
-# Check power supply
-# - Ensure 5V/3A minimum
-# - Check USB-C cable quality
-# - Try different power adapter
+# Check power supply voltage
+sudo cat /sys/class/power_supply/battery/voltage_now
 
-# Check microSD card
-# - Verify card is properly inserted
-# - Try different microSD card
-# - Check card format and image
+# Monitor power consumption
+sudo cat /sys/class/power_supply/battery/current_now
 
-# Check connections
-# - Verify HDMI cable
-# - Check keyboard/mouse connections
-# - Ensure all cables are secure
+# Check for power warnings
+dmesg | grep -i power
 ```
 
-### 2. Display Issues
+**Prevention:**
+- Use official 5V/3A USB-C power supply
+- Avoid cheap or underpowered adapters
+- Ensure stable power source
+
+### 2. Thermal Issues
 
 **Symptoms:**
-- No video output
-- Distorted display
-- Wrong resolution
+- Performance throttling
+- System instability
+- High temperature warnings
 
 **Solutions:**
 ```bash
-# Check HDMI connection
-# - Try different HDMI port
-# - Use different HDMI cable
-# - Check monitor compatibility
+# Check CPU temperature
+cat /sys/class/thermal/thermal_zone*/temp
 
-# Boot with different display settings
-# - Try different resolution
-# - Use VGA adapter if available
-# - Check display settings in bootloader
+# Monitor thermal zones
+watch -n 1 'cat /sys/class/thermal/thermal_zone*/temp'
+
+# Check for thermal throttling
+dmesg | grep -i thermal
 ```
 
-### 3. Network Issues
+**Cooling Solutions:**
+- Install heatsink or fan
+- Improve case ventilation
+- Use thermal pads for better heat transfer
+- Monitor temperature during heavy workloads
+
+### 3. GPIO and Peripheral Issues
 
 **Symptoms:**
-- No network connectivity
-- Slow network performance
-- Intermittent connection
+- GPIO not responding
+- I2C/SPI communication failures
+- Sensor reading errors
 
 **Solutions:**
 ```bash
-# Check WiFi connection
-nmcli dev wifi list
-nmcli dev wifi connect "SSID" password "password"
+# Check GPIO status
+ls /sys/class/gpio/
 
-# Check Ethernet connection
-ip link show eth0
-sudo ip link set eth0 up
+# Test GPIO functionality
+echo 18 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio18/direction
+echo 1 > /sys/class/gpio/gpio18/value
 
-# Test network connectivity
-ping -c 4 8.8.8.8
-ping -c 4 google.com
+# Check I2C devices
+i2cdetect -y 1
+
+# Check SPI devices
+ls /dev/spi*
 ```
 
 ## Software Issues
@@ -80,423 +86,365 @@ ping -c 4 google.com
 ### 1. Boot Problems
 
 **Symptoms:**
-- Kernel panic
 - Boot loop
-- System hangs during boot
+- Kernel panic
+- Bootloader errors
 
 **Solutions:**
 ```bash
 # Check boot logs
-dmesg | tail -50
+dmesg | head -50
+
+# Check system logs
 journalctl -b
 
-# Boot with different kernel parameters
-# Add to bootargs: console=ttyS2,1500000n8 debug
+# Verify bootloader
+sudo dd if=/dev/mmcblk0 bs=512 count=1 | hexdump -C
 
-# Check file system
-fsck /dev/mmcblk0p2
-
-# Reinstall bootloader
-# Flash new image to microSD card
+# Check partition table
+sudo fdisk -l /dev/mmcblk0
 ```
 
-### 2. Performance Issues
+**Recovery Steps:**
+1. Reflash bootloader
+2. Restore from backup
+3. Use recovery mode
+4. Check SD card integrity
+
+### 2. Network Connectivity Issues
 
 **Symptoms:**
-- Slow system response
-- High CPU usage
-- Memory issues
+- No internet connection
+- WiFi not working
+- Ethernet problems
 
 **Solutions:**
 ```bash
-# Check system resources
-top
-htop
-free -h
-df -h
+# Check network interfaces
+ip addr show
 
-# Check running processes
-ps aux | grep -v grep
+# Test connectivity
+ping -c 4 8.8.8.8
 
-# Check system logs
-journalctl -f
-dmesg | grep -i error
+# Check WiFi status
+iwconfig
+
+# Restart network services
+sudo systemctl restart networking
+sudo systemctl restart NetworkManager
+```
+
+**WiFi Troubleshooting:**
+```bash
+# Scan for networks
+iwlist wlan0 scan
+
+# Connect to WiFi
+sudo wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+sudo dhclient wlan0
+
+# Check WiFi driver
+lsmod | grep wifi
 ```
 
 ### 3. Development Environment Issues
 
 **Symptoms:**
-- Cross-compilation fails
-- Libraries not found
-- Permission denied errors
+- Cross-compilation failures
+- Missing libraries
+- Build errors
 
 **Solutions:**
 ```bash
-# Check toolchain installation
+# Update package lists
+sudo apt update && sudo apt upgrade
+
+# Install development tools
+sudo apt install -y build-essential cmake git
+sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+
+# Check toolchain
 aarch64-linux-gnu-gcc --version
-which aarch64-linux-gnu-gcc
 
-# Check environment variables
-echo $CROSS_COMPILE
-echo $ARCH
-echo $PATH
-
-# Install missing dependencies
-sudo apt update
-sudo apt install -y build-essential
-sudo apt install -y gcc-aarch64-linux-gnu
+# Install missing libraries
+sudo apt install -y libssl-dev libncurses-dev
+sudo apt install -y libusb-1.0-0-dev libudev-dev
 ```
 
-## GPIO Issues
+## Cross-Compilation Issues
 
-### 1. GPIO Not Working
+### 1. Toolchain Problems
 
 **Symptoms:**
-- GPIO commands fail
-- No response from GPIO pins
-- Permission denied
+- "Command not found" errors
+- Wrong architecture binaries
+- Linking failures
 
 **Solutions:**
 ```bash
-# Check GPIO permissions
-sudo usermod -a -G gpio $USER
-groups $USER
+# Install ARM64 toolchain
+sudo apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 
-# Check GPIO device
-ls -la /sys/class/gpio/
-cat /sys/kernel/debug/gpio
+# Set environment variables
+export CC=aarch64-linux-gnu-gcc
+export CXX=aarch64-linux-gnu-g++
+export AR=aarch64-linux-gnu-ar
+export STRIP=aarch64-linux-gnu-strip
 
-# Test GPIO manually
-echo 18 > /sys/class/gpio/export
-echo out > /sys/class/gpio/gpio18/direction
-echo 1 > /sys/class/gpio/gpio18/value
+# Verify toolchain
+aarch64-linux-gnu-gcc --version
+file $(which aarch64-linux-gnu-gcc)
 ```
 
-### 2. GPIO Conflicts
+### 2. Library Dependencies
 
 **Symptoms:**
-- GPIO already in use
-- Unexpected behavior
-- System crashes
+- Missing library errors
+- Version conflicts
+- Runtime linking issues
 
 **Solutions:**
 ```bash
-# Check GPIO usage
-cat /sys/kernel/debug/gpio
+# Install ARM64 libraries
+sudo apt install -y libc6-dev-arm64-cross
+sudo apt install -y libssl-dev:arm64 libncurses-dev:arm64
 
-# Free conflicting GPIO
-echo 18 > /sys/class/gpio/unexport
+# Use pkg-config for cross-compilation
+export PKG_CONFIG_PATH=/usr/lib/aarch64-linux-gnu/pkgconfig
+export PKG_CONFIG_LIBDIR=/usr/lib/aarch64-linux-gnu/pkgconfig
 
-# Check device tree
-cat /proc/device-tree/gpio*
+# Check library dependencies
+aarch64-linux-gnu-objdump -p your_binary | grep NEEDED
 ```
 
-## GPU Issues
+## GPU Development Issues
 
-### 1. GPU Not Detected
+### 1. OpenCL Problems
 
 **Symptoms:**
-- No GPU devices found
-- OpenCL/Vulkan not working
+- OpenCL devices not found
+- Kernel compilation errors
 - Performance issues
 
 **Solutions:**
 ```bash
-# Check GPU drivers
-lsmod | grep mali
-dmesg | grep -i mali
-
-# Install GPU drivers
-sudo apt install -y libmali-g610-dkm
-sudo apt install -y libmali-g610-dkm-dev
-
-# Check GPU status
+# Check OpenCL installation
 clinfo
+
+# Install OpenCL drivers
+sudo apt install -y ocl-icd-opencl-dev
+sudo apt install -y mesa-opencl-icd
+
+# Test OpenCL
+clinfo | grep -i mali
+```
+
+### 2. Vulkan Issues
+
+**Symptoms:**
+- Vulkan not supported
+- Driver errors
+- Application crashes
+
+**Solutions:**
+```bash
+# Check Vulkan support
 vulkaninfo
+
+# Install Vulkan drivers
+sudo apt install -y vulkan-tools vulkan-validationlayers-dev
+sudo apt install -y mesa-vulkan-drivers
+
+# Test Vulkan
+vulkaninfo --summary
 ```
 
-### 2. GPU Performance Issues
+## Debugging Techniques
 
-**Symptoms:**
-- Slow GPU performance
-- GPU not utilized
-- Thermal throttling
+### 1. System Monitoring
 
-**Solutions:**
 ```bash
-# Check GPU frequency
-cat /sys/class/devfreq/fdab0000.gpu/cur_freq
-cat /sys/class/devfreq/fdab0000.gpu/max_freq
+# Monitor system resources
+htop
+iotop
+nethogs
 
-# Check GPU temperature
-sensors
-cat /sys/class/thermal/thermal_zone*/temp
+# Check system information
+lscpu
+free -h
+df -h
 
-# Check GPU usage
-nvidia-smi  # If available
+# Monitor processes
+ps aux | grep your_process
 ```
 
-## Network Issues
+### 2. Log Analysis
 
-### 1. WiFi Problems
-
-**Symptoms:**
-- Can't connect to WiFi
-- Intermittent connection
-- Slow WiFi speed
-
-**Solutions:**
 ```bash
-# Check WiFi interface
-ip link show wlan0
-iwconfig
+# Check system logs
+journalctl -f
 
-# Restart network manager
-sudo systemctl restart NetworkManager
+# Check kernel messages
+dmesg | tail -50
 
-# Check WiFi drivers
-lsmod | grep wifi
-dmesg | grep -i wifi
+# Check application logs
+tail -f /var/log/your_app.log
 
-# Test WiFi connection
-ping -c 4 8.8.8.8
+# Filter specific errors
+dmesg | grep -i error
+journalctl | grep -i fail
 ```
 
-### 2. Ethernet Issues
+### 3. Performance Profiling
 
-**Symptoms:**
-- No Ethernet connection
-- Slow Ethernet speed
-- Connection drops
-
-**Solutions:**
 ```bash
-# Check Ethernet interface
-ip link show eth0
-ethtool eth0
+# CPU profiling
+perf top
+perf record -g your_program
+perf report
 
-# Restart network interface
-sudo ip link set eth0 down
-sudo ip link set eth0 up
+# Memory profiling
+valgrind --tool=memcheck your_program
+valgrind --tool=massif your_program
 
-# Check Ethernet drivers
-lsmod | grep ethernet
-dmesg | grep -i ethernet
-```
-
-## Development Issues
-
-### 1. Cross-Compilation Problems
-
-**Symptoms:**
-- Compilation errors
-- Linking errors
-- Runtime errors
-
-**Solutions:**
-```bash
-# Check toolchain
-aarch64-linux-gnu-gcc --version
-aarch64-linux-gnu-ld --version
-
-# Check environment
-echo $CROSS_COMPILE
-echo $ARCH
-echo $PATH
-
-# Test cross-compilation
-echo 'int main(){return 0;}' | aarch64-linux-gnu-gcc -x c -
-```
-
-### 2. Debugging Issues
-
-**Symptoms:**
-- GDB not working
-- No debug symbols
-- Remote debugging fails
-
-**Solutions:**
-```bash
-# Install debugging tools
-sudo apt install -y gdb-multiarch
-sudo apt install -y gdbserver
-
-# Check debug symbols
-file ./program
-objdump -h ./program
-
-# Test remote debugging
-gdbserver :1234 ./program
-```
-
-## System Recovery
-
-### 1. Boot Recovery
-
-**Symptoms:**
-- System won't boot
-- Boot loop
-- Kernel panic
-
-**Solutions:**
-```bash
-# Boot from different media
-# - Use different microSD card
-# - Boot from network
-# - Use recovery mode
-
-# Reinstall system
-# - Flash new image
-# - Restore from backup
-# - Use recovery tools
-```
-
-### 2. Data Recovery
-
-**Symptoms:**
-- Data corruption
-- File system errors
-- Lost files
-
-**Solutions:**
-```bash
-# Check file system
-fsck /dev/mmcblk0p2
-
-# Recover deleted files
-extundelete /dev/mmcblk0p2 --restore-all
-
-# Restore from backup
-dd if=backup.img of=/dev/mmcblk0p2
-```
-
-## Performance Optimization
-
-### 1. System Optimization
-
-**Solutions:**
-```bash
-# Optimize CPU governor
-echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-
-# Optimize memory
-echo 1 | sudo tee /proc/sys/vm/drop_caches
-
-# Optimize I/O
-echo noop | sudo tee /sys/block/mmcblk0/queue/scheduler
-```
-
-### 2. Development Optimization
-
-**Solutions:**
-```bash
-# Use faster storage
-# - Use SSD instead of microSD
-# - Use faster microSD card
-# - Use network storage
-
-# Optimize compilation
-# - Use parallel compilation
-# - Use ccache
-# - Use precompiled headers
+# GPU profiling
+sudo apt install -y gpu-utils
+gpu-monitor
 ```
 
 ## Common Error Messages
 
-### 1. Permission Denied
-
-**Error:** `Permission denied`
-
-**Solutions:**
+### 1. "Permission Denied"
 ```bash
 # Check file permissions
 ls -la /path/to/file
-chmod +x /path/to/file
 
-# Check user groups
-groups $USER
-sudo usermod -a -G group $USER
+# Fix permissions
+sudo chmod +x /path/to/script
+sudo chown user:user /path/to/file
 ```
 
-### 2. No Such File or Directory
-
-**Error:** `No such file or directory`
-
-**Solutions:**
+### 2. "No Space Left on Device"
 ```bash
-# Check file existence
-ls -la /path/to/file
+# Check disk usage
+df -h
 
-# Check PATH
-echo $PATH
-which command
+# Clean up space
+sudo apt autoremove
+sudo apt autoclean
+sudo rm -rf /tmp/*
 
-# Install missing packages
-sudo apt install -y package-name
+# Check for large files
+find / -size +100M -type f 2>/dev/null
 ```
 
-### 3. Out of Memory
-
-**Error:** `Out of memory`
-
-**Solutions:**
+### 3. "Device or Resource Busy"
 ```bash
-# Check memory usage
-free -h
-top
+# Check what's using the device
+lsof /dev/device_name
 
-# Increase swap
-sudo fallocate -l 2G /swapfile
-sudo chmod 600 /swapfile
-sudo mkswap /swapfile
-sudo swapon /swapfile
+# Kill processes using the device
+sudo kill -9 process_id
+
+# Unmount if necessary
+sudo umount /dev/device_name
 ```
+
+## Recovery Procedures
+
+### 1. System Recovery
+
+```bash
+# Boot from SD card
+# Access recovery mode
+# Restore from backup
+
+# Reflash system
+sudo dd if=system_image.img of=/dev/mmcblk0 bs=4M status=progress
+```
+
+### 2. Data Recovery
+
+```bash
+# Check filesystem
+sudo fsck /dev/mmcblk0p2
+
+# Recover deleted files
+sudo apt install -y testdisk
+testdisk
+
+# Backup important data
+sudo tar -czf backup.tar.gz /home/user/important_data
+```
+
+## Prevention Strategies
+
+### 1. Regular Backups
+
+```bash
+# Create system backup
+sudo dd if=/dev/mmcblk0 of=backup.img bs=4M status=progress
+
+# Backup configuration
+sudo tar -czf config_backup.tar.gz /etc /home/user/.config
+```
+
+### 2. Monitoring Setup
+
+```bash
+# Install monitoring tools
+sudo apt install -y htop iotop nethogs
+
+# Set up log rotation
+sudo nano /etc/logrotate.d/your_app
+
+# Configure automatic updates
+sudo apt install -y unattended-upgrades
+```
+
+### 3. Development Best Practices
+
+- Use version control (Git)
+- Test on multiple hardware configurations
+- Implement proper error handling
+- Use logging and debugging tools
+- Document configuration changes
 
 ## Getting Help
 
-### 1. Documentation
+### 1. Community Resources
 
-- Check official documentation
-- Read error messages carefully
-- Search for similar issues online
+- [Rock 5B+ Official Forum](https://forum.radxa.com/)
+- [GitHub Issues](https://github.com/radxa/rock5b)
+- [Discord Community](https://discord.gg/radxa)
 
-### 2. Community Support
+### 2. Documentation
 
-- GitHub Issues
-- Forums and mailing lists
-- Stack Overflow
-- Reddit communities
+- [Official Wiki](https://wiki.radxa.com/Rock5)
+- [Hardware Documentation](https://wiki.radxa.com/Rock5/hardware)
+- [Software Guides](https://wiki.radxa.com/Rock5/software)
 
 ### 3. Professional Support
 
-- Commercial support
-- Consulting services
-- Training programs
+- Contact Radxa support for hardware issues
+- Consult embedded systems experts
+- Use professional debugging services
 
-## Prevention
+## Conclusion
 
-### 1. Best Practices
+Troubleshooting embedded development issues requires systematic approach and good understanding of the platform. By following this guide and using the provided solutions, you can resolve most common issues and maintain a stable development environment.
 
-- Regular backups
-- System monitoring
-- Proper documentation
-- Testing procedures
-
-### 2. Maintenance
-
-- Regular updates
-- System monitoring
-- Performance tuning
-- Security updates
-
-## Next Steps
-
-- [Hardware Setup](./hardware-setup.md)
-- [Development Environment](./development-environment.md)
-- [OS Installation](../rock-5b-setup/os-installation.md)
+Remember to:
+- Keep backups of working configurations
+- Document solutions for future reference
+- Stay updated with latest firmware and software
+- Join community forums for ongoing support
 
 ## Resources
 
 - [Rock 5B+ Troubleshooting](https://wiki.radxa.com/Rock5/troubleshooting)
-- [Linux Troubleshooting Guide](https://www.linux.org/docs/troubleshooting.html)
-- [Embedded Systems Debugging](https://www.embedded.com/design/programming-languages-and-tools/4428708/Embedded-debugging-techniques)
+- [Linux System Administration](https://www.linux.org/)
+- [Embedded Linux Development](https://elinux.org/)
+- [ARM Development Tools](https://developer.arm.com/)
+
+Happy debugging! 🔧
