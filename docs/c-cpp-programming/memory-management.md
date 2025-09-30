@@ -18,7 +18,7 @@ This guide covers advanced memory management techniques for embedded C/C++ progr
 ├─────────────────────────────────────┤
 │           Heap (grows up)           │
 ├─────────────────────────────────────┤
-│           BSS (uninitialized)      │
+│           BSS (uninitialized)       │
 ├─────────────────────────────────────┤
 │           Data (initialized)        │
 ├─────────────────────────────────────┤

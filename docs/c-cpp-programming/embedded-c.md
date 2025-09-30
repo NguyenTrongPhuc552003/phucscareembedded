@@ -27,7 +27,7 @@ Embedded C programming requires understanding of:
 ├─────────────────────────────────────┤
 │           Heap (grows up)           │
 ├─────────────────────────────────────┤
-│           BSS (uninitialized)      │
+│           BSS (uninitialized)       │
 ├─────────────────────────────────────┤
 │           Data (initialized)        │
 ├─────────────────────────────────────┤
