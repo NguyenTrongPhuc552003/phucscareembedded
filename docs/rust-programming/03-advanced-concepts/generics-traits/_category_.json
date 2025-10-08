@@ -1,0 +1,8 @@
+{
+  "label": "Generics and Traits",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Master generic programming and trait-based design in Rust. Learn to write reusable code with generics and define shared behavior with traits."
+  }
+}

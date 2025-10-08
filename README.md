@@ -19,30 +19,35 @@ Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareemb
 ## 📚 Documentation Topics
 
 ### Embedded Linux Development
+
 - Kernel development and device drivers
 - Bootloader configuration
 - Filesystem management
 - Real-time systems programming
 
 ### GPU Development
+
 - Mali GPU programming on Rock 5B+
 - OpenCL performance optimization
 - Vulkan development
 - GPU memory management
 
 ### C/C++ Programming
+
 - Modern C++ best practices for embedded systems
 - Memory management and optimization
 - Debugging techniques
 - Performance tuning
 
 ### Yocto Project
+
 - Custom Linux image building
 - Recipe development
 - SDK generation
 - Cross-compilation setup
 
 ### Rock 5B+ Development
+
 - Hardware overview and setup
 - OS installation guides
 - Peripheral configuration
@@ -146,24 +151,28 @@ phucscareembedded/
 ## 📖 Content Categories
 
 ### Technical Tutorials
+
 - Step-by-step guides for embedded development
 - Code examples and best practices
 - Hardware interfacing techniques
 - Performance optimization strategies
 
 ### Project Showcases
+
 - Real-world embedded projects
 - IoT applications with Rock 5B+
 - Smart home automation systems
 - Industrial control solutions
 
 ### Tool Reviews
+
 - Development IDEs and environments
 - Hardware debugging tools
 - Performance profiling software
 - Version control for embedded projects
 
 ### Industry Updates
+
 - Latest trends in edge computing
 - New ARM processor releases
 - Linux kernel updates

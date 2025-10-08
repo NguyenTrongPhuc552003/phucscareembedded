@@ -1,0 +1,8 @@
+{
+  "label": "02. Rust Fundamentals",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Master Rust's fundamental concepts including structs, enums, pattern matching, error handling, collections, strings, and module organization."
+  }
+}

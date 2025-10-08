@@ -1,8 +1,0 @@
-{
-    "label": "C/C++ Programming",
-    "position": 4,
-    "link": {
-        "type": "generated-index",
-        "description": "Learn C/C++ programming best practices for embedded systems and performance optimization."
-    }
-}

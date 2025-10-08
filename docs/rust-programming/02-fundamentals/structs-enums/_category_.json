@@ -1,0 +1,8 @@
+{
+  "label": "Structs and Enums",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn to create custom data types with structs and handle multiple possibilities with enums. Master struct methods, enum variants, and the Option enum."
+  }
+}
