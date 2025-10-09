@@ -1,0 +1,8 @@
+{
+  "label": "Lifetimes",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Understand and manage reference lifetimes. Learn lifetime annotations, elision rules, bounds, and static lifetimes."
+  }
+}
