@@ -115,6 +115,84 @@ const sidebars = {
                 'rust-programming/fundamentals/structs-enums/practical-exercises',
               ],
             },
+            {
+              type: 'category',
+              label: 'Pattern Matching and Error Handling',
+              items: [
+                'rust-programming/fundamentals/pattern-matching-error-handling/match-expressions',
+                'rust-programming/fundamentals/pattern-matching-error-handling/error-handling-result',
+                'rust-programming/fundamentals/pattern-matching-error-handling/option-handling',
+                'rust-programming/fundamentals/pattern-matching-error-handling/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Collections and Strings',
+              items: [
+                'rust-programming/fundamentals/collections-strings/vectors-basics',
+                'rust-programming/fundamentals/collections-strings/hashmaps-basics',
+                'rust-programming/fundamentals/collections-strings/hashsets-basics',
+                'rust-programming/fundamentals/collections-strings/string-handling',
+                'rust-programming/fundamentals/collections-strings/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Modules and Packages',
+              items: [
+                'rust-programming/fundamentals/modules-packages/modules-basics',
+                'rust-programming/fundamentals/modules-packages/packages-crates',
+                'rust-programming/fundamentals/modules-packages/library-development',
+                'rust-programming/fundamentals/modules-packages/advanced-module-patterns',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: '03. Advanced Concepts',
+          items: [
+            {
+              type: 'category',
+              label: 'Generics and Traits',
+              items: [
+                'rust-programming/advanced-concepts/generics-traits/generics-basics',
+                'rust-programming/advanced-concepts/generics-traits/generics-methods',
+                'rust-programming/advanced-concepts/generics-traits/traits-basics',
+                'rust-programming/advanced-concepts/generics-traits/trait-bounds',
+                'rust-programming/advanced-concepts/generics-traits/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Lifetimes',
+              items: [
+                'rust-programming/advanced-concepts/lifetimes/lifetimes-basics',
+                'rust-programming/advanced-concepts/lifetimes/lifetime-annotations',
+                'rust-programming/advanced-concepts/lifetimes/lifetime-elision',
+                'rust-programming/advanced-concepts/lifetimes/advanced-lifetimes',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Smart Pointers',
+              items: [
+                'rust-programming/advanced-concepts/smart-pointers/box-smart-pointer',
+                'rust-programming/advanced-concepts/smart-pointers/rc-refcell',
+                'rust-programming/advanced-concepts/smart-pointers/arc-mutex',
+                'rust-programming/advanced-concepts/smart-pointers/weak-reference-cycles',
+                'rust-programming/advanced-concepts/smart-pointers/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Concurrency',
+              items: [
+                'rust-programming/advanced-concepts/concurrency/threads-basics',
+                'rust-programming/advanced-concepts/concurrency/message-passing',
+                'rust-programming/advanced-concepts/concurrency/concurrency',
+              ],
+            },
           ],
         },
       ],
