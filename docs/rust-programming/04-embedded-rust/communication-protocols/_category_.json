@@ -1,0 +1,8 @@
+{
+  "label": "Communication Protocols",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn to implement common embedded communication protocols like UART, I2C, and SPI."
+  }
+}
