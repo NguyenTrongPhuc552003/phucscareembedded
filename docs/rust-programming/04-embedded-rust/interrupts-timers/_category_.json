@@ -1,0 +1,8 @@
+{
+  "label": "Interrupts and Timers",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn to handle interrupts and work with timers in embedded Rust systems."
+  }
+}
