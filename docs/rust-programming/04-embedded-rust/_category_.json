@@ -1,0 +1,8 @@
+{
+  "label": "04. Embedded Rust Development",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn embedded systems development with Rust, from no_std programming to hardware communication protocols."
+  }
+}

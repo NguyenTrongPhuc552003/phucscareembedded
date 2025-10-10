@@ -195,6 +195,48 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: '04. Embedded Rust Development',
+          items: [
+            {
+              type: 'category',
+              label: 'no_std Programming',
+              items: [
+                'rust-programming/embedded-rust/no-std-programming/no-std-basics',
+                'rust-programming/embedded-rust/no-std-programming/panic-handling',
+                'rust-programming/embedded-rust/no-std-programming/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Hardware Abstraction Layers',
+              items: [
+                'rust-programming/embedded-rust/hardware-abstraction-layers/hal-design-patterns',
+                'rust-programming/embedded-rust/hardware-abstraction-layers/register-access',
+                'rust-programming/embedded-rust/hardware-abstraction-layers/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Interrupts and Timers',
+              items: [
+                'rust-programming/embedded-rust/interrupts-timers/interrupt-handling',
+                'rust-programming/embedded-rust/interrupts-timers/timer-peripherals',
+                'rust-programming/embedded-rust/interrupts-timers/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Communication Protocols',
+              items: [
+                'rust-programming/embedded-rust/communication-protocols/uart-serial-communication',
+                'rust-programming/embedded-rust/communication-protocols/i2c-spi-protocols',
+                'rust-programming/embedded-rust/communication-protocols/practical-exercises',
+              ],
+            },
+          ],
+        },
       ],
     },
     {
