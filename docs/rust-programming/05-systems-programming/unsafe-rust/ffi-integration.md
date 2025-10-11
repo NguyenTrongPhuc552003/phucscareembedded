@@ -86,7 +86,7 @@ fn basic_ffi_example() {
 - **`strlen(s: *const c_char) -> usize`**: Declares the C `strlen` function that takes a pointer to a C string and returns its length
 - **`CString::new(s).unwrap()`**: Converts a Rust `&str` to a C-compatible string. `CString` ensures the string is null-terminated and contains no null bytes
 - **`c_string.as_ptr()`**: Gets a raw pointer to the C string data, which is what C functions expect
-- **`unsafe { strlen(...) }**: Calls the C function within an unsafe block, as FFI calls are inherently unsafe
+- **`unsafe { strlen(...) }`**: Calls the C function within an unsafe block, as FFI calls are inherently unsafe
 - **Safe wrapper pattern**: The `safe_strlen` function wraps the unsafe FFI call in a safe interface, handling the string conversion and error cases
 
 **Why this works**: This pattern allows Rust to safely call C functions while maintaining memory safety. The `CString` type ensures proper string conversion, and the wrapper function provides a safe API for Rust code.
@@ -268,7 +268,7 @@ fn array_handling_example() {
 - **`rust_array.as_ptr()`**: Gets a raw pointer to the first element of the vector, which C functions expect
 - **`rust_array.len() as c_int`**: Converts the Rust vector length to a C integer type
 - **`sum_array(arr: *const c_int, len: c_int)`**: C function that takes a pointer to an array and its length
-- **`unsafe { sum_array(...) }**: Calls the C function within an unsafe block since it involves raw pointers
+- **`unsafe { sum_array(...) }`**: Calls the C function within an unsafe block since it involves raw pointers
 
 **Why this works**: Rust vectors are stored contiguously in memory, making them compatible with C arrays. The `as_ptr()` method provides a raw pointer to the first element, and the length ensures the C function knows the array bounds. This pattern is safe as long as the C function doesn't modify the array or access beyond its bounds.
 
