@@ -570,13 +570,13 @@ fn cpu_profiling_example() {
 **Code Explanation**: This example demonstrates how to use CPU profiling:
 
 - **`CPUProfiler`**: The CPU profiler struct
-- **`samples`**: The samples Arc<Mutex<Vec<CPUSample>>>
+- **`samples`**: The samples `Arc<Mutex<Vec<CPUSample>>>`
 - **`sampling_interval`**: The sampling interval
 - **`record_function_call(function_name, duration)`**: The record function call function
 - **`get_function_stats()`**: The get function stats function
 - **`print_cpu_report()`**: The print CPU report function
 
-**Why this works**: This pattern allows Rust to use CPU profiling. The `CPUProfiler` struct provides a CPU profiler implementation, the `samples` Arc<Mutex<Vec<CPUSample>>> records the samples, the `sampling_interval` is the sampling interval, the `record_function_call(function_name, duration)` function records a function call, the `get_function_stats()` function returns the function stats, and the `print_cpu_report()` function prints the CPU report.
+**Why this works**: This pattern allows Rust to use CPU profiling. The `CPUProfiler` struct provides a CPU profiler implementation, the `samples` `Arc<Mutex<Vec<CPUSample>>>` records the samples, the `sampling_interval` is the sampling interval, the `record_function_call(function_name, duration)` function records a function call, the `get_function_stats()` function returns the function stats, and the `print_cpu_report()` function prints the CPU report.
 
 ## Basic Flame Graph Setup
 
