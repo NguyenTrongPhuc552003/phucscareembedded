@@ -1,0 +1,8 @@
+{
+  "label": "Error Handling and Recovery",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Master error handling and recovery in Rust. Learn error patterns, recovery strategies, and robust error management for production applications."
+  }
+}

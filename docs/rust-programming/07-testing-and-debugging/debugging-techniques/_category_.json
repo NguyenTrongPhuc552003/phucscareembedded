@@ -1,0 +1,8 @@
+{
+  "label": "Debugging Techniques",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Master debugging techniques in Rust. Learn debugging tools, strategies, logging, and performance debugging for robust applications."
+  }
+}

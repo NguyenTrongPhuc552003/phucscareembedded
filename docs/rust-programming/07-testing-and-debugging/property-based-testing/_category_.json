@@ -1,0 +1,8 @@
+{
+  "label": "Property-Based Testing",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn property-based testing in Rust. Master QuickCheck, property definition, shrinking, and fuzzing techniques for robust code."
+  }
+}

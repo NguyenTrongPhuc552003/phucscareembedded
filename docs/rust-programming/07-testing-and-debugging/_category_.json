@@ -1,0 +1,8 @@
+{
+  "label": "07. Testing and Debugging",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Master testing and debugging techniques in Rust. Learn unit testing, property-based testing, debugging tools, and error handling patterns for robust applications."
+  }
+}
