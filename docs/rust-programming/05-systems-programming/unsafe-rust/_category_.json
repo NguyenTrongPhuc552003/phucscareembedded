@@ -1,0 +1,8 @@
+{
+  "label": "Unsafe Rust",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Master unsafe Rust programming - raw pointers, unsafe functions, and FFI integration."
+  }
+}
