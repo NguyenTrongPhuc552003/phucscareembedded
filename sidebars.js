@@ -237,6 +237,48 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: '05. Systems Programming',
+          items: [
+            {
+              type: 'category',
+              label: 'Memory Management',
+              items: [
+                'rust-programming/systems-programming/memory-management/memory-layout',
+                'rust-programming/systems-programming/memory-management/custom-allocators',
+                'rust-programming/systems-programming/memory-management/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Unsafe Rust',
+              items: [
+                'rust-programming/systems-programming/unsafe-rust/unsafe-basics',
+                'rust-programming/systems-programming/unsafe-rust/ffi-integration',
+                'rust-programming/systems-programming/unsafe-rust/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Operating System Integration',
+              items: [
+                'rust-programming/systems-programming/operating-system-integration/system-calls',
+                'rust-programming/systems-programming/operating-system-integration/process-thread-management',
+                'rust-programming/systems-programming/operating-system-integration/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Device Drivers',
+              items: [
+                'rust-programming/systems-programming/device-drivers/driver-architecture',
+                'rust-programming/systems-programming/device-drivers/kernel-integration',
+                'rust-programming/systems-programming/device-drivers/practical-exercises',
+              ],
+            },
+          ],
+        },
       ],
     },
     {
