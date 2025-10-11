@@ -279,6 +279,48 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: '06. Performance Optimization',
+          items: [
+            {
+              type: 'category',
+              label: 'Profiling and Benchmarking',
+              items: [
+                'rust-programming/performance-optimization/profiling-benchmarking/profiling-tools',
+                'rust-programming/performance-optimization/profiling-benchmarking/benchmarking-techniques',
+                'rust-programming/performance-optimization/profiling-benchmarking/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Compiler Optimizations',
+              items: [
+                'rust-programming/performance-optimization/compiler-optimizations/optimization-levels',
+                'rust-programming/performance-optimization/compiler-optimizations/code-generation',
+                'rust-programming/performance-optimization/compiler-optimizations/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Memory Optimization',
+              items: [
+                'rust-programming/performance-optimization/memory-optimization/memory-layout-optimization',
+                'rust-programming/performance-optimization/memory-optimization/allocation-optimization',
+                'rust-programming/performance-optimization/memory-optimization/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Parallel Processing',
+              items: [
+                'rust-programming/performance-optimization/parallel-processing/parallel-algorithms',
+                'rust-programming/performance-optimization/parallel-processing/advanced-concurrency',
+                'rust-programming/performance-optimization/parallel-processing/practical-exercises',
+              ],
+            },
+          ],
+        },
       ],
     },
     {
