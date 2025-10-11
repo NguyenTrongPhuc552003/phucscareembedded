@@ -133,6 +133,10 @@ fn main() {
 
 ### Integer Literals
 
+**What**: Integer literals are the exact values you write in your code.
+
+**How**: Here's how to work with integer literals in Rust:
+
 ```rust
 fn main() {
     let decimal = 98_222;           // Decimal
@@ -149,7 +153,21 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let decimal = 98_222;` creates an integer variable `decimal` with value 98,222
+- `let hex = 0xff;` creates another integer variable `hex` with value 255
+- `let octal = 0o77;` creates another integer variable `octal` with value 63
+- `let binary = 0b1111_0000;` creates another integer variable `binary` with value 240
+- `let byte = b'A';` creates another integer variable `byte` with value 65
+
+**Why**: Integer literals are essential for representing exact values in your code.
+
 ### Integer Overflow
+
+**What**: Integer overflow occurs when an integer operation results in a value that is too large or too small to be represented by the type.
+
+**How**: Here's how to work with integer overflow in Rust:
 
 ```rust
 fn main() {
@@ -172,9 +190,20 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x: u8 = 255;` creates an unsigned 8-bit integer variable `x` with value 255
+- `let y: u8 = 1;` creates another unsigned 8-bit integer variable `y` with value 1
+
+**Why**: Integer overflow is a common error in programming and can lead to unexpected behavior.
+
 ## Floating-Point Types
 
 ### Basic Floating-Point
+
+**What**: Floating-point types represent decimal numbers with varying precision.
+
+**How**: Here's how to work with floating-point types in Rust:
 
 ```rust
 fn main() {
@@ -188,7 +217,19 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 2.0;` creates a floating-point variable `x` with value 2.0
+- `let y: f32 = 3.0;` creates another floating-point variable `y` with value 3.0
+- `let z: f64 = 4.0;` creates another floating-point variable `z` with value 4.0
+
+**Why**: Floating-point types are essential for representing decimal numbers with varying precision.
+
 ### Floating-Point Operations
+
+**What**: Floating-point operations include addition, subtraction, multiplication, and division.
+
+**How**: Here's how to work with floating-point operations in Rust:
 
 ```rust
 fn main() {
@@ -212,7 +253,18 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 2.5;` creates a floating-point variable `x` with value 2.5
+- `let y = 1.5;` creates another floating-point variable `y` with value 1.5
+
+**Why**: Floating-point operations are essential for performing mathematical calculations with decimal numbers.
+
 ### Floating-Point Precision
+
+**What**: Floating-point precision is the number of digits that can be represented in a floating-point number.
+
+**How**: Here's how to work with floating-point precision in Rust:
 
 ```rust
 fn main() {
@@ -230,9 +282,21 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 0.1;` creates a floating-point variable `x` with value 0.1
+- `let y = 0.2;` creates another floating-point variable `y` with value 0.2
+- `let z = x + y;` creates another floating-point variable `z` with value 0.3
+
+**Why**: Floating-point precision is essential for performing mathematical calculations with decimal numbers.
+
 ## Boolean Type
 
 ### Basic Boolean Operations
+
+**What**: Boolean types represent true/false values.
+
+**How**: Here's how to work with boolean types in Rust:
 
 ```rust
 fn main() {
@@ -250,7 +314,18 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let t = true;` creates a boolean variable `t` with value true
+- `let f = false;` creates another boolean variable `f` with value false
+
+**Why**: Boolean types are essential for representing true/false values.
+
 ### Boolean in Conditions
+
+**What**: Boolean types can be used in conditions.
+
+**How**: Here's how to work with boolean types in conditions in Rust:
 
 ```rust
 fn main() {
@@ -275,9 +350,21 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let number = 6;` creates an integer variable `number` with value 6
+- `let is_even = number % 2 == 0;` creates a boolean variable `is_even` with value true
+- `let is_positive = number > 0;` creates another boolean variable `is_positive` with value true
+
+**Why**: Boolean types can be used in conditions to control program flow.
+
 ## Character Type
 
 ### Basic Characters
+
+**What**: Character types represent single characters.
+
+**How**: Here's how to work with character types in Rust:
 
 ```rust
 fn main() {
@@ -291,7 +378,19 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let c = 'z';` creates a character variable `c` with value 'z'
+- `let z = 'ℤ';` creates another character variable `z` with value 'ℤ'
+- `let heart_eyed_cat = '😻';` creates another character variable `heart_eyed_cat` with value '😻'
+
+**Why**: Character types are essential for representing single characters.
+
 ### Character Operations
+
+**What**: Character operations include checking if a character is alphabetic, numeric, uppercase, lowercase, and converting to lowercase.
+
+**How**: Here's how to work with character operations in Rust:
 
 ```rust
 fn main() {
@@ -316,7 +415,22 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let c = 'A';` creates a character variable `c` with value 'A'
+- `let is_alphabetic = c.is_alphabetic();` creates a boolean variable `is_alphabetic` with value true
+- `let is_numeric = c.is_numeric();` creates another boolean variable `is_numeric` with value false
+- `let is_uppercase = c.is_uppercase();` creates another boolean variable `is_uppercase` with value true
+- `let lower = c.to_lowercase().next().unwrap();` creates another character variable `lower` with value 'a'
+- `let unicode_value = c as u32;` creates another integer variable `unicode_value` with value 65
+
+**Why**: Character operations are essential for working with single characters.
+
 ### Unicode Support
+
+**What**: Unicode types represent characters using Unicode encoding.
+
+**How**: Here's how to work with Unicode types in Rust:
 
 ```rust
 fn main() {
@@ -338,9 +452,22 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let ascii_char = 'A';` creates a character variable `ascii_char` with value 'A'
+- `let unicode_char = '中';` creates another character variable `unicode_char` with value '中'
+- `let emoji = '🚀';` creates another character variable `emoji` with value '🚀'
+- `let math_symbol = '∑';` creates another character variable `math_symbol` with value '∑'
+
+**Why**: Unicode types are essential for representing characters using Unicode encoding.
+
 ## Type Inference
 
 ### Automatic Type Inference
+
+**What**: Automatic type inference is when Rust automatically determines the type of a variable based on the value assigned to it.
+
+**How**: Here's how to work with automatic type inference in Rust:
 
 ```rust
 fn main() {
@@ -357,7 +484,20 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 5;` creates an integer variable `x` with value 5
+- `let y = 3.14;` creates another floating-point variable `y` with value 3.14
+- `let z = true;` creates another boolean variable `z` with value true
+- `let c = 'a';` creates another character variable `c` with value 'a'
+
+**Why**: Automatic type inference is essential for writing concise code.
+
 ### Explicit Type Annotations
+
+**What**: Explicit type annotations are when you explicitly specify the type of a variable.
+
+**How**: Here's how to work with explicit type annotations in Rust:
 
 ```rust
 fn main() {
@@ -382,9 +522,22 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x: i32 = 5;` creates an integer variable `x` with value 5
+- `let y: f64 = 3.14;` creates another floating-point variable `y` with value 3.14
+- `let z: bool = true;` creates another boolean variable `z` with value true
+- `let c: char = 'a';` creates another character variable `c` with value 'a'
+
+**Why**: Explicit type annotations are essential for writing explicit code.
+
 ## Type Conversions
 
 ### Implicit Conversions
+
+**What**: Implicit conversions are when Rust automatically converts one type to another.
+
+**How**: Here's how to work with implicit conversions in Rust:
 
 ```rust
 fn main() {
@@ -400,7 +553,18 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 5;` creates an integer variable `x` with value 5
+- `let y = 3.14;` creates another floating-point variable `y` with value 3.14
+
+**Why**: Implicit conversions are essential for writing concise code.
+
 ### Explicit Conversions
+
+**What**: Explicit conversions are when you explicitly convert one type to another.
+
+**How**: Here's how to work with explicit conversions in Rust:
 
 ```rust
 fn main() {
@@ -420,7 +584,21 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 5i32;` creates an integer variable `x` with value 5
+- `let y = 3.14f64;` creates another floating-point variable `y` with value 3.14
+- `let a = x as f64;` creates another floating-point variable `a` with value 5.0
+- `let b = y as i32;` creates another integer variable `b` with value 3
+- `let c = x as u8;` creates another integer variable `c` with value 5
+
+**Why**: Explicit conversions are essential for writing explicit code.
+
 ### Safe Conversions
+
+**What**: Safe conversions are when you explicitly convert one type to another.
+
+**How**: Here's how to work with safe conversions in Rust:
 
 ```rust
 fn main() {
@@ -438,9 +616,20 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 300i32;` creates an integer variable `x` with value 300
+- `let y = x.into();` creates another floating-point variable `y` with value 300.0
+
+**Why**: Safe conversions are essential for writing safe code.
+
 ## Common Patterns
 
 ### Number Formatting
+
+**What**: Number formatting is when you format a number with separators and different bases.
+
+**How**: Here's how to work with number formatting in Rust:
 
 ```rust
 fn main() {
@@ -459,7 +648,17 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let number = 1234567;` creates an integer variable `number` with value 1234567
+
+**Why**: Number formatting is essential for representing numbers with separators and different bases.
+
 ### Range Operations
+
+**What**: Range operations are when you work with ranges of numbers and characters.
+
+**How**: Here's how to work with range operations in Rust:
 
 ```rust
 fn main() {
@@ -480,55 +679,13 @@ fn main() {
 }
 ```
 
-## Practice Exercises
+**Explanation**:
 
-### Exercise 1: Integer Operations
+- `for i in 1..=5 {` iterates over the numbers 1 to 5
+- `for c in 'a'..='e' {` iterates over the characters a to e
+- `for i in (0..10).step_by(2) {` iterates over the numbers 0, 2, 4, 6, 8
 
-```rust
-fn main() {
-    let a: i32 = 10;
-    let b: i32 = 3;
-
-    println!("a + b = {}", a + b);
-    println!("a - b = {}", a - b);
-    println!("a * b = {}", a * b);
-    println!("a / b = {}", a / b);
-    println!("a % b = {}", a % b);
-}
-```
-
-### Exercise 2: Floating-Point Math
-
-```rust
-fn main() {
-    let radius = 5.0;
-    let pi = std::f64::consts::PI;
-
-    let area = pi * radius * radius;
-    let circumference = 2.0 * pi * radius;
-
-    println!("Radius: {}", radius);
-    println!("Area: {:.2}", area);
-    println!("Circumference: {:.2}", circumference);
-}
-```
-
-### Exercise 3: Character Analysis
-
-```rust
-fn main() {
-    let chars = ['A', 'a', '1', '中', '🚀'];
-
-    for c in chars.iter() {
-        println!("Character: {}", c);
-        println!("  Is alphabetic: {}", c.is_alphabetic());
-        println!("  Is numeric: {}", c.is_numeric());
-        println!("  Is uppercase: {}", c.is_uppercase());
-        println!("  Unicode value: {}", *c as u32);
-        println!();
-    }
-}
-```
+**Why**: Range operations are essential for working with ranges of numbers and characters.
 
 ## Key Takeaways
 

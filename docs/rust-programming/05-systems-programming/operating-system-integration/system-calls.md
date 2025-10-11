@@ -6,48 +6,17 @@ sidebar_position: 1
 
 Master system calls in Rust with comprehensive explanations using the 4W+H framework.
 
-## What Are System Calls?
-
-**What**: System calls are the interface between user-space programs and the operating system kernel, allowing programs to request services from the kernel such as file operations, process management, and hardware access.
-
-**Why**: System calls are essential because:
-
-- **Kernel Access**: Provide controlled access to kernel services and hardware
-- **Security**: Enable secure interaction between user and kernel space
-- **Abstraction**: Hide low-level hardware details from applications
-- **Standardization**: Provide consistent interface across different systems
-- **Resource Management**: Allow kernel to manage system resources
-- **Process Isolation**: Maintain security boundaries between processes
-
-**When**: Use system calls when:
-
-- Performing file I/O operations
-- Managing processes and threads
-- Accessing network resources
-- Interacting with hardware devices
-- Managing memory and system resources
-- Implementing system-level functionality
-
-**Where**: System calls are used in:
-
-- Operating system kernels and drivers
-- System utilities and tools
-- Embedded systems and microcontrollers
-- Network servers and clients
-- Database systems and file systems
-- Real-time systems and control systems
-
-**How**: System calls are implemented through:
-
-- Direct system call invocation
-- Library function wrappers
-- FFI bindings to system libraries
-- Assembly language interfaces
-- Kernel entry points and syscalls
-
 ## Basic System Call Concepts
 
 ### System Call Interface
+
+**What**: The system call interface is the interface of the system call.
+
+**Why**: This is essential because it ensures that the system call is properly interfaced.
+
+**When**: Use the system call interface when interfacing the system call.
+
+**How**: The system call interface is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::os::raw::{c_int, c_void};
@@ -75,7 +44,25 @@ fn basic_syscall_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates direct system call invocation in Rust:
+
+- **`extern "C"`**: Declares a foreign function interface to the C system call function
+- **`syscall(number: c_int, ...)`**: The variadic system call function that takes a system call number and variable arguments
+- **System call numbers**: Constants that identify specific system calls (these are architecture and OS specific)
+- **`unsafe { syscall(SYS_GETPID) }`**: Direct system call invocation to get the current process ID
+- **`unsafe`**: Required because system calls can cause undefined behavior if used incorrectly
+
+**Why this is unsafe**: Direct system calls bypass Rust's safety guarantees and can cause undefined behavior, crashes, or security vulnerabilities if used incorrectly. The system call numbers are also platform-specific.
+
 ### File System Calls
+
+**What**: The file system calls are the calls to the file system.
+
+**Why**: This is essential because it ensures that the file system is properly called.
+
+**When**: Use the file system calls when calling the file system.
+
+**How**: The file system calls are implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::ffi::CString;
@@ -155,9 +142,35 @@ fn file_syscall_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates file system operations using direct system calls:
+
+- **`FileDescriptor` struct**: Wraps a file descriptor with safe Rust methods
+- **`syscall()` function**: Direct system call invocation for low-level file operations
+- **File operations**: `open()`, `read()`, `write()`, `close()` implement basic file I/O
+- **Error handling**: Converts system call return values to Rust `Result` types
+- **C string handling**: Uses `CString` for safe conversion between Rust and C strings
+- **Unsafe operations**: File operations require `unsafe` blocks for system call access
+- **System call numbers**: `SYS_OPEN`, `SYS_READ`, `SYS_WRITE`, `SYS_CLOSE` are platform-specific constants
+
+**Why this works**: This file system interface provides:
+
+- **Low-level control**: Direct access to system call interface
+- **Error handling**: Proper error checking and conversion to Rust types
+- **Memory safety**: Safe string handling between Rust and C
+- **Resource management**: Proper file descriptor cleanup
+- **Platform abstraction**: Works across different Unix-like systems
+
 ## Process Management
 
 ### Process Creation
+
+**What**: The process management is the management of the process.
+
+**Why**: This is essential because it ensures that the process is properly managed.
+
+**When**: Use the process management when managing the process.
+
+**How**: The process management is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::os::raw::{c_int, c_char};
@@ -244,7 +257,33 @@ fn process_management_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates process creation and management using system calls:
+
+- **`Process` struct**: Represents a process with PID and status tracking
+- **`fork()` system call**: Creates a new process by duplicating the current process
+- **Process differentiation**: Uses return value of `fork()` to distinguish parent and child processes
+- **`wait()` system call**: Parent process waits for child process to complete
+- **Process ID handling**: Tracks process IDs for parent-child communication
+- **Error handling**: Proper error checking for system call failures
+- **Process lifecycle**: Manages the complete process creation and termination cycle
+
+**Why this works**: This process management system provides:
+
+- **Process creation**: Reliable process spawning with proper error handling
+- **Parent-child communication**: Clear distinction between parent and child processes
+- **Process synchronization**: Parent waits for child completion
+- **Error recovery**: Handles system call failures gracefully
+- **Resource management**: Proper process cleanup and status tracking
+
 ### Process Information
+
+**What**: The process information is the information of the process.
+
+**Why**: This is essential because it ensures that the process is properly informationed.
+
+**When**: Use the process information when informationing the process.
+
+**How**: The process information is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::os::raw::c_int;
@@ -278,9 +317,32 @@ fn process_info_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates process information using system calls:
+
+- **`ProcessInfo` struct**: Provides access to process information
+- **`get_pid()` system call**: Gets the process ID
+- **`get_ppid()` system call**: Gets the parent process ID
+- **`get_uid()` system call**: Gets the user ID
+- **`get_gid()` system call**: Gets the group ID
+
+**Why this works**: This process information system provides:
+
+- **Process ID**: Identifies the current process
+- **Parent process ID**: Tracks the parent process
+- **User ID**: Identifies the user running the process
+- **Group ID**: Identifies the group running the process
+
 ## Memory Management System Calls
 
 ### Memory Allocation
+
+**What**: The memory management is the management of the memory.
+
+**Why**: This is essential because it ensures that the memory is properly managed.
+
+**When**: Use the memory management when managing the memory.
+
+**How**: The memory management is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::os::raw::{c_int, c_void, c_size_t};
@@ -358,9 +420,35 @@ fn memory_mapping_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates memory mapping using system calls:
+
+- **`MemoryMapping` struct**: Represents a memory-mapped region with pointer and size
+- **`mmap()` system call**: Maps a region of memory with specified size and protection flags
+- **Memory protection**: Uses `PROT_READ | PROT_WRITE` for read-write access
+- **Anonymous mapping**: Uses `MAP_PRIVATE | MAP_ANONYMOUS` for private, anonymous memory
+- **Slice access**: Provides safe access to mapped memory through `as_slice()` and `as_mut_slice()`
+- **`Drop` trait**: Automatically unmaps memory when the mapping is destroyed
+- **`munmap()` system call**: Unmaps the memory region to free system resources
+
+**Why this works**: This memory mapping system provides:
+
+- **Direct memory access**: Efficient access to mapped memory regions
+- **Automatic cleanup**: RAII pattern ensures memory is unmapped when no longer needed
+- **Memory safety**: Safe slice access with proper bounds checking
+- **System integration**: Uses standard POSIX memory mapping functions
+- **Resource management**: Proper allocation and deallocation of system memory
+
 ## Network System Calls
 
 ### Socket Operations
+
+**What**: The socket operations are the operations of the socket.
+
+**Why**: This is essential because it ensures that the socket is properly operated.
+
+**When**: Use the socket operations when operating the socket.
+
+**How**: The socket operations are implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::os::raw::{c_int, c_void};
@@ -447,9 +535,36 @@ fn network_syscall_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates network socket operations using system calls:
+
+- **`Socket` struct**: Represents a network socket with file descriptor
+- **Socket creation**: Uses `socket()` system call with protocol family, type, and protocol
+- **Socket binding**: Uses `bind()` system call to bind socket to address and port
+- **Socket listening**: Uses `listen()` system call to mark socket as passive
+- **Socket acceptance**: Uses `accept()` system call to accept incoming connections
+- **Socket cleanup**: Uses `close()` system call to close socket file descriptor
+- **Error handling**: Proper error checking for all socket operations
+- **`Drop` trait**: Automatically closes socket when it goes out of scope
+
+**Why this works**: This socket implementation provides:
+
+- **Network communication**: Full socket API for network programming
+- **Resource management**: Automatic socket cleanup with RAII pattern
+- **Error handling**: Comprehensive error checking for network operations
+- **System integration**: Direct access to kernel socket interface
+- **Protocol support**: Support for different network protocols and socket types
+
 ## Advanced System Call Patterns
 
 ### System Call Wrapper
+
+**What**: The socket operations are the operations of the socket.
+
+**Why**: This is essential because it ensures that the socket is properly operated.
+
+**When**: Use the socket operations when operating the socket.
+
+**How**: The socket operations are implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::os::raw::{c_int, c_void};
@@ -497,7 +612,33 @@ fn syscall_wrapper_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates a system call wrapper for safe system call invocation:
+
+- **`SyscallWrapper` struct**: Provides safe wrappers around system calls with different parameter counts
+- **`call0()` method**: System calls with no parameters (e.g., `getpid()`, `getppid()`)
+- **`call1()` method**: System calls with one parameter (e.g., `close()`, `unlink()`)
+- **`call2()` method**: System calls with two parameters (e.g., `open()`, `read()`)
+- **`call3()` method**: System calls with three parameters (e.g., `write()`, `lseek()`)
+- **Error handling**: Converts system call return values to Rust `Result` types
+- **Type safety**: Provides type-safe interfaces for different system call signatures
+
+**Why this works**: This system call wrapper provides:
+
+- **Type safety**: Compile-time checking of system call parameters
+- **Error handling**: Consistent error handling across all system calls
+- **Abstraction**: High-level interface for low-level system calls
+- **Reusability**: Generic wrapper that works with any system call
+- **Safety**: Prevents common system call programming errors
+
 ### Error Handling
+
+**What**: The system call error handling is the error handling of the system call.
+
+**Why**: This is essential because it ensures that the system call is properly error handled.
+
+**When**: Use the system call error handling when error handling the system call.
+
+**How**: The system call error handling is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::os::raw::c_int;
@@ -559,154 +700,23 @@ fn error_handling_example() {
 }
 ```
 
-## Practical Examples
+**Code Explanation**: This example demonstrates comprehensive system call error handling:
 
-### Simple Shell Implementation
+- **`SyscallResult` struct**: Wraps system call return values with error information
+- **Error checking**: Uses `errno` to determine if system call failed
+- **Error conversion**: Converts system call errors to Rust `Result` types
+- **Error messages**: Provides human-readable error descriptions
+- **Success handling**: Proper handling of successful system call results
+- **Error propagation**: Uses `?` operator for error propagation
+- **Error recovery**: Demonstrates how to handle different types of system call errors
 
-```rust
-use std::ffi::CString;
-use std::os::raw::{c_int, c_char};
-use std::ptr;
+**Why this works**: This error handling system provides:
 
-// Simple shell using system calls
-pub struct SimpleShell;
-
-impl SimpleShell {
-    pub fn run() {
-        loop {
-            print!("$ ");
-            std::io::Write::flush(&mut std::io::stdout()).unwrap();
-
-            let mut input = String::new();
-            std::io::stdin().read_line(&mut input).unwrap();
-            let input = input.trim();
-
-            if input.is_empty() {
-                continue;
-            }
-
-            if input == "exit" {
-                break;
-            }
-
-            Self::execute_command(input);
-        }
-    }
-
-    fn execute_command(command: &str) {
-        let parts: Vec<&str> = command.split_whitespace().collect();
-        if parts.is_empty() {
-            return;
-        }
-
-        let program = parts[0];
-        let args: Vec<&str> = parts.iter().skip(1).cloned().collect();
-
-        // Fork a new process
-        let pid = unsafe { syscall(SYS_FORK) };
-
-        if pid == 0 {
-            // Child process
-            let c_program = CString::new(program).unwrap();
-            let c_args: Vec<CString> = args.iter()
-                .map(|s| CString::new(*s).unwrap())
-                .collect();
-            let c_args_ptrs: Vec<*const c_char> = c_args.iter()
-                .map(|s| s.as_ptr())
-                .collect();
-
-            let result = unsafe {
-                syscall(
-                    SYS_EXECVE,
-                    c_program.as_ptr(),
-                    c_args_ptrs.as_ptr(),
-                    ptr::null::<*const c_char>(),
-                )
-            };
-
-            if result < 0 {
-                println!("Command not found: {}", program);
-                unsafe { syscall(SYS_EXIT, 1); }
-            }
-        } else if pid > 0 {
-            // Parent process
-            let mut status = 0;
-            unsafe { syscall(SYS_WAIT4, pid, &mut status as *mut c_int, 0, ptr::null::<c_void>()); }
-        } else {
-            println!("Fork failed");
-        }
-    }
-}
-
-fn shell_example() {
-    SimpleShell::run();
-}
-```
-
-### File System Monitor
-
-```rust
-use std::os::raw::{c_int, c_void};
-use std::ptr;
-
-// File system monitoring using system calls
-const SYS_INOTIFY_INIT: c_int = 253;
-const SYS_INOTIFY_ADD_WATCH: c_int = 254;
-const SYS_INOTIFY_RM_WATCH: c_int = 255;
-
-pub struct FileSystemMonitor {
-    fd: c_int,
-}
-
-impl FileSystemMonitor {
-    pub fn new() -> Result<Self, String> {
-        let fd = unsafe { syscall(SYS_INOTIFY_INIT) };
-
-        if fd < 0 {
-            Err(format!("Inotify init failed: {}", fd))
-        } else {
-            Ok(Self { fd })
-        }
-    }
-
-    pub fn watch(&self, path: &str, mask: u32) -> Result<c_int, String> {
-        let c_path = std::ffi::CString::new(path).unwrap();
-        let wd = unsafe { syscall(SYS_INOTIFY_ADD_WATCH, self.fd, c_path.as_ptr(), mask) };
-
-        if wd < 0 {
-            Err(format!("Add watch failed: {}", wd))
-        } else {
-            Ok(wd)
-        }
-    }
-
-    pub fn unwatch(&self, wd: c_int) -> Result<(), String> {
-        let result = unsafe { syscall(SYS_INOTIFY_RM_WATCH, self.fd, wd) };
-
-        if result < 0 {
-            Err(format!("Remove watch failed: {}", result))
-        } else {
-            Ok(())
-        }
-    }
-}
-
-impl Drop for FileSystemMonitor {
-    fn drop(&mut self) {
-        unsafe { syscall(SYS_CLOSE, self.fd); }
-    }
-}
-
-fn filesystem_monitor_example() {
-    match FileSystemMonitor::new() {
-        Ok(monitor) => {
-            println!("File system monitor created");
-            // In a real scenario, you would watch for file system events
-        }
-        Err(e) => println!("Monitor creation error: {}", e),
-    }
-}
-```
+- **Robust error handling**: Comprehensive error checking for all system calls
+- **Error information**: Detailed error messages for debugging
+- **Error propagation**: Clean error propagation through Rust's `Result` type
+- **Error recovery**: Strategies for handling different types of errors
+- **System integration**: Proper integration with system error reporting
 
 ## Key Takeaways
 

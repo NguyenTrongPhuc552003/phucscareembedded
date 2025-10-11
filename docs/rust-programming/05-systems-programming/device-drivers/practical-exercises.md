@@ -359,6 +359,27 @@ fn gpio_driver_example() -> DriverResult<()> {
 }
 ```
 
+**Code Explanation**: This example demonstrates a comprehensive GPIO driver implementation:
+
+- **`GpioMode` enum**: Defines different GPIO pin modes (Input, Output, Alternate, Analog)
+- **`GpioState` enum**: Represents pin states (Low, High) for digital operations
+- **`GpioInterruptType` enum**: Defines interrupt trigger types (RisingEdge, FallingEdge, BothEdges, LevelHigh, LevelLow)
+- **`GpioPinConfig` struct**: Configuration structure for GPIO pins with mode, pull-up/down, and interrupt settings
+- **`GpioController` struct**: Main controller that manages multiple GPIO pins with thread-safe access
+- **Thread safety**: Uses `Arc<RwLock<HashMap<u32, GpioPinConfig>>>` for concurrent pin configuration access
+- **Interrupt handling**: Supports callback functions for GPIO interrupts with `Box<dyn Fn(u32) + Send + Sync>`
+- **Register access**: Uses `RegisterAccess` for low-level hardware register manipulation
+- **Error handling**: Comprehensive error checking with `DriverResult<()>` and `DriverError` types
+
+**Why this works**: This GPIO driver provides:
+
+- **Hardware abstraction**: High-level interface for GPIO operations
+- **Thread safety**: Safe concurrent access to GPIO pins
+- **Interrupt support**: Real-time response to GPIO state changes
+- **Flexible configuration**: Support for different pin modes and interrupt types
+- **Error handling**: Robust error checking and validation
+- **Multiple controllers**: Support for multiple GPIO controllers on the same system
+
 ## Exercise 2: I2C Driver Implementation
 
 **Objective**: Create a comprehensive I2C driver that supports master and slave modes, different clock speeds, and transaction handling.
@@ -708,6 +729,27 @@ fn i2c_driver_example() -> DriverResult<()> {
 }
 ```
 
+**Code Explanation**: This example demonstrates a comprehensive I2C driver implementation:
+
+- **`I2cClockSpeed` enum**: Defines different I2C clock speeds (Standard 100kHz, Fast 400kHz, FastPlus 1MHz, HighSpeed 3.4MHz)
+- **`I2cMode` enum**: Supports both Master and Slave modes for I2C communication
+- **`I2cTransaction` struct**: Represents I2C transactions with address, data, and operation type
+- **`I2cDriver` struct**: Main I2C driver with thread-safe access and timeout handling
+- **Clock configuration**: Dynamic clock speed configuration with `set_clock_speed()`
+- **Transaction handling**: Support for read, write, and combined read-write operations
+- **Timeout mechanism**: Uses `Duration` and `Instant` for transaction timeout handling
+- **Error handling**: Comprehensive error types for I2C-specific errors
+- **High-level operations**: `I2cOperations` struct provides convenient methods for common I2C operations
+
+**Why this works**: This I2C driver provides:
+
+- **Protocol compliance**: Implements standard I2C protocol with proper timing
+- **Flexible configuration**: Support for different clock speeds and modes
+- **Transaction safety**: Thread-safe transaction handling with proper locking
+- **Timeout protection**: Prevents hanging on failed I2C transactions
+- **Error recovery**: Robust error handling and retry mechanisms
+- **High-level interface**: Easy-to-use methods for common I2C operations
+
 ## Exercise 3: SPI Driver Implementation
 
 **Objective**: Create a comprehensive SPI driver that supports master and slave modes, different clock speeds, and transaction handling.
@@ -991,6 +1033,28 @@ fn spi_driver_example() -> DriverResult<()> {
     Ok(())
 }
 ```
+
+**Code Explanation**: This example demonstrates a comprehensive SPI driver implementation:
+
+- **`SpiClockSpeed` enum**: Defines different SPI clock speeds (Low 1MHz, Medium 10MHz, Fast 50MHz, High 100MHz)
+- **`SpiMode` enum**: Supports different SPI modes (Mode0, Mode1, Mode2, Mode3) for clock polarity and phase
+- **`SpiTransaction` struct**: Represents SPI transactions with chip select, data, and operation type
+- **`SpiDriver` struct**: Main SPI driver with thread-safe access and timeout handling
+- **Clock configuration**: Dynamic clock speed configuration with `set_clock_speed()`
+- **Transaction handling**: Support for read, write, and combined read-write operations
+- **Chip select management**: Automatic chip select control for multi-device SPI buses
+- **Timeout mechanism**: Uses `Duration` and `Instant` for transaction timeout handling
+- **High-level operations**: `SpiOperations` struct provides convenient methods for common SPI operations
+
+**Why this works**: This SPI driver provides:
+
+- **Protocol compliance**: Implements standard SPI protocol with proper timing
+- **Flexible configuration**: Support for different clock speeds and modes
+- **Transaction safety**: Thread-safe transaction handling with proper locking
+- **Timeout protection**: Prevents hanging on failed SPI transactions
+- **Error recovery**: Robust error handling and retry mechanisms
+- **High-level interface**: Easy-to-use methods for common SPI operations
+- **Multi-device support**: Proper chip select management for multiple SPI devices
 
 ## Key Takeaways
 

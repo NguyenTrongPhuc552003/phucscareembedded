@@ -6,39 +6,6 @@ sidebar_position: 3
 
 Master `no_std` programming through hands-on exercises with comprehensive explanations using the 4W+H framework.
 
-## What Are Practical Exercises in no_std Programming?
-
-**What**: Practical exercises in `no_std` programming are hands-on coding activities that reinforce theoretical knowledge through real-world embedded systems scenarios.
-
-**Why**: Understanding practical exercises is crucial because:
-
-- **Reinforcement** solidifies theoretical concepts through hands-on practice
-- **Skill development** builds practical programming skills for embedded systems
-- **Problem-solving** develops ability to solve real-world embedded challenges
-- **Confidence building** increases confidence in `no_std` programming abilities
-- **Portfolio creation** provides concrete examples of embedded Rust skills
-- **Industry readiness** prepares for professional embedded development
-
-**When**: Use practical exercises when you need to:
-
-- Apply theoretical knowledge to real problems
-- Build practical embedded programming skills
-- Prepare for embedded systems interviews
-- Create portfolio projects
-- Test understanding of `no_std` concepts
-- Develop problem-solving abilities
-
-**How**: Practical exercises work by:
-
-- **Progressive complexity** starting with simple tasks and building to complex projects
-- **Real-world scenarios** using actual embedded systems problems
-- **Hands-on coding** writing and testing actual code
-- **Problem decomposition** breaking complex problems into manageable parts
-- **Iterative development** building solutions incrementally
-- **Testing and debugging** validating solutions and fixing issues
-
-**Where**: These exercises are used in embedded systems education, professional development, and portfolio building for embedded Rust developers.
-
 ## Exercise 1: Bare Metal LED Blinker
 
 ### What is the LED Blinker Exercise?

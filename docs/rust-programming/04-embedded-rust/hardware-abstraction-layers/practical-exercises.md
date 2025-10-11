@@ -6,39 +6,6 @@ sidebar_position: 3
 
 Master Hardware Abstraction Layer development through hands-on exercises with comprehensive explanations using the 4W+H framework.
 
-## What Are Practical HAL Exercises?
-
-**What**: Practical HAL exercises are hands-on coding activities that reinforce theoretical knowledge through real-world hardware abstraction layer development scenarios.
-
-**Why**: Understanding practical HAL exercises is crucial because:
-
-- **Skill development** builds practical HAL development skills
-- **Pattern application** reinforces HAL design patterns through practice
-- **Hardware integration** teaches real hardware interface development
-- **Problem solving** develops ability to solve complex hardware abstraction challenges
-- **Portfolio building** provides concrete examples of HAL development skills
-- **Industry readiness** prepares for professional embedded development
-
-**When**: Use practical HAL exercises when you need to:
-
-- Apply HAL design patterns to real problems
-- Build practical hardware abstraction skills
-- Create reusable hardware interfaces
-- Test understanding of HAL concepts
-- Develop problem-solving abilities
-- Prepare for embedded systems interviews
-
-**How**: Practical HAL exercises work by:
-
-- **Progressive complexity** starting with simple abstractions and building to complex systems
-- **Real hardware scenarios** using actual embedded hardware interfaces
-- **Pattern implementation** applying HAL design patterns in practice
-- **Code organization** demonstrating proper HAL structure and organization
-- **Testing and validation** ensuring HAL implementations work correctly
-- **Documentation** creating clear HAL interface specifications
-
-**Where**: These exercises are used in embedded systems education, professional development, and portfolio building for embedded Rust developers.
-
 ## Exercise 1: GPIO HAL Implementation
 
 ### What is the GPIO HAL Exercise?

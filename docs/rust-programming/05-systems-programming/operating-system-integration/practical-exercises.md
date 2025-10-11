@@ -283,6 +283,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
+**Code Explanation**: This example demonstrates a comprehensive system call wrapper:
+
+- **`SyscallWrapper` struct**: Provides safe wrappers around system calls with different parameter counts
+- **`call0()` method**: System calls with no parameters (e.g., `getpid()`, `getppid()`)
+- **`call1()` method**: System calls with one parameter (e.g., `close()`, `unlink()`)
+- **`call2()` method**: System calls with two parameters (e.g., `open()`, `read()`)
+- **`call3()` method**: System calls with three parameters (e.g., `write()`, `lseek()`)
+- **Error handling**: Converts system call return values to Rust `Result` types
+- **Type safety**: Provides type-safe interfaces for different system call signatures
+
+**Why this works**: This system call wrapper provides:
+
+- **Type safety**: Compile-time checking of system call parameters
+- **Error handling**: Consistent error handling across all system calls
+- **Abstraction**: High-level interface for low-level system calls
+- **Reusability**: Generic wrapper that works with any system call
+- **Safety**: Prevents common system call programming errors
+
 ## Exercise 2: Process Monitor
 
 **Objective**: Create a process monitoring tool that tracks system processes, their resource usage, and provides real-time updates.
@@ -438,6 +456,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+**Code Explanation**: This example demonstrates a comprehensive process monitoring system:
+
+- **`ProcessMonitor` struct**: Monitors system processes with real-time updates
+- **Process tracking**: Uses `HashMap<u32, ProcessInfo>` to track process information
+- **Real-time updates**: Continuously monitors process changes using `ps` command
+- **Process information**: Tracks PID, name, status, CPU usage, and memory usage
+- **Filtering**: Supports filtering processes by name, status, and resource usage
+- **Thread safety**: Uses `Arc<Mutex<...>>` for thread-safe access to process data
+- **Error handling**: Comprehensive error checking for all operations
+
+**Why this works**: This process monitoring system provides:
+
+- **Real-time monitoring**: Continuous monitoring of system processes
+- **Process information**: Detailed information about each process
+- **Filtering capabilities**: Ability to filter processes by various criteria
+- **Thread safety**: Safe concurrent access to process data
+- **Error handling**: Robust error handling for all operations
 
 ## Exercise 3: Inter-Process Communication System
 
@@ -757,6 +793,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+**Code Explanation**: This example demonstrates a comprehensive inter-process communication system:
+
+- **`IpcSystem` struct**: Manages multiple IPC mechanisms with thread-safe access
+- **Named pipes**: Uses `mkfifo()` system call for named pipe creation
+- **Shared memory**: Uses `shmget()` and `shmat()` system calls for shared memory
+- **Message queues**: Uses `msgget()`, `msgsnd()`, and `msgrcv()` system calls for message queues
+- **Synchronization**: Uses mutexes and condition variables for thread synchronization
+- **Error handling**: Comprehensive error checking for all IPC operations
+- **Resource management**: Proper cleanup of IPC resources
+
+**Why this works**: This IPC system provides:
+
+- **Multiple communication methods**: Support for pipes, shared memory, and message queues
+- **Thread safety**: Safe concurrent access to IPC resources
+- **Synchronization**: Proper synchronization between processes
+- **Error handling**: Robust error handling for all IPC operations
+- **Resource management**: Automatic cleanup of IPC resources
 
 ## Exercise 4: System Resource Monitor
 
@@ -1128,6 +1182,24 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 ```
+
+**Code Explanation**: This example demonstrates a comprehensive system resource monitoring tool:
+
+- **`ResourceMonitor` struct**: Monitors system resources with real-time updates
+- **CPU monitoring**: Tracks CPU usage using `/proc/stat` file
+- **Memory monitoring**: Tracks memory usage using `/proc/meminfo` file
+- **Disk monitoring**: Tracks disk usage using `df` command
+- **Network monitoring**: Tracks network usage using `/proc/net/dev` file
+- **Real-time updates**: Continuously monitors resource usage with configurable intervals
+- **Thread safety**: Uses `Arc<Mutex<...>>` for thread-safe access to resource data
+
+**Why this works**: This resource monitoring system provides:
+
+- **Real-time monitoring**: Continuous monitoring of system resources
+- **Resource information**: Detailed information about CPU, memory, disk, and network usage
+- **Configurable intervals**: Ability to set monitoring intervals
+- **Thread safety**: Safe concurrent access to resource data
+- **Error handling**: Robust error handling for all operations
 
 ## Key Takeaways
 

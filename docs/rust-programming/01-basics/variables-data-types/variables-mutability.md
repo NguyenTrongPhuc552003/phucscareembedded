@@ -177,6 +177,10 @@ fn main() {
 
 ### Mutable vs Immutable Examples
 
+**What**: Examples of mutable and immutable variables.
+
+**How**: Here's how to use mutable and immutable variables:
+
 ```rust
 fn main() {
     // Immutable - good for constants
@@ -197,9 +201,24 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let pi = 3.14159;` creates an immutable variable `pi` with value 3.14159
+- `let max_users = 1000;` creates another immutable variable `max_users` with value 1000
+- `let mut current_user = 0;` creates a mutable variable `current_user` with value 0
+- `let mut is_running = true;` creates another mutable variable `is_running` with value true
+- `let user_name = "Alice";` creates an immutable variable `user_name` with value "Alice"
+- `let user_age = 25;` creates another immutable variable `user_age` with value 25
+
+**Why**: This demonstrates the difference between mutable and immutable variables, showing how to use each type appropriately.
+
 ## Variable Shadowing
 
 ### Basic Shadowing
+
+**What**: Basic shadowing is when you create a new variable with the same name as an existing variable.
+
+**How**: Here's how to use basic shadowing:
 
 ```rust
 fn main() {
@@ -210,7 +229,20 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 5;` creates an immutable variable `x` with value 5
+- `let x = x + 1;` creates a new variable `x` that shadows the old one
+- `let x = x * 2;` creates another new variable `x` that shadows the old one
+- The old `x` is no longer accessible, but the new `x` has the value 12
+
+**Why**: This demonstrates basic shadowing, which is a powerful feature for creating new variables with the same name.
+
 ### Shadowing with Different Types
+
+**What**: Shadowing with different types is when you create a new variable with the same name as an existing variable, but with a different type.
+
+**How**: Here's how to use shadowing with different types:
 
 ```rust
 fn main() {
@@ -220,7 +252,19 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let spaces = "   ";` creates an immutable variable `spaces` with value "   "
+- `let spaces = spaces.len();` creates a new variable `spaces` that shadows the old one with the length of the string
+- The old `spaces` is no longer accessible, but the new `spaces` has the value 3
+
+**Why**: This demonstrates shadowing with different types, which is a powerful feature for creating new variables with the same name.
+
 ### Shadowing vs Mutation
+
+**What**: Shadowing vs mutation is when you create a new variable with the same name as an existing variable, but with a different value.
+
+**How**: Here's how to use shadowing vs mutation:
 
 ```rust
 fn main() {
@@ -238,9 +282,22 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 5;` creates an immutable variable `x` with value 5
+- `let x = x + 1;` creates a new variable `x` that shadows the old one
+- `let x = x * 2;` creates another new variable `x` that shadows the old one
+- The old `x` is no longer accessible, but the new `x` has the value 12
+
+**Why**: This demonstrates shadowing vs mutation, which is a powerful feature for creating new variables with the same name.
+
 ## Constants
 
 ### Defining Constants
+
+**What**: Defining constants is when you create a constant variable with the `const` keyword.
+
+**How**: Here's how to define constants:
 
 ```rust
 const MAX_POINTS: u32 = 100_000;
@@ -254,7 +311,19 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `const MAX_POINTS: u32 = 100_000;` creates a constant variable `MAX_POINTS` with value 100_000
+- `const PI: f64 = 3.14159;` creates another constant variable `PI` with value 3.14159
+- `const COMPANY_NAME: &str = "Rust Corp";` creates another constant variable `COMPANY_NAME` with value "Rust Corp"
+
+**Why**: This demonstrates defining constants, which is a powerful feature for creating constants with the `const` keyword.
+
 ### Constants vs Variables
+
+**What**: Constants vs variables is when you create a constant variable with the `const` keyword and a variable with the `let` keyword.
+
+**How**: Here's how to use constants vs variables:
 
 ```rust
 const MAX_USERS: u32 = 1000;        // Constant
@@ -271,9 +340,20 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `const MAX_USERS: u32 = 1000;` creates a constant variable `MAX_USERS` with value 1000
+- `let current_users = 50;` creates a variable `current_users` with value 50
+
+**Why**: This demonstrates constants vs variables, which is a powerful feature for creating constants and variables with the `const` and `let` keywords.
+
 ## Variable Scope
 
 ### Understanding Scope
+
+**What**: Understanding scope is when you understand how variables are accessible in your program.
+
+**How**: Here's how to understand scope:
 
 ```rust
 fn main() {
@@ -289,7 +369,22 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 5;` creates an immutable variable `x` with value 5
+- `{` creates a new scope
+- `let y = 10;` creates a new variable `y` with value 10
+- `println!("x: {}, y: {}", x, y);` prints the value of `x` and `y`
+- `}` closes the scope
+- `println!("x: {}", x);` prints the value of `x`
+
+**Why**: This demonstrates understanding scope, which is a powerful feature for creating new variables with the same name.
+
 ### Scope and Shadowing
+
+**What**: Scope and shadowing is when you create a new variable with the same name as an existing variable.
+
+**How**: Here's how to use scope and shadowing:
 
 ```rust
 fn main() {
@@ -305,9 +400,25 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let x = 5;` creates an immutable variable `x` with value 5
+- `println!("x before inner scope: {}", x);` prints the value of `x`
+- `{` creates a new scope
+- `let x = 10;` creates a new variable `x` that shadows the old one
+- `println!("x in inner scope: {}", x);` prints the value of `x`
+- `}` closes the scope
+- `println!("x after inner scope: {}", x);` prints the value of `x`
+
+**Why**: This demonstrates scope and shadowing, which is a powerful feature for creating new variables with the same name.
+
 ## Variable Patterns
 
 ### Destructuring
+
+**What**: Destructuring is when you create a new variable with the same name as an existing variable.
+
+**How**: Here's how to use destructuring:
 
 ```rust
 fn main() {
@@ -319,7 +430,20 @@ fn main() {
 }
 ```
 
+**Explanation**:
+
+- `let (x, y, z) = (1, 2, 3);` creates a tuple variable `(x, y, z)` with value (1, 2, 3)
+- `println!("x: {}, y: {}, z: {}", x, y, z);` prints the value of `x`, `y`, and `z`
+- `let (name, age) = ("Alice", 25);` creates a tuple variable `(name, age)` with value ("Alice", 25)
+- `println!("Name: {}, Age: {}", name, age);` prints the value of `name` and `age`
+
+**Why**: This demonstrates destructuring, which is a powerful feature for creating new variables with the same name.
+
 ### Ignoring Values
+
+**What**: Ignoring values is when you create a new variable with the same name as an existing variable, but with a different value.
+
+**How**: Here's how to use ignoring values:
 
 ```rust
 fn main() {
@@ -331,200 +455,14 @@ fn main() {
 }
 ```
 
-## Best Practices
+**Explanation**:
 
-### Naming Conventions
+- `let (x, _, z) = (1, 2, 3);` creates a tuple variable `(x, _, z)` with value (1, 2, 3)
+- `println!("x: {}, z: {}", x, z);` prints the value of `x` and `z`
+- `let (_, age) = ("Bob", 30);` creates a tuple variable `(_, age)` with value ("Bob", 30)
+- `println!("Age: {}", age);` prints the value of `age`
 
-```rust
-fn main() {
-    // Use snake_case for variables
-    let user_name = "Alice";
-    let max_retry_count = 3;
-    let is_authenticated = true;
-
-    // Use UPPER_CASE for constants
-    const MAX_CONNECTIONS: u32 = 100;
-    const API_VERSION: &str = "v1";
-
-    // Use descriptive names
-    let number_of_failed_attempts = 0;
-    let should_retry_connection = true;
-}
-```
-
-### When to Use Each Type
-
-```rust
-fn main() {
-    // Use const for values that never change
-    const PI: f64 = 3.14159;
-    const MAX_SIZE: usize = 1024;
-
-    // Use let for values that don't change after initialization
-    let user_id = 12345;
-    let file_path = "/home/user/document.txt";
-
-    // Use let mut for values that change
-    let mut counter = 0;
-    let mut current_user = None;
-    let mut is_connected = false;
-}
-```
-
-## Common Patterns
-
-### Counter Pattern
-
-```rust
-fn main() {
-    let mut count = 0;
-
-    // Increment counter
-    count += 1;
-    count += 1;
-    count += 1;
-
-    println!("Count: {}", count);
-}
-```
-
-### State Pattern
-
-```rust
-fn main() {
-    let mut state = "idle";
-    println!("Initial state: {}", state);
-
-    state = "running";
-    println!("Current state: {}", state);
-
-    state = "stopped";
-    println!("Final state: {}", state);
-}
-```
-
-### Accumulator Pattern
-
-```rust
-fn main() {
-    let mut sum = 0;
-    let numbers = [1, 2, 3, 4, 5];
-
-    for num in numbers.iter() {
-        sum += num;
-    }
-
-    println!("Sum: {}", sum);
-}
-```
-
-## Error Handling
-
-### Common Variable Errors
-
-```rust
-fn main() {
-    // Error: trying to mutate immutable variable
-    // let x = 5;
-    // x = 6; // This won't compile!
-
-    // Solution: use mut
-    let mut x = 5;
-    x = 6;
-    println!("x: {}", x);
-
-    // Error: variable not in scope
-    // {
-    //     let y = 10;
-    // }
-    // println!("y: {}", y); // This won't compile!
-
-    // Solution: declare in correct scope
-    let y = 10;
-    println!("y: {}", y);
-}
-```
-
-### Shadowing vs Mutation Errors
-
-```rust
-fn main() {
-    let x = 5;
-    let x = x + 1;        // This is shadowing, not mutation
-    println!("x: {}", x);
-
-    // If you want to mutate, use mut
-    let mut y = 5;
-    y = y + 1;            // This is mutation
-    println!("y: {}", y);
-}
-```
-
-## Practice Exercises
-
-### Exercise 1: Variable Declaration
-
-```rust
-fn main() {
-    // Declare immutable variables
-    let name = "Alice";
-    let age = 25;
-    let height = 5.6;
-
-    // Declare mutable variables
-    let mut score = 0;
-    let mut attempts = 0;
-
-    // Print all variables
-    println!("Name: {}", name);
-    println!("Age: {}", age);
-    println!("Height: {}", height);
-    println!("Score: {}", score);
-    println!("Attempts: {}", attempts);
-}
-```
-
-### Exercise 2: Shadowing Practice
-
-```rust
-fn main() {
-    let x = 5;
-    println!("x = {}", x);
-
-    let x = x + 1;
-    println!("x = {}", x);
-
-    let x = x * 2;
-    println!("x = {}", x);
-
-    {
-        let x = x - 3;
-        println!("x in inner scope = {}", x);
-    }
-
-    println!("x in outer scope = {}", x);
-}
-```
-
-### Exercise 3: Constants and Variables
-
-```rust
-const MAX_ATTEMPTS: u32 = 3;
-const PI: f64 = 3.14159;
-
-fn main() {
-    let mut current_attempt = 0;
-    let user_name = "Bob";
-
-    println!("Max attempts: {}", MAX_ATTEMPTS);
-    println!("Pi: {}", PI);
-    println!("User: {}", user_name);
-    println!("Current attempt: {}", current_attempt);
-
-    current_attempt += 1;
-    println!("Current attempt: {}", current_attempt);
-}
-```
+**Why**: This demonstrates ignoring values, which is a powerful feature for creating new variables with the same name.
 
 ## Key Takeaways
 

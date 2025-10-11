@@ -50,6 +50,14 @@ Master process and thread management in Rust with comprehensive explanations usi
 
 ### Process Creation and Control
 
+**What**: The process creation and control is the creation and control of the process.
+
+**Why**: This is essential because it ensures that the process is created and controlled properly.
+
+**When**: Use the process creation and control when creating and controlling the process.
+
+**How**: The process creation and control is implemented as a struct with the size and alignment of the memory block to be allocated.
+
 ```rust
 use std::process::{Command, Child, ExitStatus};
 use std::io::{self, Write};
@@ -131,7 +139,32 @@ fn process_management_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates process creation and management in Rust:
+
+- **`ProcessManager` struct**: Manages multiple processes with thread-safe access
+- **`spawn_process()` method**: Creates new processes using `Command::new()`
+- **Process tracking**: Uses `Arc<Mutex<Vec<Child>>>` for thread-safe process management
+- **Process waiting**: Uses `wait()` method to wait for process completion
+- **Error handling**: Proper error checking for process creation and waiting
+- **Thread safety**: Uses `Arc<Mutex<...>>` for concurrent access to process list
+
+**Why this works**: This process management system provides:
+
+- **Process creation**: Reliable process spawning with proper error handling
+- **Process tracking**: Maintains list of active processes
+- **Process synchronization**: Waits for all processes to complete
+- **Error handling**: Robust error checking for all operations
+- **Thread safety**: Safe concurrent access to process data structures
+
 ### Process Information and Control
+
+**What**: The process information and control is the information and control of the process.
+
+**Why**: This is essential because it ensures that the process is information and controlled properly.
+
+**When**: Use the process information and control when creating and controlling the process.
+
+**How**: The process information and control is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::process;
@@ -185,7 +218,33 @@ fn process_info_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates process information and control in Rust:
+
+- **`ProcessInfo` struct**: Provides access to process information and control functions
+- **Process ID**: Uses `std::process::id()` to get current process ID
+- **Command line arguments**: Uses `std::env::args()` to get command line arguments
+- **Environment variables**: Uses `std::env::vars()` to get environment variables
+- **Current directory**: Uses `std::env::current_dir()` to get current working directory
+- **Process control**: Provides `exit()` and `abort()` functions for process termination
+- **Error handling**: Proper error handling for all process operations
+
+**Why this works**: This process information system provides:
+
+- **Process identification**: Access to process ID and command line arguments
+- **Environment access**: Access to environment variables and working directory
+- **Process control**: Ability to terminate processes with different methods
+- **Error handling**: Robust error handling for all operations
+- **System integration**: Direct integration with system process management
+
 ### Process Communication
+
+**What**: The process communication is the communication of the process.
+
+**Why**: This is essential because it ensures that the process is communicated properly.
+
+**When**: Use the process communication when communicating the process.
+
+**How**: The process communication is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::process::{Command, Stdio};
@@ -265,9 +324,34 @@ fn process_communication_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates process communication using pipes and channels:
+
+- **`ProcessCommunication` struct**: Manages inter-process communication with pipes and channels
+- **Pipe creation**: Uses `Command::new()` with `Stdio::piped()` for pipe communication
+- **Channel communication**: Uses `mpsc::channel()` for thread-safe communication
+- **Data transfer**: Handles data transfer between processes using pipes
+- **Error handling**: Comprehensive error checking for all communication operations
+- **Thread safety**: Uses `Arc<Mutex<...>>` for thread-safe access to communication data
+
+**Why this works**: This process communication system provides:
+
+- **Inter-process communication**: Reliable communication between processes
+- **Data transfer**: Efficient data transfer using pipes and channels
+- **Error handling**: Robust error handling for all operations
+- **Thread safety**: Safe concurrent access to communication data
+- **System integration**: Direct integration with system process management
+
 ## Thread Management
 
 ### Thread Creation and Control
+
+**What**: The thread creation and control is the creation and control of the thread.
+
+**Why**: This is essential because it ensures that the thread is created and controlled properly.
+
+**When**: Use the thread creation and control when creating and controlling the thread.
+
+**How**: The thread creation and control is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::thread;
@@ -345,7 +429,32 @@ fn thread_management_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates process communication using pipes and channels:
+
+- **`ProcessCommunication` struct**: Manages inter-process communication with pipes and channels
+- **Pipe creation**: Uses `Command::new()` with `Stdio::piped()` for pipe communication
+- **Channel communication**: Uses `mpsc::channel()` for thread-safe communication
+- **Data transfer**: Handles data transfer between processes using pipes
+- **Error handling**: Comprehensive error checking for all communication operations
+- **Thread safety**: Uses `Arc<Mutex<...>>` for thread-safe access to communication data
+
+**Why this works**: This process communication system provides:
+
+- **Inter-process communication**: Reliable communication between processes
+- **Data transfer**: Efficient data transfer using pipes and channels
+- **Error handling**: Robust error handling for all operations
+- **Thread safety**: Safe concurrent access to communication data
+- **System integration**: Direct integration with system process management
+
 ### Thread Synchronization
+
+**What**: The thread synchronization is the synchronization of the thread.
+
+**Why**: This is essential because it ensures that the thread is synchronized properly.
+
+**When**: Use the thread synchronization when synchronizing the thread.
+
+**How**: The thread synchronization is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::sync::{Arc, Mutex, RwLock, Condvar};
@@ -410,7 +519,32 @@ fn thread_synchronization_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates thread synchronization using various primitives:
+
+- **`ThreadSynchronization` struct**: Manages thread synchronization with mutexes, read-write locks, and condition variables
+- **Mutex synchronization**: Uses `Arc<Mutex<...>>` for exclusive access to shared data
+- **Read-write locks**: Uses `Arc<RwLock<...>>` for multiple readers or single writer access
+- **Condition variables**: Uses `Condvar` for thread signaling and waiting
+- **Producer-consumer pattern**: Demonstrates classic synchronization pattern
+- **Thread safety**: Ensures safe concurrent access to shared resources
+
+**Why this works**: This thread synchronization system provides:
+
+- **Exclusive access**: Mutexes ensure only one thread accesses shared data at a time
+- **Reader-writer locks**: Efficient access for read-heavy workloads
+- **Thread signaling**: Condition variables enable efficient thread coordination
+- **Deadlock prevention**: Careful ordering of lock acquisition prevents deadlocks
+- **Performance optimization**: Minimizes contention through appropriate lock selection
+
 ### Thread Communication
+
+**What**: The thread communication is the communication of the thread.
+
+**Why**: This is essential because it ensures that the thread is communicated properly.
+
+**When**: Use the thread communication when communicating the thread.
+
+**How**: The thread communication is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::sync::mpsc;
@@ -473,9 +607,34 @@ fn thread_communication_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates thread communication using channels:
+
+- **`ThreadCommunication` struct**: Manages thread communication with sender and receiver channels
+- **Channel creation**: Uses `mpsc::channel()` for multi-producer, single-consumer communication
+- **Message passing**: Handles message passing between threads using channels
+- **Thread spawning**: Creates producer and consumer threads for communication
+- **Error handling**: Proper error handling for send and receive operations
+- **Thread coordination**: Coordinates thread execution and communication
+
+**Why this works**: This thread communication system provides:
+
+- **Message passing**: Reliable message passing between threads
+- **Thread coordination**: Proper coordination of thread execution
+- **Error handling**: Robust error handling for communication operations
+- **Performance**: Efficient communication using Rust's channel system
+- **Safety**: Type-safe communication with compile-time guarantees
+
 ## Advanced Thread Patterns
 
 ### Thread Pool
+
+**What**: The thread pool is the pool of the thread.
+
+**Why**: This is essential because it ensures that the thread is pooled properly.
+
+**When**: Use the thread pool when pooling the thread.
+
+**How**: The thread pool is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::sync::{Arc, Mutex, Condvar};
@@ -556,7 +715,32 @@ fn thread_pool_example() {
 }
 ```
 
+**Code Explanation**: This example demonstrates a thread pool implementation:
+
+- **`ThreadPool` struct**: Manages a pool of worker threads for task execution
+- **Worker threads**: Creates a fixed number of worker threads that process tasks
+- **Task queue**: Uses channels to queue tasks for worker threads
+- **Task execution**: Workers continuously process tasks from the queue
+- **Thread lifecycle**: Proper thread creation, execution, and cleanup
+- **Resource management**: Automatic cleanup of threads when pool is dropped
+
+**Why this works**: This thread pool system provides:
+
+- **Task distribution**: Efficient distribution of tasks across worker threads
+- **Resource management**: Controlled number of threads to prevent resource exhaustion
+- **Task queuing**: Reliable task queuing and processing
+- **Thread safety**: Safe concurrent access to shared resources
+- **Performance**: Optimal performance through thread reuse
+
 ### Worker Thread Pattern
+
+**What**: The thread pool is the pool of the thread.
+
+**Why**: This is essential because it ensures that the thread is pooled properly.
+
+**When**: Use the thread pool when pooling the thread.
+
+**How**: The thread pool is implemented as a struct with the size and alignment of the memory block to be allocated.
 
 ```rust
 use std::sync::{Arc, Mutex, Condvar};
@@ -627,146 +811,22 @@ fn worker_thread_example() {
 }
 ```
 
-## Practical Examples
+**Code Explanation**: This example demonstrates a worker thread pattern:
 
-### Multi-threaded File Processor
+- **`WorkerThread` struct**: Manages a single worker thread with task queue and condition variable
+- **Task queue**: Uses `VecDeque` for efficient task queuing and dequeuing
+- **Condition variable**: Uses `Condvar` for efficient thread signaling
+- **Task processing**: Worker thread continuously processes tasks from the queue
+- **Thread lifecycle**: Proper thread creation, execution, and cleanup
+- **Task submission**: Safe task submission with automatic notification
 
-```rust
-use std::fs;
-use std::path::Path;
-use std::sync::{Arc, Mutex};
-use std::thread;
+**Why this works**: This worker thread pattern provides:
 
-// Multi-threaded file processor
-pub struct FileProcessor {
-    thread_count: usize,
-    results: Arc<Mutex<Vec<String>>>,
-}
-
-impl FileProcessor {
-    pub fn new(thread_count: usize) -> Self {
-        Self {
-            thread_count,
-            results: Arc::new(Mutex::new(Vec::new())),
-        }
-    }
-
-    pub fn process_files(&self, files: Vec<String>) -> Vec<String> {
-        let files = Arc::new(files);
-        let mut handles = Vec::new();
-
-        for i in 0..self.thread_count {
-            let files = Arc::clone(&files);
-            let results = Arc::clone(&self.results);
-
-            let handle = thread::spawn(move || {
-                let start = i * files.len() / self.thread_count;
-                let end = (i + 1) * files.len() / self.thread_count;
-
-                for file_path in &files[start..end] {
-                    if let Ok(content) = fs::read_to_string(file_path) {
-                        let processed = self.process_content(&content);
-                        let mut results = results.lock().unwrap();
-                        results.push(processed);
-                    }
-                }
-            });
-
-            handles.push(handle);
-        }
-
-        for handle in handles {
-            handle.join().unwrap();
-        }
-
-        let results = self.results.lock().unwrap();
-        results.clone()
-    }
-
-    fn process_content(&self, content: &str) -> String {
-        // Simple processing: count words
-        let word_count = content.split_whitespace().count();
-        format!("Processed content with {} words", word_count)
-    }
-}
-
-fn file_processor_example() {
-    let processor = FileProcessor::new(4);
-    let files = vec![
-        "file1.txt".to_string(),
-        "file2.txt".to_string(),
-        "file3.txt".to_string(),
-    ];
-
-    let results = processor.process_files(files);
-    for result in results {
-        println!("{}", result);
-    }
-}
-```
-
-### Concurrent Web Server
-
-```rust
-use std::net::{TcpListener, TcpStream};
-use std::io::{Read, Write};
-use std::thread;
-
-// Simple concurrent web server
-pub struct WebServer {
-    port: u16,
-    thread_pool: ThreadPool,
-}
-
-impl WebServer {
-    pub fn new(port: u16, thread_count: usize) -> Self {
-        Self {
-            port,
-            thread_pool: ThreadPool::new(thread_count),
-        }
-    }
-
-    pub fn start(&self) -> Result<(), String> {
-        let listener = TcpListener::bind(format!("127.0.0.1:{}", self.port))
-            .map_err(|e| format!("Failed to bind to port {}: {}", self.port, e))?;
-
-        println!("Server listening on port {}", self.port);
-
-        for stream in listener.incoming() {
-            match stream {
-                Ok(stream) => {
-                    let pool = self.thread_pool.clone();
-                    pool.execute(move || {
-                        Self::handle_connection(stream);
-                    });
-                }
-                Err(e) => {
-                    eprintln!("Failed to accept connection: {}", e);
-                }
-            }
-        }
-
-        Ok(())
-    }
-
-    fn handle_connection(mut stream: TcpStream) {
-        let mut buffer = [0; 1024];
-
-        if let Ok(size) = stream.read(&mut buffer) {
-            let request = String::from_utf8_lossy(&buffer[..size]);
-            println!("Received request: {}", request);
-
-            let response = "HTTP/1.1 200 OK\r\n\r\nHello, World!";
-            let _ = stream.write_all(response.as_bytes());
-        }
-    }
-}
-
-fn web_server_example() {
-    let server = WebServer::new(8080, 4);
-    server.start().unwrap();
-}
-```
+- **Task processing**: Efficient task processing by dedicated worker thread
+- **Thread coordination**: Proper coordination using condition variables
+- **Resource management**: Controlled resource usage with single worker thread
+- **Task queuing**: Reliable task queuing and processing
+- **Performance**: Optimal performance through dedicated worker thread
 
 ## Key Takeaways
 

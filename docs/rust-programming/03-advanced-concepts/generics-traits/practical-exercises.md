@@ -6,30 +6,6 @@ sidebar_position: 4
 
 Master generics and traits through hands-on exercises with comprehensive explanations using the 4W+H framework.
 
-## What Are These Exercises?
-
-**What**: These practical exercises will help you apply your knowledge of generics and traits to real-world scenarios, building your skills through hands-on coding practice.
-
-**Why**: Understanding these exercises is important because:
-
-- **Practical application** reinforces theoretical knowledge
-- **Real-world scenarios** prepare you for actual development
-- **Problem-solving skills** develop through hands-on practice
-- **Code quality** improves through repeated practice
-- **Confidence building** comes from successfully completing exercises
-
-**When**: Use these exercises when you want to:
-
-- Practice generic programming concepts
-- Apply trait-based design patterns
-- Build reusable libraries and frameworks
-- Solve complex programming problems
-- Prepare for real-world Rust development
-
-**How**: These exercises work by presenting progressively challenging problems that require you to apply generics and traits to create type-safe, reusable solutions.
-
-**Where**: These exercises are used throughout Rust development for building libraries, frameworks, and applications.
-
 ## Exercise 1: Generic Data Structure Library
 
 ### Problem Statement
@@ -664,6 +640,14 @@ fn main() {
     println!("  Doubled: {:?}", doubled);
 }
 ```
+
+**Explanation**:
+
+- `Displayable` trait defines a custom trait bound for types that need to display and clone
+- `sort_and_display` algorithm uses the `Displayable` trait bound to sort and display the array
+- `process_and_analyze` algorithm uses multiple trait bounds to process and analyze the array
+
+**Why**: This exercise demonstrates how to create reusable, type-safe algorithms with custom trait bounds.
 
 ## Exercise 4: Generic Serialization System
 

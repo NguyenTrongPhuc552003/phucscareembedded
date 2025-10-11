@@ -6,39 +6,6 @@ sidebar_position: 5
 
 Master collections and strings through hands-on practice with comprehensive explanations using the 4W+H framework.
 
-## What Are Practical Exercises?
-
-**What**: Practical exercises are hands-on coding challenges that reinforce your understanding of collections and strings in Rust. These exercises combine vectors, hash maps, hash sets, and string handling to solve real-world problems.
-
-**Why**: Understanding practical exercises is crucial because:
-
-- **Reinforcement** solidifies your understanding of concepts
-- **Real-world application** connects theory to practice
-- **Problem-solving skills** develops your ability to solve complex problems
-- **Code quality** improves through hands-on practice
-- **Confidence building** prepares you for real projects
-- **Pattern recognition** helps you identify common solutions
-- **Best practices** reinforces idiomatic Rust programming
-
-**When**: Use practical exercises when you need to:
-
-- Reinforce your understanding of collections and strings
-- Practice solving real-world problems
-- Build confidence in Rust programming
-- Prepare for more advanced topics
-- Develop problem-solving skills
-- Apply multiple concepts together
-
-**How**: Practical exercises work by:
-
-- **Combining concepts** from multiple lessons
-- **Real-world scenarios** that you might encounter
-- **Progressive difficulty** from simple to complex
-- **Comprehensive solutions** with detailed explanations
-- **Best practices** and idiomatic Rust patterns
-
-**Where**: Practical exercises are used throughout Rust learning to reinforce concepts and build practical skills.
-
 ## Exercise 1: Student Grade Management System
 
 ### Problem Description

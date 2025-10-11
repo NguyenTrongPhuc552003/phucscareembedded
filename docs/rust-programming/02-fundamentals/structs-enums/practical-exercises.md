@@ -6,43 +6,6 @@ sidebar_position: 5
 
 Master Rust's structs and enums with comprehensive hands-on exercises using the 4W+H framework.
 
-## What Are Practical Exercises for Structs and Enums?
-
-**What**: Practical exercises are hands-on coding challenges that reinforce the struct and enum concepts you've learned in the Structs and Enums chapter.
-
-**Why**: Practical exercises are essential because:
-
-- **Skill reinforcement** helps you internalize Rust's struct and enum concepts through practice
-- **Real-world application** connects theoretical knowledge to practical programming
-- **Problem-solving development** builds your ability to think like a Rust programmer
-- **Confidence building** gives you hands-on experience with custom data types
-- **Learning progression** prepares you for more advanced Rust concepts
-- **Type safety mastery** helps you understand Rust's unique type system
-- **API design skills** enables you to create clean interfaces
-- **Pattern matching expertise** helps you handle complex data structures
-
-**When**: Complete these exercises when:
-
-- You've finished the Structs and Enums lessons
-- You want to practice what you've learned about custom data types
-- You're preparing for the next phase of Rust learning
-- You need hands-on experience with structs and enums
-- You want to build confidence in your Rust programming skills
-- You're ready to apply concepts in real-world scenarios
-- You want to master Rust's type system
-
-**How**: These exercises work by:
-
-- **Progressive difficulty** starting with simple structs and enums and building complexity
-- **Real-world scenarios** using practical examples you might encounter
-- **Comprehensive coverage** testing all the concepts from the chapter
-- **Detailed explanations** helping you understand every line of code
-- **Skill building** preparing you for advanced Rust programming
-- **Pattern recognition** helping you identify common struct and enum patterns
-- **Best practices** teaching you idiomatic Rust code
-
-**Where**: Use these exercises in your learning journey to solidify your understanding of Rust's type system and prepare for more advanced topics.
-
 ## Exercise 1: Basic Structs and Methods
 
 **What**: This exercise practices creating and using basic structs with methods.

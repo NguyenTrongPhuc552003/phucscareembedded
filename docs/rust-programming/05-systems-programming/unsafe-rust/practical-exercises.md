@@ -6,43 +6,6 @@ sidebar_position: 3
 
 Master unsafe Rust programming through hands-on exercises with comprehensive solutions using the 4W+H framework.
 
-## What Are These Exercises?
-
-**What**: These exercises provide practical, hands-on experience with unsafe Rust concepts, including raw pointers, memory manipulation, FFI integration, and safe abstractions over unsafe code.
-
-**Why**: These exercises are essential because:
-
-- **Practical Application**: Apply unsafe Rust concepts to real-world scenarios
-- **Safety Understanding**: Learn to write safe code using unsafe operations
-- **Performance Skills**: Develop low-level optimization abilities
-- **Systems Programming**: Gain experience with system-level operations
-- **Career Preparation**: Build skills needed for systems programming roles
-
-**When**: Complete these exercises when:
-
-- Learning unsafe Rust concepts
-- Preparing for systems programming interviews
-- Building performance-critical applications
-- Working with hardware interfaces
-- Optimizing existing codebases
-
-**Where**: These exercises apply in:
-
-- Systems programming and operating systems
-- Embedded systems development
-- Game engines and graphics programming
-- Database systems and file systems
-- High-performance computing applications
-- Real-time systems and control systems
-
-**How**: Complete these exercises by:
-
-- Following step-by-step instructions
-- Implementing solutions from scratch
-- Testing and debugging your code
-- Measuring and optimizing performance
-- Comparing different approaches
-
 ## Exercise 1: Custom Smart Pointer
 
 ### Problem Statement
@@ -198,6 +161,14 @@ fn exercise_1_solution() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to implement a custom smart pointer with reference counting:
+
+- **`RefCount`**: The reference counting struct
+- **`CustomRc`**: The custom smart pointer
+- **`CustomWeak`**: The weak reference
+
+**Why this works**: This pattern allows Rust to implement reference counting and weak references. The `RefCount` struct tracks the reference count, and the `CustomRc` and `CustomWeak` structs provide the smart pointer and weak reference functionality.
+
 ## Exercise 2: Memory Pool with Unsafe Operations
 
 ### Problem Statement
@@ -346,6 +317,16 @@ fn exercise_2_solution() {
     println!("After drop - Pool stats: {:?}", pool.stats());
 }
 ```
+
+**Code Explanation**: This example demonstrates how to implement a memory pool with unsafe operations:
+
+- **`UnsafeMemoryPool`**: The memory pool struct
+- **`new`**: The constructor for the memory pool
+- **`allocate`**: The method that allocates an object from the pool
+- **`deallocate`**: The method that deallocates an object from the pool
+- **`stats`**: The method that returns the stats of the pool
+
+**Why this works**: This pattern allows Rust to implement a memory pool with unsafe operations. The `UnsafeMemoryPool` struct pre-allocates a fixed number of objects and provides fast allocation/deallocation using unsafe operations for maximum performance.
 
 ## Exercise 3: FFI Wrapper for C Library
 
@@ -514,6 +495,17 @@ fn exercise_3_solution() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to create a safe wrapper for C library functions:
+
+- **`CFile`**: The safe wrapper for C file operations
+- **`open`**: The method that opens a file
+- **`read`**: The method that reads from a file
+- **`write`**: The method that writes to a file
+- **`seek`**: The method that seeks in a file
+- **`tell`**: The method that gets the file position
+
+**Why this works**: This pattern allows Rust to create a safe wrapper for C library functions. The `CFile` struct wraps the C file operations and provides a safe interface for file operations.
+
 ## Exercise 4: Lock-Free Data Structure
 
 ### Problem Statement
@@ -626,6 +618,15 @@ fn exercise_4_solution() {
     println!("Stack is empty: {}", stack.is_empty());
 }
 ```
+
+**Code Explanation**: This example demonstrates how to implement a lock-free stack using unsafe operations and atomic operations for high-performance concurrent access:
+
+- **`LockFreeStack`**: The lock-free stack struct
+- **`push`**: The method that pushes a value onto the stack
+- **`pop`**: The method that pops a value from the stack
+- **`is_empty`**: The method that checks if the stack is empty
+
+**Why this works**: This pattern allows Rust to implement a lock-free stack using unsafe operations and atomic operations for high-performance concurrent access. The `LockFreeStack` struct provides lock-free push and pop operations using atomic operations.
 
 ## Exercise 5: Memory-Mapped File Operations
 
@@ -772,6 +773,17 @@ fn exercise_5_solution() {
     }
 }
 ```
+
+**Code Explanation**: This example demonstrates how to create a safe wrapper for memory-mapped file operations using unsafe code to provide direct memory access to file contents:
+
+- **`MemoryMappedFile`**: The memory-mapped file struct
+- **`new`**: The constructor for the memory-mapped file
+- **`as_slice`**: The method that converts the memory to a slice
+- **`as_mut_slice`**: The method that converts the memory to a mutable slice
+- **`size`**: The method that returns the size of the memory-mapped file
+- **`make_readonly`**: The method that makes the memory-mapped file read-only
+
+**Why this works**: This pattern allows Rust to create a safe wrapper for memory-mapped file operations using unsafe code to provide direct memory access to file contents. The `MemoryMappedFile` struct wraps the memory-mapped file operations and provides a safe interface for memory-mapped file operations.
 
 ## Key Takeaways
 

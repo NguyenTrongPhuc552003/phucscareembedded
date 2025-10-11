@@ -6,39 +6,6 @@ sidebar_position: 3
 
 Apply your knowledge of interrupts and timers in embedded Rust with hands-on exercises using the 4W+H framework.
 
-## What Are These Practical Exercises?
-
-**What**: These exercises provide hands-on experience with interrupt handling and timer peripherals in embedded Rust, covering real-world applications and scenarios.
-
-**Why**: Understanding these exercises is important because:
-
-- **Practical application** reinforces theoretical knowledge through hands-on experience
-- **Real-world skills** develops industry-relevant embedded programming abilities
-- **Problem solving** enhances debugging and troubleshooting capabilities
-- **System integration** teaches how to combine interrupts and timers effectively
-- **Performance optimization** enables efficient embedded system design
-- **Professional development** prepares for embedded systems careers
-
-**When**: Use these exercises when you need to:
-
-- Practice interrupt handling and timer programming
-- Apply theoretical knowledge to real projects
-- Develop embedded systems skills
-- Prepare for embedded programming interviews
-- Build portfolio projects
-- Debug timing and interrupt issues
-
-**How**: These exercises work by:
-
-- **Progressive complexity** building from simple to advanced applications
-- **Real-world scenarios** using practical embedded system examples
-- **Code implementation** providing complete working examples
-- **Testing and validation** ensuring correct functionality
-- **Performance analysis** optimizing system performance
-- **Documentation** creating clear, maintainable code
-
-**Where**: These exercises apply to embedded systems, IoT devices, real-time applications, motor control, sensor interfacing, and any application requiring precise timing and event handling.
-
 ## Exercise 1: Interrupt-Driven GPIO Control
 
 ### What is Interrupt-Driven GPIO Control?

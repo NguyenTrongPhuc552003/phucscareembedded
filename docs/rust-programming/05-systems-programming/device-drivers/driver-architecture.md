@@ -49,6 +49,18 @@ Master device driver architecture in Rust with comprehensive explanations using 
 ## Driver Architecture Patterns
 
 ### Layered Driver Architecture
+**What**: The layered driver architecture divides the driver into multiple logical layers—each with a clear responsibility—such as hardware access, device management, and interface handling.
+
+**Why**: This pattern increases modularity and maintainability by separating hardware-specific code from device logic and user-facing interfaces. It helps in isolating platform dependencies and allows layers to be testing or reused independently.
+
+**When**: Use layered architecture when writing drivers for hardware that may exist in various platforms, for complex devices requiring clean separation of logic, or when targeting systems where testability and code reuse are priorities.
+
+**How**: Each architectural layer is implemented using traits (interfaces) in Rust, such as `DriverLayer`, `HardwareLayer`, and `DeviceLayer`. 
+- The hardware layer directly interacts with registers and manages interrupts.
+- The device layer handles logical operations like open/read/write.
+- The driver layer manages driver lifecycle (initialization, cleanup, state). 
+
+This separation is illustrated in the following code example, making it easier to reason about, test, and modify each portion of the driver stack without impacting the others.
 
 ```rust
 use std::sync::{Arc, Mutex};
@@ -77,7 +89,33 @@ pub trait DeviceLayer {
     fn write(&mut self, data: &[u8]) -> Result<usize, DriverError>;
     fn ioctl(&mut self, command: u32, arg: usize) -> Result<usize, DriverError>;
 }
+```
 
+**Code Explanation**: This example demonstrates a layered driver architecture using Rust traits:
+
+- **`DriverLayer`**: Defines the basic lifecycle operations for any driver (initialize, cleanup, status)
+- **`HardwareLayer`**: Abstracts hardware register access and interrupt management. This layer handles the lowest-level hardware interaction
+- **`DeviceLayer`**: Provides the standard device interface (open, close, read, write, ioctl) that applications use
+- **`DriverError`**: Comprehensive error handling for all possible driver failure modes
+
+**Why this works**: The layered approach provides:
+
+- **Separation of concerns**: Each layer has a specific responsibility
+- **Testability**: Each layer can be tested independently
+- **Reusability**: Hardware layers can be reused across different device types
+- **Safety**: Rust's type system ensures proper error handling at each layer
+
+### Driver Error Types
+
+**What**: Driver error types are a comprehensive list of all possible error conditions that can occur in device drivers.
+
+**Why**: This pattern ensures that all error cases are handled and provides a clear, type-safe way to manage driver failures.
+
+**When**: Use driver error types when writing device drivers to ensure that all error cases are handled.
+
+**How**: The driver error types are defined as an enum with all possible error cases.
+
+```rust
 // Driver error types
 #[derive(Debug, Clone)]
 pub enum DriverError {
@@ -112,7 +150,30 @@ impl std::error::Error for DriverError {}
 pub type DriverResult<T> = Result<T, DriverError>;
 ```
 
+**Code Explanation**: This example demonstrates comprehensive error handling for device drivers:
+
+- **`DriverError` enum**: Defines all possible error conditions that can occur in device drivers
+- **`#[derive(Debug, Clone)]`**: Automatically implements Debug and Clone traits for the enum
+- **`Display` implementation**: Provides human-readable error messages for each error type
+- **`Error` trait implementation**: Makes DriverError compatible with Rust's standard error handling
+- **`DriverResult<T>` type alias**: Creates a convenient type alias for Result<T, DriverError>
+
+**Why this works**: This error handling system provides:
+
+- **Type safety**: Compiler ensures all error cases are handled
+- **User-friendly messages**: Clear error descriptions for debugging
+- **Standard compatibility**: Works with Rust's error handling ecosystem
+- **Comprehensive coverage**: Handles all common driver failure scenarios
+
 ### Driver Registration System
+
+**What**: The driver registration system is a thread-safe system that manages the registration and unregistration of drivers.
+
+**Why**: This pattern ensures that drivers are registered and unregistered in a thread-safe manner, and that drivers are properly initialized and cleaned up.
+
+**When**: Use the driver registration system when writing device drivers that need to be registered and unregistered.
+
+**How**: The driver registration system is implemented as a struct with a thread-safe HashMap of drivers.
 
 ```rust
 use std::sync::{Arc, Mutex, RwLock};
@@ -182,9 +243,33 @@ pub fn get_driver_registry() -> &'static DriverRegistry {
 }
 ```
 
+**Code Explanation**: This example demonstrates a thread-safe driver registration system:
+
+- **`DriverRegistry` struct**: Manages a collection of drivers and device mappings using thread-safe containers
+- **`Arc<RwLock<HashMap<...>>>`**: Thread-safe storage for drivers. `Arc` allows sharing across threads, `RwLock` provides read-write locking
+- **`register_driver()`**: Adds a new driver to the registry, checking for duplicates
+- **`unregister_driver()`**: Removes a driver and calls its cleanup method
+- **`bind_device()`**: Associates a device ID with a driver name for device-to-driver mapping
+- **`lazy_static!`**: Creates a global registry instance that's initialized on first access
+
+**Why this works**: This registration system provides:
+
+- **Thread safety**: Multiple threads can safely register and access drivers
+- **Device binding**: Maps specific devices to their appropriate drivers
+- **Lifecycle management**: Handles driver initialization and cleanup
+- **Global access**: Provides a single point of access to all registered drivers
+
 ## Hardware Abstraction
 
 ### Register Access Layer
+
+**What**: The register access layer is a layer that provides access to hardware registers.
+
+**Why**: This pattern ensures that hardware registers are accessed in a thread-safe manner, and that hardware registers are properly initialized and cleaned up.
+
+**When**: Use the register access layer when writing device drivers that need to access hardware registers.
+
+**How**: The register access layer is implemented as a struct with a thread-safe HashMap of registers.
 
 ```rust
 use std::sync::{Arc, Mutex};
@@ -230,7 +315,31 @@ impl RegisterAccess {
         self.write_register(offset, new_value)
     }
 }
+```
 
+**Code Explanation**: This example demonstrates hardware register access patterns in Rust:
+
+- **`RegisterAccess` struct**: Simulates hardware register access using a HashMap to store register values. In real hardware, this would be memory-mapped I/O
+- **`Arc<Mutex<HashMap<u32, u32>>>`**: Thread-safe storage for register values. `Arc` allows sharing across threads, `Mutex` provides synchronization
+- **`base_address + offset`**: Calculates the actual hardware address by adding the offset to the base address
+- **`read_register()`**: Locks the mutex, calculates the address, and retrieves the register value. Returns `HardwareError` if register not found
+- **`write_register()`**: Locks the mutex, calculates the address, and stores the new value
+- **`read_field()`**: Reads a specific bit field using bit masking (`value & mask`) and shifting (`>> shift`)
+- **`write_field()`**: Updates a specific bit field by clearing the old bits (`current & !mask`) and setting new bits (`(value << shift) & mask`)
+
+**Why this works**: This pattern provides safe, thread-safe access to hardware registers while abstracting the complexity of bit manipulation and memory-mapped I/O.
+
+### Bit Field Manipulation
+
+**What**: The bit field manipulation layer is a layer that provides bit field manipulation utilities.
+
+**Why**: This pattern ensures that bit fields are manipulated in a thread-safe manner, and that bit fields are properly initialized and cleaned up.
+
+**When**: Use the bit field manipulation layer when writing device drivers that need to manipulate bit fields.
+
+**How**: The bit field manipulation layer is implemented as a struct with a thread-safe HashMap of bit fields.
+
+```rust
 // Bit manipulation utilities
 pub struct BitField {
     pub mask: u32,
@@ -288,12 +397,31 @@ impl RegisterDefinition {
 }
 ```
 
+**Code Explanation**: This example demonstrates bit field manipulation utilities:
+
+- **`BitField` struct**: Represents a bit field with a mask (which bits to extract) and shift (position in the register)
+- **`new(mask, shift)`**: Creates a new bit field. The mask defines which bits to work with, shift defines the position
+- **`extract(value)`**: Extracts the bit field value by masking (`value & self.mask`) to isolate the bits, then shifting (`>> self.shift`) to move them to the right position
+- **`insert(value, field_value)`**: Inserts a new value into the bit field by first clearing the old bits (`value & !self.mask`), then setting the new bits (`(field_value << self.shift) & self.mask`)
+- **`RegisterDefinition`**: Manages multiple bit fields within a single register, providing a high-level interface for register manipulation
+
+**Why this works**: Bit fields allow precise control over individual bits in hardware registers, which is essential for device driver programming where each bit often controls a specific hardware feature.
+
 ### Interrupt Handling
+
+**What**: The interrupt handling layer is a layer that provides interrupt handling utilities.
+
+**Why**: This pattern ensures that interrupts are handled in a thread-safe manner, and that interrupts are properly initialized and cleaned up.
+
+**When**: Use the interrupt handling layer when writing device drivers that need to handle interrupts.
+
+**How**: The interrupt handling layer is implemented as a struct with a thread-safe HashMap of interrupt handlers.
 
 ```rust
 use std::sync::{Arc, Mutex, Condvar};
 use std::collections::HashMap;
 use std::thread;
+use std::collections::VecDeque;
 
 // Interrupt handler trait
 pub trait InterruptHandler {
@@ -384,37 +512,35 @@ impl InterruptManager {
         self.condition.notify_all();
     }
 }
-
-// Interrupt service routine
-pub struct InterruptServiceRoutine {
-    irq: u32,
-    handler: Box<dyn Fn(u32) -> DriverResult<()> + Send + Sync>,
-}
-
-impl InterruptServiceRoutine {
-    pub fn new<F>(irq: u32, handler: F) -> Self
-    where
-        F: Fn(u32) -> DriverResult<()> + Send + Sync + 'static,
-    {
-        Self {
-            irq,
-            handler: Box::new(handler),
-        }
-    }
-
-    pub fn handle(&self, irq: u32) -> DriverResult<()> {
-        if irq == self.irq {
-            (self.handler)(irq)
-        } else {
-            Ok(())
-        }
-    }
-}
 ```
+
+**Code Explanation**: This example demonstrates interrupt handling in Rust:
+
+- **`InterruptHandler` trait**: Defines the interface for interrupt handlers with methods to handle, enable, and disable interrupts
+- **`InterruptManager` struct**: Manages multiple interrupt handlers using thread-safe containers
+- **`interrupt_queue`**: A thread-safe queue that stores pending interrupts for processing
+- **`condition` variable**: Used to wake up the interrupt processing thread when new interrupts arrive
+- **`start_interrupt_processing()`**: Spawns a background thread that processes interrupts from the queue
+- **`trigger_interrupt()`**: Adds an interrupt to the queue and notifies the processing thread
+
+**Why this works**: This interrupt handling system provides:
+
+- **Thread safety**: Multiple threads can safely register handlers and trigger interrupts
+- **Asynchronous processing**: Interrupts are processed in a background thread
+- **Queue-based**: Interrupts are queued and processed in order
+- **Lifecycle management**: Handles starting and stopping interrupt processing
 
 ## Device Driver Implementation
 
 ### Character Device Driver
+
+**What**: The character device driver is a driver that provides character device interface.
+
+**Why**: This pattern ensures that character device interface is provided in a thread-safe manner, and that character device interface is properly initialized and cleaned up.
+
+**When**: Use the character device driver when writing device drivers that need to provide character device interface.
+
+**How**: The character device driver is implemented as a struct with a thread-safe HashMap of character device interface.
 
 ```rust
 use std::sync::{Arc, Mutex, RwLock};
@@ -536,477 +662,158 @@ impl CharDeviceDriver {
         self.device_info.read().unwrap().clone()
     }
 }
-
-// Device file operations
-pub struct DeviceFileOperations {
-    driver: Arc<CharDeviceDriver>,
-}
-
-impl DeviceFileOperations {
-    pub fn new(driver: Arc<CharDeviceDriver>) -> Self {
-        Self { driver }
-    }
-
-    pub fn open(&self) -> DriverResult<()> {
-        self.driver.open()
-    }
-
-    pub fn release(&self) -> DriverResult<()> {
-        self.driver.close()
-    }
-
-    pub fn read(&self, buffer: &mut [u8]) -> DriverResult<usize> {
-        self.driver.read(buffer)
-    }
-
-    pub fn write(&self, data: &[u8]) -> DriverResult<usize> {
-        self.driver.write(data)
-    }
-
-    pub fn ioctl(&self, command: u32, arg: usize) -> DriverResult<usize> {
-        self.driver.ioctl(command, arg)
-    }
-}
 ```
+
+**Code Explanation**: This example demonstrates a character device driver implementation:
+
+- **`CharDeviceDriver` struct**: Represents a character device with major/minor numbers and internal state
+- **`buffer: Arc<Mutex<VecDeque<u8>>>`**: Thread-safe circular buffer for storing data
+- **`open_count`**: Tracks how many times the device has been opened
+- **`open()`/`close()`**: Manage device open/close operations and update counters
+- **`read()`/`write()`**: Handle data transfer operations with the device buffer
+- **`ioctl()`**: Provides device-specific control operations (get info, clear buffer, etc.)
+- **`DeviceInfo`**: Stores metadata about the device including access times and open count
+
+**Why this works**: This character device driver provides:
+
+- **Thread safety**: All operations are protected by mutexes
+- **State tracking**: Monitors device usage and access patterns
+- **Standard interface**: Implements the standard open/close/read/write/ioctl interface
+- **Flexible control**: Supports device-specific operations through ioctl
 
 ### Block Device Driver
 
+**What**: The block device driver is a driver that provides block device interface.
+
+**Why**: This pattern ensures that block device interface is provided in a thread-safe manner, and that block device interface is properly initialized and cleaned up.
+
+**When**: Use the block device driver when writing device drivers that need to provide block device interface.
+
+**How**: The block device driver is implemented as a struct with a thread-safe HashMap of block device interface.
+
 ```rust
-use std::sync::{Arc, Mutex};
+use std::sync::{Arc, Mutex, RwLock};
 use std::collections::HashMap;
+use std::time::{Duration, Instant};
 
-// Block device driver
-pub struct BlockDeviceDriver {
-    name: String,
-    major_number: u32,
-    minor_number: u32,
-    block_size: usize,
-    total_blocks: u64,
-    storage: Arc<Mutex<HashMap<u64, Vec<u8>>>>,
-    open_count: Arc<Mutex<u32>>,
-}
+// Block device sector size (e.g., 512 bytes)
+const BLOCK_SIZE: usize = 512;
 
-impl BlockDeviceDriver {
-    pub fn new(name: String, major: u32, minor: u32, block_size: usize, total_blocks: u64) -> Self {
-        Self {
-            name,
-            major_number: major,
-            minor_number: minor,
-            block_size,
-            total_blocks,
-            storage: Arc::new(Mutex::new(HashMap::new())),
-            open_count: Arc::new(Mutex::new(0)),
-        }
-    }
-
-    pub fn open(&self) -> DriverResult<()> {
-        let mut count = self.open_count.lock().unwrap();
-        *count += 1;
-        Ok(())
-    }
-
-    pub fn close(&self) -> DriverResult<()> {
-        let mut count = self.open_count.lock().unwrap();
-        if *count > 0 {
-            *count -= 1;
-        }
-        Ok(())
-    }
-
-    pub fn read_block(&self, block_number: u64, buffer: &mut [u8]) -> DriverResult<usize> {
-        if block_number >= self.total_blocks {
-            return Err(DriverError::InvalidParameter);
-        }
-
-        if buffer.len() < self.block_size {
-            return Err(DriverError::InvalidParameter);
-        }
-
-        let storage = self.storage.lock().unwrap();
-
-        if let Some(block_data) = storage.get(&block_number) {
-            buffer[..self.block_size].copy_from_slice(block_data);
-            Ok(self.block_size)
-        } else {
-            // Return zero-filled block
-            buffer[..self.block_size].fill(0);
-            Ok(self.block_size)
-        }
-    }
-
-    pub fn write_block(&self, block_number: u64, data: &[u8]) -> DriverResult<usize> {
-        if block_number >= self.total_blocks {
-            return Err(DriverError::InvalidParameter);
-        }
-
-        if data.len() != self.block_size {
-            return Err(DriverError::InvalidParameter);
-        }
-
-        let mut storage = self.storage.lock().unwrap();
-        storage.insert(block_number, data.to_vec());
-        Ok(self.block_size)
-    }
-
-    pub fn get_device_info(&self) -> BlockDeviceInfo {
-        BlockDeviceInfo {
-            name: self.name.clone(),
-            major: self.major_number,
-            minor: self.minor_number,
-            block_size: self.block_size,
-            total_blocks: self.total_blocks,
-            open_count: *self.open_count.lock().unwrap(),
-        }
-    }
-}
+// Type alias for Result
+pub type DriverResult<T> = Result<T, DriverError>;
 
 #[derive(Debug, Clone)]
 pub struct BlockDeviceInfo {
     pub name: String,
     pub major: u32,
     pub minor: u32,
+    pub block_count: u64,
     pub block_size: usize,
-    pub total_blocks: u64,
-    pub open_count: u32,
+    pub last_access: Option<Instant>,
 }
 
-// Block device operations
-pub struct BlockDeviceOperations {
-    driver: Arc<BlockDeviceDriver>,
+#[derive(Debug)]
+pub enum DriverError {
+    Busy,
+    NotSupported,
+    IoError,
+    OutOfBounds,
+    Other(String),
 }
 
-impl BlockDeviceOperations {
-    pub fn new(driver: Arc<BlockDeviceDriver>) -> Self {
-        Self { driver }
+pub struct BlockDeviceDriver {
+    name: String,
+    major_number: u32,
+    minor_number: u32,
+    storage: Arc<Mutex<Vec<u8>>>,
+    block_count: u64,
+    device_info: Arc<RwLock<BlockDeviceInfo>>,
+}
+
+impl BlockDeviceDriver {
+    pub fn new(name: String, major: u32, minor: u32, block_count: u64) -> Self {
+        let storage = vec![0u8; block_count as usize * BLOCK_SIZE];
+        Self {
+            name: name.clone(),
+            major_number: major,
+            minor_number: minor,
+            storage: Arc::new(Mutex::new(storage)),
+            block_count,
+            device_info: Arc::new(RwLock::new(BlockDeviceInfo {
+                name,
+                major,
+                minor,
+                block_count,
+                block_size: BLOCK_SIZE,
+                last_access: None,
+            })),
+        }
     }
 
-    pub fn open(&self) -> DriverResult<()> {
-        self.driver.open()
+    pub fn read_block(&self, block_index: u64, buf: &mut [u8]) -> DriverResult<usize> {
+        if block_index >= self.block_count || buf.len() < BLOCK_SIZE {
+            return Err(DriverError::OutOfBounds);
+        }
+        let offset = (block_index as usize) * BLOCK_SIZE;
+        let mut storage = self.storage.lock().unwrap();
+        buf.copy_from_slice(&storage[offset..offset + BLOCK_SIZE]);
+        let mut info = self.device_info.write().unwrap();
+        info.last_access = Some(Instant::now());
+        Ok(BLOCK_SIZE)
     }
 
-    pub fn release(&self) -> DriverResult<()> {
-        self.driver.close()
+    pub fn write_block(&self, block_index: u64, data: &[u8]) -> DriverResult<usize> {
+        if block_index >= self.block_count || data.len() != BLOCK_SIZE {
+            return Err(DriverError::OutOfBounds);
+        }
+        let offset = (block_index as usize) * BLOCK_SIZE;
+        let mut storage = self.storage.lock().unwrap();
+        storage[offset..offset + BLOCK_SIZE].copy_from_slice(data);
+        let mut info = self.device_info.write().unwrap();
+        info.last_access = Some(Instant::now());
+        Ok(BLOCK_SIZE)
     }
 
-    pub fn read(&self, block_number: u64, buffer: &mut [u8]) -> DriverResult<usize> {
-        self.driver.read_block(block_number, buffer)
-    }
-
-    pub fn write(&self, block_number: u64, data: &[u8]) -> DriverResult<usize> {
-        self.driver.write_block(block_number, data)
-    }
-
-    pub fn ioctl(&self, command: u32, arg: usize) -> DriverResult<usize> {
-        match command {
-            0x2001 => { // GET_DEVICE_INFO
-                let info = self.driver.get_device_info();
-                Ok(info.total_blocks as usize)
+    /// Example ioctl for block device (get info, flush, etc.)
+    pub fn ioctl(&self, cmd: u32) -> DriverResult<usize> {
+        match cmd {
+            0x2001 => { // GET_BLOCK_COUNT
+                let info = self.device_info.read().unwrap();
+                Ok(info.block_count as usize)
             }
             0x2002 => { // GET_BLOCK_SIZE
-                let info = self.driver.get_device_info();
+                let info = self.device_info.read().unwrap();
                 Ok(info.block_size)
+            }
+            0x2003 => { // FLUSH (no-op for memory-backed)
+                Ok(0)
             }
             _ => Err(DriverError::NotSupported),
         }
     }
-}
-```
 
-## Driver Lifecycle Management
-
-### Driver Initialization and Cleanup
-
-```rust
-use std::sync::{Arc, Mutex};
-use std::thread;
-use std::time::Duration;
-
-// Driver lifecycle manager
-pub struct DriverLifecycleManager {
-    drivers: Arc<Mutex<Vec<Box<dyn DriverLayer + Send + Sync>>>>,
-    running: Arc<Mutex<bool>>,
-}
-
-impl DriverLifecycleManager {
-    pub fn new() -> Self {
-        Self {
-            drivers: Arc::new(Mutex::new(Vec::new())),
-            running: Arc::new(Mutex::new(false)),
-        }
-    }
-
-    pub fn add_driver(&self, driver: Box<dyn DriverLayer + Send + Sync>) -> DriverResult<()> {
-        let mut drivers = self.drivers.lock().unwrap();
-        drivers.push(driver);
-        Ok(())
-    }
-
-    pub fn initialize_all(&self) -> DriverResult<()> {
-        let drivers = self.drivers.lock().unwrap();
-
-        for driver in drivers.iter() {
-            driver.initialize()?;
-        }
-
-        Ok(())
-    }
-
-    pub fn cleanup_all(&self) -> DriverResult<()> {
-        let drivers = self.drivers.lock().unwrap();
-
-        for driver in drivers.iter() {
-            driver.cleanup()?;
-        }
-
-        Ok(())
-    }
-
-    pub fn start_monitoring(&self) -> DriverResult<()> {
-        let running = Arc::clone(&self.running);
-        let drivers = Arc::clone(&self.drivers);
-
-        {
-            let mut running = running.lock().unwrap();
-            *running = true;
-        }
-
-        thread::spawn(move || {
-            loop {
-                // Monitor driver health
-                {
-                    let drivers = drivers.lock().unwrap();
-                    for driver in drivers.iter() {
-                        if !driver.is_initialized() {
-                            eprintln!("Driver not initialized");
-                        }
-                    }
-                }
-
-                thread::sleep(Duration::from_secs(1));
-
-                // Check if we should stop
-                let running = running.lock().unwrap();
-                if !*running {
-                    break;
-                }
-            }
-        });
-
-        Ok(())
-    }
-
-    pub fn stop_monitoring(&self) {
-        let mut running = self.running.lock().unwrap();
-        *running = false;
-    }
-}
-
-// Driver health monitoring
-pub trait DriverHealth {
-    fn get_health_status(&self) -> HealthStatus;
-    fn perform_health_check(&self) -> DriverResult<()>;
-}
-
-#[derive(Debug, Clone)]
-pub enum HealthStatus {
-    Healthy,
-    Warning(String),
-    Critical(String),
-    Unknown,
-}
-
-// Driver statistics
-#[derive(Debug, Clone)]
-pub struct DriverStatistics {
-    pub operations_count: u64,
-    pub error_count: u64,
-    pub last_operation_time: Option<std::time::Instant>,
-    pub average_operation_time: Duration,
-}
-
-impl Default for DriverStatistics {
-    fn default() -> Self {
-        Self {
-            operations_count: 0,
-            error_count: 0,
-            last_operation_time: None,
-            average_operation_time: Duration::from_millis(0),
-        }
-    }
-}
-
-// Statistics tracking
-pub struct DriverStatisticsTracker {
-    stats: Arc<Mutex<DriverStatistics>>,
-}
-
-impl DriverStatisticsTracker {
-    pub fn new() -> Self {
-        Self {
-            stats: Arc::new(Mutex::new(DriverStatistics::default())),
-        }
-    }
-
-    pub fn record_operation(&self, duration: Duration) {
-        let mut stats = self.stats.lock().unwrap();
-        stats.operations_count += 1;
-        stats.last_operation_time = Some(std::time::Instant::now());
-
-        // Update average operation time
-        let total_time = stats.average_operation_time * (stats.operations_count - 1) as u32 + duration;
-        stats.average_operation_time = total_time / stats.operations_count as u32;
-    }
-
-    pub fn record_error(&self) {
-        let mut stats = self.stats.lock().unwrap();
-        stats.error_count += 1;
-    }
-
-    pub fn get_statistics(&self) -> DriverStatistics {
-        self.stats.lock().unwrap().clone()
+    pub fn get_device_info(&self) -> BlockDeviceInfo {
+        self.device_info.read().unwrap().clone()
     }
 }
 ```
 
-## Practical Examples
+**Code Explanation**: This example demonstrates a block device driver implementation:
 
-### Simple GPIO Driver
+- **`BlockDeviceDriver` struct**: Represents a block device with major/minor numbers and internal state
+- **`buffer: Arc<Mutex<VecDeque<u8>>>`**: Thread-safe circular buffer for storing data
+- **`open_count`**: Tracks how many times the device has been opened
+- **`open()`/`close()`**: Manage device open/close operations and update counters
+- **`read()`/`write()`**: Handle data transfer operations with the device buffer
+- **`ioctl()`**: Provides device-specific control operations (get info, flush, etc.)
+- **`DeviceInfo`**: Stores metadata about the device including access times and open count
 
-```rust
-use std::sync::{Arc, Mutex};
+**Why this works**: This block device driver provides:
 
-// GPIO driver implementation
-pub struct GpioDriver {
-    base_address: u32,
-    register_access: RegisterAccess,
-    pin_count: u32,
-    pin_states: Arc<Mutex<HashMap<u32, bool>>>,
-}
-
-impl GpioDriver {
-    pub fn new(base_address: u32, pin_count: u32) -> Self {
-        Self {
-            base_address,
-            register_access: RegisterAccess::new(base_address),
-            pin_count,
-            pin_states: Arc::new(Mutex::new(HashMap::new())),
-        }
-    }
-
-    pub fn set_pin_direction(&self, pin: u32, output: bool) -> DriverResult<()> {
-        if pin >= self.pin_count {
-            return Err(DriverError::InvalidParameter);
-        }
-
-        let direction_register = 0x00; // GPIO direction register
-        let pin_mask = 1 << pin;
-
-        if output {
-            // Set pin as output
-            let current = self.register_access.read_register(direction_register)?;
-            self.register_access.write_register(direction_register, current | pin_mask)?;
-        } else {
-            // Set pin as input
-            let current = self.register_access.read_register(direction_register)?;
-            self.register_access.write_register(direction_register, current & !pin_mask)?;
-        }
-
-        Ok(())
-    }
-
-    pub fn set_pin_value(&self, pin: u32, value: bool) -> DriverResult<()> {
-        if pin >= self.pin_count {
-            return Err(DriverError::InvalidParameter);
-        }
-
-        let output_register = 0x04; // GPIO output register
-        let pin_mask = 1 << pin;
-
-        let current = self.register_access.read_register(output_register)?;
-        let new_value = if value {
-            current | pin_mask
-        } else {
-            current & !pin_mask
-        };
-
-        self.register_access.write_register(output_register, new_value)?;
-
-        // Update internal state
-        let mut states = self.pin_states.lock().unwrap();
-        states.insert(pin, value);
-
-        Ok(())
-    }
-
-    pub fn get_pin_value(&self, pin: u32) -> DriverResult<bool> {
-        if pin >= self.pin_count {
-            return Err(DriverError::InvalidParameter);
-        }
-
-        let input_register = 0x08; // GPIO input register
-        let pin_mask = 1 << pin;
-
-        let value = self.register_access.read_register(input_register)?;
-        Ok((value & pin_mask) != 0)
-    }
-
-    pub fn get_pin_state(&self, pin: u32) -> Option<bool> {
-        let states = self.pin_states.lock().unwrap();
-        states.get(&pin).cloned()
-    }
-}
-
-impl DriverLayer for GpioDriver {
-    fn initialize(&mut self) -> DriverResult<()> {
-        // Initialize GPIO controller
-        let control_register = 0x0C; // GPIO control register
-        self.register_access.write_register(control_register, 0x01)?; // Enable GPIO
-
-        Ok(())
-    }
-
-    fn cleanup(&mut self) -> DriverResult<()> {
-        // Disable GPIO controller
-        let control_register = 0x0C;
-        self.register_access.write_register(control_register, 0x00)?;
-
-        Ok(())
-    }
-
-    fn is_initialized(&self) -> bool {
-        let control_register = 0x0C;
-        self.register_access.read_register(control_register)
-            .map(|v| v & 0x01 != 0)
-            .unwrap_or(false)
-    }
-}
-
-// Usage example
-fn gpio_driver_example() -> DriverResult<()> {
-    let mut gpio = GpioDriver::new(0x10000000, 32);
-
-    // Initialize driver
-    gpio.initialize()?;
-
-    // Configure pin 0 as output
-    gpio.set_pin_direction(0, true)?;
-
-    // Set pin 0 high
-    gpio.set_pin_value(0, true)?;
-
-    // Configure pin 1 as input
-    gpio.set_pin_direction(1, false)?;
-
-    // Read pin 1 value
-    let value = gpio.get_pin_value(1)?;
-    println!("Pin 1 value: {}", value);
-
-    // Cleanup
-    gpio.cleanup()?;
-
-    Ok(())
-}
-```
+- **Thread safety**: All operations are protected by mutexes
+- **State tracking**: Monitors device usage and access patterns
+- **Standard interface**: Implements the standard open/close/read/write/ioctl interface
+- **Flexible control**: Supports device-specific operations through ioctl
 
 ## Key Takeaways
 

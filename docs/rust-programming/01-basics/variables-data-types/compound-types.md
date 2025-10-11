@@ -127,6 +127,10 @@ fn main() {
 
 ### Tuple as Return Values
 
+**What**: Tuples can be used as return values from functions.
+
+**How**: Here's how to use tuples as return values:
+
 ```rust
 fn calculate_stats(numbers: &[i32]) -> (i32, i32, f64) {
     let sum: i32 = numbers.iter().sum();
@@ -144,7 +148,21 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to use tuples as return values:
+
+- **`calculate_stats`**: The calculate stats function
+- **`numbers`**: The numbers array
+- **`sum`**: The sum
+- **`count`**: The count
+- **`average`**: The average
+
+**Why this works**: This pattern allows Rust to use tuples as return values. The `calculate_stats` function calculates the sum, count, and average of the numbers array, and returns a tuple of the results.
+
 ### Nested Tuples
+
+**What**: Tuples can be nested to create more complex data structures.
+
+**How**: Here's how to nest tuples in Rust:
 
 ```rust
 fn main() {
@@ -160,7 +178,23 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to nest tuples in Rust:
+
+- **`nested`**: The nested tuple
+- **`a`**: The first element of the first tuple
+- **`b`**: The second element of the first tuple
+- **`c`**: The first element of the second tuple
+- **`d`**: The second element of the second tuple
+- **`e`**: The first element of the third tuple
+- **`f`**: The second element of the third tuple
+
+**Why this works**: This pattern allows Rust to nest tuples in Rust. The `nested` tuple is created with three tuples, and the `println!` statements are used to access the nested elements.
+
 ### Unit Tuple
+
+**What**: Unit tuples are tuples with no elements.
+
+**How**: Here's how to use unit tuples:
 
 ```rust
 fn main() {
@@ -174,9 +208,20 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to use unit tuples:
+
+- **`unit`**: The unit tuple
+- **`result`**: The result of the println statement
+
+**Why this works**: This pattern allows Rust to use unit tuples. The `unit` tuple is created with no elements, and the `println!` statements are used to access the unit tuple.
+
 ## Arrays
 
 ### Basic Array Operations
+
+**What**: Arrays are compound types that group together values of the same type. They have a fixed size and can contain elements of the same type.
+
+**How**: Here's how to use arrays:
 
 ```rust
 fn main() {
@@ -196,7 +241,19 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to use arrays:
+
+- **`a`**: The first array
+- **`b`**: The second array
+- **`c`**: The third array
+
+**Why this works**: This pattern allows Rust to use arrays. The `a` array is created with five elements, the `b` array is created with five elements, and the `c` array is created with five elements.
+
 ### Array Iteration
+
+**What**: Arrays can be iterated over using a for loop.
+
+**How**: Here's how to iterate over arrays:
 
 ```rust
 fn main() {
@@ -219,7 +276,19 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to iterate over arrays:
+
+- **`numbers`**: The numbers array
+- **`number`**: The number
+- **`index`**: The index
+
+**Why this works**: This pattern allows Rust to iterate over arrays. The `numbers` array is created with five elements, and the `for` loop is used to iterate over the array.
+
 ### Array Slicing
+
+**What**: Arrays can be sliced using a range.
+
+**How**: Here's how to slice arrays:
 
 ```rust
 fn main() {
@@ -243,7 +312,21 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to slice arrays:
+
+- **`numbers`**: The numbers array
+- **`slice`**: The slice
+- **`first_half`**: The first half
+- **`second_half`**: The second half
+- **`full_slice`**: The full slice
+
+**Why this works**: This pattern allows Rust to slice arrays. The `numbers` array is created with ten elements, and the `slice` is created with three elements.
+
 ### Array Methods
+
+**What**: Arrays can be used with methods to perform various operations.
+
+**How**: Here's how to use array methods:
 
 ```rust
 fn main() {
@@ -268,7 +351,23 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to use array methods:
+
+- **`numbers`**: The numbers array
+- **`length`**: The length
+- **`is_empty`**: The is empty
+- **`first`**: The first
+- **`last`**: The last
+- **`contains`**: The contains
+- **`joined`**: The joined
+
+**Why this works**: This pattern allows Rust to use array methods. The `numbers` array is created with five elements, and the `println!` statements are used to access the array methods.
+
 ### Multi-dimensional Arrays
+
+**What**: Multi-dimensional arrays are arrays of arrays.
+
+**How**: Here's how to use multi-dimensional arrays:
 
 ```rust
 fn main() {
@@ -293,9 +392,21 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to use multi-dimensional arrays:
+
+- **`matrix`**: The matrix
+- **`row`**: The row
+- **`element`**: The element
+
+**Why this works**: This pattern allows Rust to use multi-dimensional arrays. The `matrix` array is created with three rows and three columns, and the `println!` statements are used to access the matrix elements.
+
 ## Array vs Tuple Comparison
 
 ### When to Use Arrays
+
+**What**: Arrays can be compared with tuples.
+
+**How**: Here's how to compare arrays with tuples:
 
 ```rust
 fn main() {
@@ -312,7 +423,19 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to use arrays with tuples:
+
+- **`scores`**: The scores array
+- **`names`**: The names array
+- **`days_of_week`**: The days of week array
+
+**Why this works**: This pattern allows Rust to use arrays with tuples. The `scores` array is created with five elements, the `names` array is created with three elements, and the `days_of_week` array is created with seven elements.
+
 ### When to Use Tuples
+
+**What**: Tuples can be compared with arrays.
+
+**How**: Here's how to compare tuples with arrays:
 
 ```rust
 fn main() {
@@ -331,9 +454,22 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to compare tuples with arrays:
+
+- **`person`**: The person tuple
+- **`coordinates`**: The coordinates tuple
+- **`rgb_color`**: The rgb color tuple
+- **`file_info`**: The file info tuple
+
+**Why this works**: This pattern allows Rust to compare tuples with arrays. The `person` tuple is created with three elements, the `coordinates` tuple is created with two elements, the `rgb_color` tuple is created with three elements, and the `file_info` tuple is created with three elements.
+
 ## Common Patterns
 
 ### Swapping Values
+
+**What**: Values can be swapped using a temporary variable.
+
+**How**: Here's how to swap values:
 
 ```rust
 fn main() {
@@ -349,7 +485,18 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to swap values:
+
+- **`numbers`**: The numbers array
+- **`temp`**: The temporary variable
+
+**Why this works**: This pattern allows Rust to swap values. The `numbers` array is created with five elements, and the `temp` variable is used to swap the first and last elements.
+
 ### Finding Elements
+
+**What**: Elements can be found using a for loop.
+
+**How**: Here's how to find elements:
 
 ```rust
 fn main() {
@@ -367,7 +514,18 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to find elements:
+
+- **`numbers`**: The numbers array
+- **`index`**: The index
+
+**Why this works**: This pattern allows Rust to find elements. The `numbers` array is created with five elements, and the `for` loop is used to find the element.
+
 ### Array Sum and Average
+
+**What**: The sum and average of an array can be calculated using the `iter` method.
+
+**How**: Here's how to calculate the sum and average of an array:
 
 ```rust
 fn main() {
@@ -388,9 +546,23 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to calculate the sum and average of an array:
+
+- **`numbers`**: The numbers array
+- **`sum`**: The sum
+- **`average`**: The average
+- **`min`**: The min
+- **`max`**: The max
+
+**Why this works**: This pattern allows Rust to calculate the sum and average of an array. The `numbers` array is created with five elements, and the `iter` method is used to calculate the sum and average.
+
 ## Error Handling
 
 ### Array Bounds Checking
+
+**What**: Array bounds checking can be performed using an if statement.
+
+**How**: Here's how to perform array bounds checking:
 
 ```rust
 fn main() {
@@ -412,7 +584,18 @@ fn main() {
 }
 ```
 
+**Code Explanation**: This example demonstrates how to perform array bounds checking:
+
+- **`numbers`**: The numbers array
+- **`element`**: The element
+
+**Why this works**: This pattern allows Rust to perform array bounds checking. The `numbers` array is created with five elements, and the `if` statement is used to check if the index is out of bounds.
+
 ### Tuple Access Safety
+
+**What**: Tuple access can be performed using a match statement.
+
+**How**: Here's how to perform tuple access:
 
 ```rust
 fn main() {
@@ -430,68 +613,14 @@ fn main() {
 }
 ```
 
-## Practice Exercises
+**Code Explanation**: This example demonstrates how to perform tuple access:
 
-### Exercise 1: Tuple Operations
+- **`tup`**: The tuple
+- **`a`**: The first element
+- **`b`**: The second element
+- **`c`**: The third element
 
-```rust
-fn main() {
-    let point = (10, 20);
-    let (x, y) = point;
-
-    println!("Point: ({}, {})", x, y);
-
-    // Calculate distance from origin
-    let distance = ((x * x + y * y) as f64).sqrt();
-    println!("Distance from origin: {:.2}", distance);
-}
-```
-
-### Exercise 2: Array Statistics
-
-```rust
-fn main() {
-    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-    let sum: i32 = numbers.iter().sum();
-    let count = numbers.len();
-    let average = sum as f64 / count as f64;
-
-    println!("Numbers: {:?}", numbers);
-    println!("Sum: {}", sum);
-    println!("Count: {}", count);
-    println!("Average: {:.2}", average);
-}
-```
-
-### Exercise 3: Matrix Operations
-
-```rust
-fn main() {
-    let matrix = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9]
-    ];
-
-    // Print matrix
-    for row in matrix.iter() {
-        for element in row.iter() {
-            print!("{} ", element);
-        }
-        println!();
-    }
-
-    // Calculate sum of all elements
-    let mut sum = 0;
-    for row in matrix.iter() {
-        for element in row.iter() {
-            sum += element;
-        }
-    }
-    println!("Sum of all elements: {}", sum);
-}
-```
+**Why this works**: This pattern allows Rust to perform tuple access. The `tup` tuple is created with three elements, and the `match` statement is used to access the tuple elements.
 
 ## Key Takeaways
 
