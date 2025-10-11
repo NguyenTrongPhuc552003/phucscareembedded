@@ -321,6 +321,44 @@ const sidebars = {
             },
           ],
         },
+        {
+          type: 'category',
+          label: '07. Testing and Debugging',
+          items: [
+            {
+              type: 'category',
+              label: 'Unit Testing',
+              items: [
+                'rust-programming/testing-and-debugging/unit-testing/testing-fundamentals',
+                'rust-programming/testing-and-debugging/unit-testing/advanced-testing',
+                'rust-programming/testing-and-debugging/unit-testing/practical-exercises',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Property-Based Testing',
+              items: [
+                'rust-programming/testing-and-debugging/property-based-testing/property-based-testing',
+                'rust-programming/testing-and-debugging/property-based-testing/fuzzing',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Debugging Techniques',
+              items: [
+                'rust-programming/testing-and-debugging/debugging-techniques/debugging-tools',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Error Handling and Recovery',
+              items: [
+                'rust-programming/testing-and-debugging/error-handling-recovery/error-handling-patterns',
+                'rust-programming/testing-and-debugging/error-handling-recovery/recovery-strategies',
+              ],
+            },
+          ],
+        },
       ],
     },
     {
