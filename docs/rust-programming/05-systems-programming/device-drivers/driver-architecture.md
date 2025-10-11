@@ -49,16 +49,18 @@ Master device driver architecture in Rust with comprehensive explanations using 
 ## Driver Architecture Patterns
 
 ### Layered Driver Architecture
+
 **What**: The layered driver architecture divides the driver into multiple logical layers—each with a clear responsibility—such as hardware access, device management, and interface handling.
 
 **Why**: This pattern increases modularity and maintainability by separating hardware-specific code from device logic and user-facing interfaces. It helps in isolating platform dependencies and allows layers to be testing or reused independently.
 
 **When**: Use layered architecture when writing drivers for hardware that may exist in various platforms, for complex devices requiring clean separation of logic, or when targeting systems where testability and code reuse are priorities.
 
-**How**: Each architectural layer is implemented using traits (interfaces) in Rust, such as `DriverLayer`, `HardwareLayer`, and `DeviceLayer`. 
+**How**: Each architectural layer is implemented using traits (interfaces) in Rust, such as `DriverLayer`, `HardwareLayer`, and `DeviceLayer`.
+
 - The hardware layer directly interacts with registers and manages interrupts.
 - The device layer handles logical operations like open/read/write.
-- The driver layer manages driver lifecycle (initialization, cleanup, state). 
+- The driver layer manages driver lifecycle (initialization, cleanup, state).
 
 This separation is illustrated in the following code example, making it easier to reason about, test, and modify each portion of the driver stack without impacting the others.
 
@@ -156,7 +158,7 @@ pub type DriverResult<T> = Result<T, DriverError>;
 - **`#[derive(Debug, Clone)]`**: Automatically implements Debug and Clone traits for the enum
 - **`Display` implementation**: Provides human-readable error messages for each error type
 - **`Error` trait implementation**: Makes DriverError compatible with Rust's standard error handling
-- **`DriverResult<T>` type alias**: Creates a convenient type alias for Result<T, DriverError>
+- **`DriverResult<T>` type alias**: Creates a convenient type alias for `Result<T, DriverError>`
 
 **Why this works**: This error handling system provides:
 
