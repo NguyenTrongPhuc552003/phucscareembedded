@@ -1,0 +1,8 @@
+{
+  "label": "05. Systems Programming",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Master systems programming with Rust - memory management, unsafe code, OS integration, and device drivers."
+  }
+}
