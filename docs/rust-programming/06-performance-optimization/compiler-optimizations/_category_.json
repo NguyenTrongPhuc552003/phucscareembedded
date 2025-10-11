@@ -1,0 +1,8 @@
+{
+  "label": "Compiler Optimizations",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Master compiler optimizations - optimization levels, code generation, and performance tuning."
+  }
+}
