@@ -11,7 +11,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Phuc\'s Embedded Development Guide',
-  tagline: 'Comprehensive guide for embedded Linux, GPU development, and C/C++ programming',
+  tagline: 'Comprehensive guide for embedded Linux, GPU development, and Rust programming',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
