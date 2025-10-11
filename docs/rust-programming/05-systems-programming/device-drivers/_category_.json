@@ -1,0 +1,8 @@
+{
+  "label": "Device Drivers",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Master device driver development - driver architecture, kernel integration, and hardware interfaces."
+  }
+}
