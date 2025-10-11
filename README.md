@@ -1,10 +1,10 @@
 # Phuc's Embedded Development Guide
 
-A comprehensive documentation website for embedded Linux, GPU development, and C/C++ programming, built with Docusaurus and deployed on GitHub Pages.
+A comprehensive documentation website for embedded Linux, GPU development, and Rust programming, built with Docusaurus and deployed on GitHub Pages.
 
 ## 🌟 Features
 
-- **Comprehensive Documentation**: Complete guides for embedded Linux development, GPU programming, and C/C++ best practices
+- **Comprehensive Documentation**: Complete guides for embedded Linux development, GPU programming, and Rust programming
 - **Multi-language Support**: Available in 8 languages (English, Vietnamese, Chinese, Spanish, French, German, Japanese, Korean)
 - **Interactive Search**: Powered by Algolia DocSearch for fast content discovery
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
@@ -17,6 +17,30 @@ A comprehensive documentation website for embedded Linux, GPU development, and C
 Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareembedded/](https://nguyentrongphuc552003.github.io/phucscareembedded/)
 
 ## 📚 Documentation Topics
+
+### Rust Programming
+
+- **Rust Basics**: Variables, functions, ownership, and control flow
+- **Rust Fundamentals**: Structs, enums, pattern matching, and error handling
+- **Advanced Concepts**: Generics, traits, lifetimes, and smart pointers
+- **Embedded Rust Development**: no_std programming, hardware abstraction layers, interrupts, and communication protocols
+
+### Comprehensive Rust Programming Curriculum
+
+Our Rust programming guide follows a structured learning path:
+
+1. **Chapter 1: Rust Basics** - Variables, functions, ownership, and control flow
+2. **Chapter 2: Rust Fundamentals** - Structs, enums, pattern matching, and error handling
+3. **Chapter 3: Advanced Concepts** - Generics, traits, lifetimes, and smart pointers
+4. **Chapter 4: Embedded Rust Development** - Bare-metal programming, hardware interfaces, and real-time systems
+
+Each chapter includes:
+
+- **4W+H Framework**: What, Why, When, Where, How for each concept
+- **Progressive Complexity**: From basic to advanced implementations
+- **Real-world Examples**: Practical embedded systems applications
+- **Hands-on Exercises**: Interactive learning with solutions
+- **Key Takeaways**: Summary of important concepts
 
 ### Embedded Linux Development
 
@@ -31,13 +55,6 @@ Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareemb
 - OpenCL performance optimization
 - Vulkan development
 - GPU memory management
-
-### C/C++ Programming
-
-- Modern C++ best practices for embedded systems
-- Memory management and optimization
-- Debugging techniques
-- Performance tuning
 
 ### Yocto Project
 
@@ -127,7 +144,7 @@ phucscareembedded/
 │   ├── getting-started/     # Introduction and setup guides
 │   ├── embedded-linux/      # Linux kernel and drivers
 │   ├── gpu-development/     # GPU programming guides
-│   ├── c-cpp-programming/   # C/C++ best practices
+│   ├── rust-programming/    # Rust programming guide
 │   ├── yocto-projects/      # Yocto build system
 │   └── rock-5b-setup/       # Hardware-specific guides
 ├── blog/                    # Blog posts and tutorials
@@ -143,9 +160,10 @@ phucscareembedded/
 ## 🎯 Target Audience
 
 - **Embedded Systems Engineers**: Professionals working with ARM-based systems
+- **Rust Developers**: Learning embedded Rust programming and systems development
 - **Linux Kernel Developers**: Developers working on device drivers and kernel modules
 - **GPU Programmers**: Developers working with Mali GPUs and OpenCL/Vulkan
-- **Students**: Learning embedded systems and C/C++ programming
+- **Students**: Learning embedded systems and Rust programming
 - **Hobbyists**: DIY enthusiasts working with single-board computers
 
 ## 📖 Content Categories
@@ -153,6 +171,7 @@ phucscareembedded/
 ### Technical Tutorials
 
 - Step-by-step guides for embedded development
+- Rust programming from basics to advanced embedded systems
 - Code examples and best practices
 - Hardware interfacing techniques
 - Performance optimization strategies
@@ -184,12 +203,6 @@ The website supports multiple languages:
 
 - 🇺🇸 English (default)
 - 🇻🇳 Tiếng Việt
-- 🇨🇳 简体中文
-- 🇪🇸 Español
-- 🇫🇷 Français
-- 🇩🇪 Deutsch
-- 🇯🇵 日本語
-- 🇰🇷 한국어
 
 ## 🤝 Contributing
 
@@ -231,6 +244,8 @@ This project is licensed under the GNU General Public License v2.0 - see the [LI
 ## 🔗 Related Resources
 
 - [Rock 5B+ Official Documentation](https://wiki.radxa.com/Rock5)
+- [The Rust Book](https://doc.rust-lang.org/book/) - Comprehensive Rust programming guide
+- [Embedded Rust Book](https://docs.rust-embedded.org/book/) - Embedded systems with Rust
 - [ARM Mali GPU Programming](https://developer.arm.com/ip-products/graphics-and-multimedia/mali-gpus)
 - [Linux Kernel Documentation](https://www.kernel.org/doc/)
 - [OpenCL Specification](https://www.khronos.org/opencl/)
