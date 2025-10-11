@@ -217,23 +217,26 @@ vulkaninfo | grep "deviceName"
 
 - [Embedded Linux Development](../embedded-linux/kernel-development.md)
 - [GPU Development](../gpu-development/mali-gpu.md)
-- [C/C++ Programming](../c-cpp-programming/embedded-c.md)
+- [Rust Programming](../rust-programming/01-basics/getting-started/installation-setup.md)
 
 ## Troubleshooting
 
 ### Common Issues
 
 **Cross-compilation fails:**
+
 - Verify toolchain installation
 - Check environment variables
 - Ensure target architecture is correct
 
 **GPU tools not working:**
+
 - Check Mali GPU driver installation
 - Verify OpenCL/Vulkan libraries
 - Check device permissions
 
 **Yocto build fails:**
+
 - Verify all dependencies are installed
 - Check disk space (need 50GB+)
 - Ensure proper environment setup

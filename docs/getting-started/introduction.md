@@ -12,7 +12,7 @@ This guide covers:
 
 - **Embedded Linux Development**: Kernel development, device drivers, and system programming
 - **GPU Programming**: Mali GPU development, OpenCL, and Vulkan programming
-- **C/C++ Programming**: Best practices for embedded systems
+- **Rust Programming**: Complete Rust programming guide from basics to embedded systems
 - **Yocto Project**: Building custom Linux distributions
 - **Rock 5B+ Setup**: Hardware configuration and development environment
 
@@ -21,7 +21,7 @@ This guide covers:
 Before starting, you should have:
 
 - Basic knowledge of Linux command line
-- Understanding of C/C++ programming
+- Understanding of programming concepts (any language)
 - Familiarity with version control (Git)
 - Rock 5B+ development board (recommended)
 
