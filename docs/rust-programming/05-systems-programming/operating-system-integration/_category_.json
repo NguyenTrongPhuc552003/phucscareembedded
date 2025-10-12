@@ -1,8 +1,8 @@
 {
-  "label": "Operating System Integration",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Master operating system integration - system calls, process management, and OS-level programming."
-  }
+	"label": "Operating System Integration",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master operating system integration - system calls, process management, and OS-level programming."
+	}
 }

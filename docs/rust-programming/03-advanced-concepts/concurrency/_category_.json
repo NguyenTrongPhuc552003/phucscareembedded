@@ -1,8 +1,8 @@
 {
-  "label": "Concurrency",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Write concurrent and parallel programs safely. Learn threads, message passing, shared state, and async programming."
-  }
+	"label": "Concurrency",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Write concurrent and parallel programs safely. Learn threads, message passing, shared state, and async programming."
+	}
 }

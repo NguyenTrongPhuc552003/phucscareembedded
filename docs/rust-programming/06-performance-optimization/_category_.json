@@ -1,8 +1,8 @@
 {
-  "label": "Performance Optimization",
-  "position": 6,
-  "link": {
-    "type": "generated-index",
-    "description": "Master performance optimization - profiling, benchmarking, compiler optimizations, and parallel processing."
-  }
+	"label": "Performance Optimization",
+	"position": 6,
+	"link": {
+		"type": "generated-index",
+		"description": "Master performance optimization - profiling, benchmarking, compiler optimizations, and parallel processing."
+	}
 }

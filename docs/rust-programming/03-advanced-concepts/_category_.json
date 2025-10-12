@@ -1,8 +1,8 @@
 {
-  "label": "03. Advanced Concepts",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Master advanced Rust concepts including generics, traits, lifetimes, smart pointers, and concurrency. Learn to write reusable, efficient, and safe code."
-  }
+	"label": "03. Advanced Concepts",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master advanced Rust concepts including generics, traits, lifetimes, smart pointers, and concurrency. Learn to write reusable, efficient, and safe code."
+	}
 }

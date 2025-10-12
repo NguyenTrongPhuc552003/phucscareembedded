@@ -1,8 +1,8 @@
 {
-  "label": "Modules and Packages",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Organize code with modules and manage dependencies with packages. Learn module hierarchy, privacy rules, use declarations, and Cargo.toml configuration."
-  }
+	"label": "Modules and Packages",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Organize code with modules and manage dependencies with packages. Learn module hierarchy, privacy rules, use declarations, and Cargo.toml configuration."
+	}
 }

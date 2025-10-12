@@ -1,8 +1,8 @@
 {
-  "label": "Profiling and Benchmarking",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "Master profiling and benchmarking techniques - performance measurement, analysis, and optimization strategies."
-  }
+	"label": "Profiling and Benchmarking",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master profiling and benchmarking techniques - performance measurement, analysis, and optimization strategies."
+	}
 }

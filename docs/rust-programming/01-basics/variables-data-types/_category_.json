@@ -1,8 +1,8 @@
 {
-  "label": "Variables and Data Types",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "Learn about variables, mutability, data types, and type conversions. Master Rust's type system and understand the difference between stack and heap data."
-  }
+	"label": "Variables and Data Types",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn about variables, mutability, data types, and type conversions. Master Rust's type system and understand the difference between stack and heap data."
+	}
 }

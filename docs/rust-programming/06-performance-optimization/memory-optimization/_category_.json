@@ -1,8 +1,8 @@
 {
-  "label": "Memory Optimization",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Master memory optimization - layout optimization, allocation strategies, and memory management."
-  }
+	"label": "Memory Optimization",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master memory optimization - layout optimization, allocation strategies, and memory management."
+	}
 }

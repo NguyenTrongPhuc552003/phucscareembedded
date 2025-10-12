@@ -1,8 +1,8 @@
 {
-  "label": "Ownership Fundamentals",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Understand Rust's unique ownership system, borrowing, and memory management. Learn the three ownership rules and how to work with references."
-  }
+	"label": "Ownership Fundamentals",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand Rust's unique ownership system, borrowing, and memory management. Learn the three ownership rules and how to work with references."
+	}
 }

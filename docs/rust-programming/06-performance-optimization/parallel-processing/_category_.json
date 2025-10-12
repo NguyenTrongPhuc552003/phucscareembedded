@@ -1,8 +1,8 @@
 {
-  "label": "Parallel Processing",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Master parallel processing - parallel algorithms, concurrency, and performance optimization."
-  }
+	"label": "Parallel Processing",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Master parallel processing - parallel algorithms, concurrency, and performance optimization."
+	}
 }

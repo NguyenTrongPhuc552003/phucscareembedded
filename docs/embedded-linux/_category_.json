@@ -1,8 +1,8 @@
 {
-    "label": "Embedded Linux",
-    "position": 3,
-    "link": {
-        "type": "generated-index",
-        "description": "Learn embedded Linux development, kernel programming, and device drivers."
-    }
+	"label": "Embedded Linux",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn embedded Linux development, kernel programming, and device drivers."
+	}
 }

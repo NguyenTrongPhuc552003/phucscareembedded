@@ -1,8 +1,8 @@
 {
-  "label": "Memory Management",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "Master memory management in systems programming - stack vs heap, custom allocators, and memory optimization."
-  }
+	"label": "Memory Management",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master memory management in systems programming - stack vs heap, custom allocators, and memory optimization."
+	}
 }

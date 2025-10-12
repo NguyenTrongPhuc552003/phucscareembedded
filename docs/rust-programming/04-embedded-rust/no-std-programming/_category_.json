@@ -1,8 +1,8 @@
 {
-  "label": "no_std Programming",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "Learn to write Rust programs without the standard library for embedded systems."
-  }
+	"label": "no_std Programming",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn to write Rust programs without the standard library for embedded systems."
+	}
 }

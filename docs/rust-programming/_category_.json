@@ -1,8 +1,8 @@
 {
-  "label": "Rust Programming",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "A comprehensive learning path for mastering Rust programming from absolute beginner to advanced systems programming. This series covers all aspects of Rust development including syntax, ownership, concurrency, embedded programming, and performance optimization."
-  }
+	"label": "Rust Programming",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "A comprehensive learning path for mastering Rust programming from absolute beginner to advanced systems programming. This series covers all aspects of Rust development including syntax, ownership, concurrency, embedded programming, and performance optimization."
+	}
 }

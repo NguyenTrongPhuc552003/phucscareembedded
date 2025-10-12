@@ -1,8 +1,8 @@
 {
-  "label": "Hardware Abstraction Layers",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "Learn to create hardware abstractions and work with peripheral access crates."
-  }
+	"label": "Hardware Abstraction Layers",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn to create hardware abstractions and work with peripheral access crates."
+	}
 }
