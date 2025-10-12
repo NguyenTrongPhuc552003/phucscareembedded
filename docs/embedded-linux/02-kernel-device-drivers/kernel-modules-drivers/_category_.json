@@ -1,0 +1,8 @@
+{
+	"label": "Kernel Modules and Device Drivers",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn to develop and manage kernel modules and device drivers for embedded hardware."
+	}
+}

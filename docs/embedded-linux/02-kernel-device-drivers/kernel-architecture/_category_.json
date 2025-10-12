@@ -1,0 +1,8 @@
+{
+	"label": "Linux Kernel Architecture",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand Linux kernel structure, components, and memory management for embedded systems."
+	}
+}
