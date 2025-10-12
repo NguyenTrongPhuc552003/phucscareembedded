@@ -1,0 +1,8 @@
+{
+	"label": "01. Introduction to Embedded Linux",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master the fundamentals of embedded systems and Linux integration with comprehensive explanations using the 4W+H framework."
+	}
+}
