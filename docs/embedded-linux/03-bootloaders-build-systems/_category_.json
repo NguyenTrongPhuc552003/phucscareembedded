@@ -1,0 +1,8 @@
+{
+	"label": "03. Bootloaders and Build Systems",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master bootloaders, build systems, and custom Linux distribution creation for embedded systems."
+	}
+}

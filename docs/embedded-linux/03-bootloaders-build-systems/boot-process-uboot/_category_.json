@@ -1,0 +1,8 @@
+{
+	"label": "Boot Process and U-Boot",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand the boot sequence, configure U-Boot, and implement secure boot processes."
+	}
+}

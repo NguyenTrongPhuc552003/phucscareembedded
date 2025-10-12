@@ -1,0 +1,8 @@
+{
+	"label": "Yocto Project Build System",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master Yocto Project for enterprise-grade embedded Linux development and custom recipes."
+	}
+}
