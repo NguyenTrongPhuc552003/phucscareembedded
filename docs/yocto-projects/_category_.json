@@ -1,8 +1,0 @@
-{
-	"label": "Yocto Project",
-	"position": 5,
-	"link": {
-		"type": "generated-index",
-		"description": "Learn Yocto Project for building custom Linux distributions for embedded systems."
-	}
-}
