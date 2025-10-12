@@ -32,6 +32,28 @@ const sidebars = {
       type: 'category',
       label: 'Embedded Linux',
       items: [
+        {
+          type: 'category',
+          label: '01. Introduction to Embedded Linux',
+          items: [
+            {
+              type: 'category',
+              label: 'Overview of Embedded Systems',
+              items: [
+                'embedded-linux/01-introduction/overview-embedded-systems/embedded-systems-fundamentals',
+                'embedded-linux/01-introduction/overview-embedded-systems/what-is-embedded-linux',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Development Environment Setup',
+              items: [
+                'embedded-linux/01-introduction/dev-environment-setup/cross-compilation-toolchain',
+                'embedded-linux/01-introduction/dev-environment-setup/development-environment-setup',
+              ],
+            },
+          ],
+        },
         'embedded-linux/kernel-development',
         'embedded-linux/device-drivers',
         'embedded-linux/bootloader',
