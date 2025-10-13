@@ -133,6 +133,124 @@ const sidebars = {
 						},
 					],
 				},
+				{
+					type: 'category',
+					label: '04. Filesystems and Storage',
+					items: [
+						{
+							type: 'category',
+							label: 'Introduction to Filesystems in Embedded Linux',
+							items: [
+								'embedded-linux/filesystems-storage/filesystem-introduction/filesystem-fundamentals',
+								'embedded-linux/filesystems-storage/filesystem-introduction/filesystem-selection',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Flash Memory Filesystems',
+							items: [
+								'embedded-linux/filesystems-storage/flash-memory-filesystems/flash-memory-basics',
+								'embedded-linux/filesystems-storage/flash-memory-filesystems/mtd-subsystem',
+								'embedded-linux/filesystems-storage/flash-memory-filesystems/jffs2-ubifs',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Block-Based Filesystems and Storage Management',
+							items: [
+								'embedded-linux/filesystems-storage/block-filesystems-storage/block-devices-filesystems',
+								'embedded-linux/filesystems-storage/block-filesystems-storage/storage-management',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Advanced Storage Topics',
+							items: [
+								'embedded-linux/filesystems-storage/advanced-storage-topics/wear-leveling-bad-blocks',
+								'embedded-linux/filesystems-storage/advanced-storage-topics/filesystem-optimization',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '05. Networking and Communication Protocols',
+					items: [
+						{
+							type: 'category',
+							label: 'Networking Basics',
+							items: [
+								'embedded-linux/networking-communication-protocols/networking-basics/network-configuration',
+								'embedded-linux/networking-communication-protocols/networking-basics/socket-programming',
+							],
+						},
+						{
+							type: 'category',
+							label: 'I2C and SPI Communication',
+							items: [
+								'embedded-linux/networking-communication-protocols/i2c-spi-communication/i2c-protocol',
+								'embedded-linux/networking-communication-protocols/i2c-spi-communication/spi-protocol',
+							],
+						},
+						{
+							type: 'category',
+							label: 'UART and Serial Communication',
+							items: [
+								'embedded-linux/networking-communication-protocols/uart-serial-communication/uart-basics',
+								'embedded-linux/networking-communication-protocols/uart-serial-communication/modbus-protocols',
+							],
+						},
+						{
+							type: 'category',
+							label: 'CAN and Industrial Communication',
+							items: [
+								'embedded-linux/networking-communication-protocols/can-industrial-communication/can-protocol',
+								'embedded-linux/networking-communication-protocols/can-industrial-communication/industrial-protocols',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '06. Real-Time Systems and Performance Optimization',
+					items: [
+						{
+							type: 'category',
+							label: 'Real-Time Linux',
+							items: [
+								'embedded-linux/realtime-performance-optimization/realtime-linux/realtime-concepts',
+								'embedded-linux/realtime-performance-optimization/realtime-linux/preempt-rt-patch',
+								'embedded-linux/realtime-performance-optimization/realtime-linux/realtime-monitoring',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Performance Tuning',
+							items: [
+								'embedded-linux/realtime-performance-optimization/performance-tuning/system-profiling',
+								'embedded-linux/realtime-performance-optimization/performance-tuning/kernel-parameter-tuning',
+								'embedded-linux/realtime-performance-optimization/performance-tuning/performance-monitoring',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Power Management',
+							items: [
+								'embedded-linux/realtime-performance-optimization/power-management/cpu-power-management',
+								'embedded-linux/realtime-performance-optimization/power-management/system-power-management',
+								'embedded-linux/realtime-performance-optimization/power-management/battery-management',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Advanced Performance Optimization',
+							items: [
+								'embedded-linux/realtime-performance-optimization/advanced-optimization/hardware-performance-counters',
+								'embedded-linux/realtime-performance-optimization/advanced-optimization/system-integration',
+							],
+						},
+					],
+				},
 			],
 		},
 		{
