@@ -1,0 +1,8 @@
+{
+	"label": "Block Filesystems and Storage Management",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master block-based filesystems, storage partitioning, and device management for embedded systems."
+	}
+}

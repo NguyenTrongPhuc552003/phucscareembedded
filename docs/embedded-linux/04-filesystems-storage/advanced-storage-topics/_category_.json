@@ -1,0 +1,8 @@
+{
+	"label": "Advanced Storage Topics",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Explore advanced storage concepts including wear leveling, optimization, and data integrity techniques."
+	}
+}

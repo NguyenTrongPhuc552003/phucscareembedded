@@ -1,0 +1,8 @@
+{
+	"label": "Filesystem Introduction",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand filesystem fundamentals, types, and selection criteria for embedded Linux systems."
+	}
+}

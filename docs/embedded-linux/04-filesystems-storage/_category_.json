@@ -1,0 +1,8 @@
+{
+	"label": "04. Filesystems and Storage",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Master filesystem types, storage management, and optimization techniques for embedded Linux systems with comprehensive explanations using the 4W+H framework."
+	}
+}
