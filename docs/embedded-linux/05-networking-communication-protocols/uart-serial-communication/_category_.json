@@ -1,0 +1,8 @@
+{
+	"label": "UART and Serial Communication",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Implement UART and serial communication protocols, including Modbus and industrial protocol integration."
+	}
+}

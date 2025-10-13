@@ -1,0 +1,8 @@
+{
+	"label": "Networking Basics",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn network configuration, TCP/IP stack implementation, and socket programming for embedded Linux systems."
+	}
+}
