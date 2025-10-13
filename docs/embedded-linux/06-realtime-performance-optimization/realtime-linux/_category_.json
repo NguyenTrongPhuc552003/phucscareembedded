@@ -1,0 +1,9 @@
+{
+	"label": "Real-Time Linux",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Integrate real-time capabilities into the Linux kernel with PREEMPT_RT patches and real-time application development."
+	}
+}
+

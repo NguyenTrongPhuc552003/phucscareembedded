@@ -1,0 +1,9 @@
+{
+	"label": "Advanced Performance Optimization",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Master advanced profiling techniques, multi-core optimization, and hardware acceleration for maximum performance."
+	}
+}
+
