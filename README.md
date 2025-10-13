@@ -25,50 +25,33 @@ Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareemb
 - **Advanced Concepts**: Generics, traits, lifetimes, and smart pointers
 - **Embedded Rust Development**: no_std programming, hardware abstraction layers, interrupts, and communication protocols
 
-### Comprehensive Rust Programming Curriculum
-
-Our Rust programming guide follows a structured learning path:
-
-1. **Chapter 1: Rust Basics** - Variables, functions, ownership, and control flow
-2. **Chapter 2: Rust Fundamentals** - Structs, enums, pattern matching, and error handling
-3. **Chapter 3: Advanced Concepts** - Generics, traits, lifetimes, and smart pointers
-4. **Chapter 4: Embedded Rust Development** - Bare-metal programming, hardware interfaces, and real-time systems
-
-Each chapter includes:
-
-- **4W+H Framework**: What, Why, When, Where, How for each concept
-- **Progressive Complexity**: From basic to advanced implementations
-- **Real-world Examples**: Practical embedded systems applications
-- **Hands-on Exercises**: Interactive learning with solutions
-- **Key Takeaways**: Summary of important concepts
-
 ### Embedded Linux Development
 
-- Kernel development and device drivers
-- Bootloader configuration
-- Filesystem management
-- Real-time systems programming
+- **Kernel and Driver Foundations**: Learn the Linux kernel’s architecture, dive into writing device drivers, and gain hands-on experience with system-level programming for interacting with custom hardware.
+- **Boot Process and Customization**: Understand the Linux boot process—from bootloaders like U-Boot to flexible build systems such as Buildroot and Yocto—focusing on tailoring embedded distributions to unique hardware requirements.
+- **Storage and Filesystem Strategies**: Explore filesystem design principles relevant to embedded systems, including flash memory constraints, filesystems like ext4 and UBI, and overlay techniques for reliable, updatable storage.
+- **Real-Time Linux Techniques**: Examine deterministic system requirements, leverage the PREEMPT_RT patch for bounded latencies, and integrate real-time concepts to build responsive, time-sensitive applications.
 
 ### GPU Development
 
-- Mali GPU programming on Rock 5B+
-- OpenCL performance optimization
-- Vulkan development
-- GPU memory management
+- **Embedded GPU Ecosystem**: Grasp the architecture and programming paradigms of modern embedded GPUs, with hands-on guides for Mali GPUs and practical use of graphics standards like OpenGL ES and Vulkan.
+- **Parallel Computing with OpenCL**: Learn how to offload compute workloads to GPUs, analyze memory hierarchies, and apply kernel optimization tactics for accelerating embedded applications.
+- **Advanced Vulkan Programming**: Delve into low-level graphics and compute with Vulkan, focusing on maximizing performance, cross-platform compatibility, and efficient resource management.
+- **Sophisticated Memory Management**: Master explicit control over GPU memory, synchronization, and data transfer, essential for high-performance graphics and compute applications in resource-constrained devices.
 
 ### Yocto Project
 
-- Custom Linux image building
-- Recipe development
-- SDK generation
-- Cross-compilation setup
+- **Building Tailored Linux Images**: Navigate every step of crafting custom embedded Linux images, understanding metadata, layer structure, and configuration best practices in Yocto.
+- **Recipe and Layer Development**: Develop, extend, and maintain custom recipes and layers—optimizing for modularity, maintainability, and reusability across multiple projects.
+- **SDK and Toolchain Provisioning**: Generate and distribute robust cross-compilation SDKs, empowering seamless application development for target architectures.
+- **Streamlined Cross-Compilation**: Set up, troubleshoot, and optimize toolchains and environments, ensuring reproducible builds and smooth developer workflows.
 
 ### Rock 5B+ Development
 
-- Hardware overview and setup
-- OS installation guides
-- Peripheral configuration
-- Troubleshooting and optimization
+- **System-Level Hardware Insight**: Get an in-depth look at the Rock 5B+ platform—from board architecture and SoC features to power management and connectivity options.
+- **Operating System Deployment**: Step-by-step guides for selecting, flashing, and debugging embedded operating systems specialized for the Rock 5B+.
+- **Customizing and Using Peripherals**: Interface with on-board peripherals (GPIO, SPI, I2C, etc.), tune system performance, and create robust, real-world hardware integrations.
+- **Diagnostics, Debugging, and Optimization**: Adopt proven strategies for isolating hardware and software faults, optimizing performance, and ensuring system reliability in production deployments.
 
 ## 🛠️ Technology Stack
 
