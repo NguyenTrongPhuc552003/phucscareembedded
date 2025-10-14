@@ -1,0 +1,8 @@
+{
+	"label": "System Monitoring and Diagnostics",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Implement comprehensive system monitoring, diagnostics, and troubleshooting for embedded Linux systems."
+	}
+}

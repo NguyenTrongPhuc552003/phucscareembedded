@@ -1,0 +1,8 @@
+{
+	"label": "System Hardening",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Harden embedded Linux systems through kernel configuration, access controls, and secure coding practices."
+	}
+}

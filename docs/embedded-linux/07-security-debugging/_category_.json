@@ -1,0 +1,8 @@
+{
+	"label": "07. Security and Debugging",
+	"position": 7,
+	"link": {
+		"type": "generated-index",
+		"description": "Master security practices, system hardening, debugging techniques, and system monitoring for robust embedded Linux systems with comprehensive explanations using the 4W+H framework."
+	}
+}

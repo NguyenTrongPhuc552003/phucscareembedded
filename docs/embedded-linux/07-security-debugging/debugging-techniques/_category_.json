@@ -1,0 +1,8 @@
+{
+	"label": "Debugging Techniques",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master debugging tools and techniques for both user-space and kernel-space development in embedded Linux."
+	}
+}

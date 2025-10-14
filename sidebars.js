@@ -251,6 +251,48 @@ const sidebars = {
 						},
 					],
 				},
+				{
+					type: 'category',
+					label: '07. Security and Debugging',
+					items: [
+						{
+							type: 'category',
+							label: 'Security Practices',
+							items: [
+								'embedded-linux/security-debugging/security-practices/embedded-security-fundamentals',
+								'embedded-linux/security-debugging/security-practices/secure-boot-trusted-computing',
+								'embedded-linux/security-debugging/security-practices/cryptographic-key-management',
+							],
+						},
+						{
+							type: 'category',
+							label: 'System Hardening',
+							items: [
+								'embedded-linux/security-debugging/system-hardening/kernel-security-configuration',
+								'embedded-linux/security-debugging/system-hardening/access-control-authentication',
+								'embedded-linux/security-debugging/system-hardening/secure-coding-practices',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Debugging Techniques',
+							items: [
+								'embedded-linux/security-debugging/debugging-techniques/debugging-tools-techniques',
+								'embedded-linux/security-debugging/debugging-techniques/memory-debugging-analysis',
+								'embedded-linux/security-debugging/debugging-techniques/kernel-debugging',
+							],
+						},
+						{
+							type: 'category',
+							label: 'System Monitoring and Diagnostics',
+							items: [
+								'embedded-linux/security-debugging/system-monitoring/system-monitoring-fundamentals',
+								'embedded-linux/security-debugging/system-monitoring/performance-monitoring-optimization',
+								'embedded-linux/security-debugging/system-monitoring/alerting-notification-systems',
+							],
+						},
+					],
+				},
 			],
 		},
 		{
