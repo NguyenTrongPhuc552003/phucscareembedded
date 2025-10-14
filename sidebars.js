@@ -293,6 +293,48 @@ const sidebars = {
 						},
 					],
 				},
+				{
+					type: 'category',
+					label: '08. Project Development and Case Studies',
+					items: [
+						{
+							type: 'category',
+							label: 'Capstone Project Planning',
+							items: [
+								'embedded-linux/project-development-case-studies/capstone-project-planning/project-requirements-analysis',
+								'embedded-linux/project-development-case-studies/capstone-project-planning/system-architecture-design',
+								'embedded-linux/project-development-case-studies/capstone-project-planning/technology-selection-justification',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Capstone Project Implementation',
+							items: [
+								'embedded-linux/project-development-case-studies/capstone-project-implementation/development-methodologies',
+								'embedded-linux/project-development-case-studies/capstone-project-implementation/integration-testing',
+								'embedded-linux/project-development-case-studies/capstone-project-implementation/performance-optimization',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Case Studies Analysis',
+							items: [
+								'embedded-linux/project-development-case-studies/case-studies-analysis/industrial-automation-case-study',
+								'embedded-linux/project-development-case-studies/case-studies-analysis/iot-smart-city-case-study',
+								'embedded-linux/project-development-case-studies/case-studies-analysis/automotive-embedded-case-study',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Project Completion and Portfolio',
+							items: [
+								'embedded-linux/project-development-case-studies/project-completion-portfolio/final-testing-optimization',
+								'embedded-linux/project-development-case-studies/project-completion-portfolio/documentation-maintenance',
+								'embedded-linux/project-development-case-studies/project-completion-portfolio/professional-portfolio-development',
+							],
+						},
+					],
+				},
 			],
 		},
 		{
