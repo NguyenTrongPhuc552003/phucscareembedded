@@ -1,0 +1,8 @@
+{
+	"label": "Capstone Project Implementation",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Implement core functionality of embedded Linux projects with proper integration and testing."
+	}
+}

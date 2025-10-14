@@ -1,0 +1,8 @@
+{
+	"label": "Case Studies Analysis",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Analyze real-world embedded Linux applications and learn industry best practices."
+	}
+}
