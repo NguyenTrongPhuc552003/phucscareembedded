@@ -27,10 +27,14 @@ Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareemb
 
 ### Embedded Linux Development
 
-- **Kernel and Driver Foundations**: Learn the Linux kernel’s architecture, dive into writing device drivers, and gain hands-on experience with system-level programming for interacting with custom hardware.
-- **Boot Process and Customization**: Understand the Linux boot process—from bootloaders like U-Boot to flexible build systems such as Buildroot and Yocto—focusing on tailoring embedded distributions to unique hardware requirements.
-- **Storage and Filesystem Strategies**: Explore filesystem design principles relevant to embedded systems, including flash memory constraints, filesystems like ext4 and UBI, and overlay techniques for reliable, updatable storage.
-- **Real-Time Linux Techniques**: Examine deterministic system requirements, leverage the PREEMPT_RT patch for bounded latencies, and integrate real-time concepts to build responsive, time-sensitive applications.
+- **Phase 1 - Introduction to Embedded Linux**: Comprehensive overview of embedded systems, Linux fundamentals, development environment setup, and cross-compilation toolchains for ARM-based platforms.
+- **Phase 2 - Linux Kernel and Device Drivers**: Deep dive into kernel architecture, device driver development, interrupt handling, memory management, and advanced driver programming techniques.
+- **Phase 3 - Bootloaders and Build Systems**: Master U-Boot configuration, Buildroot and Yocto Project build systems, secure boot implementation, and advanced build optimization techniques.
+- **Phase 4 - Filesystems and Storage**: Explore filesystem fundamentals, flash memory management, MTD subsystem, JFFS2/UBIFS, block devices, and advanced storage optimization strategies.
+- **Phase 5 - Networking and Communication Protocols**: Learn network configuration, socket programming, I2C/SPI/UART protocols, CAN bus, Modbus, and industrial communication standards.
+- **Phase 6 - Real-Time Systems and Performance Optimization**: Implement real-time Linux with PREEMPT_RT, system profiling, performance tuning, power management, and advanced optimization techniques.
+- **Phase 7 - Security and Debugging**: Master embedded security fundamentals, secure boot, cryptographic key management, system hardening, debugging tools, and comprehensive monitoring systems.
+- **Phase 8 - Project Development and Case Studies**: Complete capstone project planning, implementation methodologies, industry case studies analysis, and professional portfolio development.
 
 ### GPU Development
 
