@@ -133,7 +133,7 @@ phucscareembedded/
 │   ├── gpu-development/     # GPU programming guides
 │   ├── rust-programming/    # Rust programming guide
 │   ├── yocto-projects/      # Yocto build system
-│   └── rock-5b-setup/       # Hardware-specific guides
+│   └── rock-5b-plus/       # Hardware-specific guides
 ├── blog/                    # Blog posts and tutorials
 ├── src/                     # Source code
 │   ├── components/          # Custom React components
