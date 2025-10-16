@@ -4,7 +4,7 @@ A comprehensive documentation website for embedded Linux, GPU development, and R
 
 ## 🌟 Features
 
-- **Comprehensive Documentation**: Complete guides for embedded Linux development, GPU programming, and Rust programming
+- **Comprehensive Documentation**: Complete guides for embedded Linux development, Zephyr OS, GPU programming, and Rust programming
 - **Multi-language Support**: Available in 8 languages (English, Vietnamese, Chinese, Spanish, French, German, Japanese, Korean)
 - **Interactive Search**: Powered by Algolia DocSearch for fast content discovery
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
@@ -35,6 +35,17 @@ Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareemb
 - **Phase 6 - Real-Time Systems and Performance Optimization**: Implement real-time Linux with PREEMPT_RT, system profiling, performance tuning, power management, and advanced optimization techniques.
 - **Phase 7 - Security and Debugging**: Master embedded security fundamentals, secure boot, cryptographic key management, system hardening, debugging tools, and comprehensive monitoring systems.
 - **Phase 8 - Project Development and Case Studies**: Complete capstone project planning, implementation methodologies, industry case studies analysis, and professional portfolio development.
+
+### Zephyr OS Development
+
+- **Phase 1 - Introduction to Zephyr OS**: Zephyr RTOS fundamentals, embedded systems concepts, and real-time programming principles.
+- **Phase 2 - Zephyr Kernel Architecture**: Kernel components, thread management, memory management, and interrupt handling.
+- **Phase 3 - Zephyr Development Environment**: SDK setup, build system, device tree integration, and testing frameworks.
+- **Phase 4 - Zephyr Application Development**: Application architecture, thread communication, power management, and real-time programming.
+- **Phase 5 - Device Drivers and Hardware Interface**: Driver framework, GPIO, serial communication, and sensor interfaces.
+- **Phase 6 - Advanced Zephyr Topics**: Networking, security, file systems, and multi-core programming.
+- **Phase 7 - Debugging, Profiling, and Performance**: Debugging tools, performance analysis, system optimization, and testing.
+- **Phase 8 - Zephyr Project Development**: Complete embedded project implementation from planning to deployment.
 
 ### GPU Development
 
@@ -130,10 +141,10 @@ phucscareembedded/
 ├── docs/                    # Documentation content
 │   ├── getting-started/     # Introduction and setup guides
 │   ├── embedded-linux/      # Linux kernel and drivers
+│   ├── zephyr-os/           # Zephyr RTOS development
 │   ├── gpu-development/     # GPU programming guides
 │   ├── rust-programming/    # Rust programming guide
 │   ├── yocto-projects/      # Yocto build system
-│   └── rock-5b-plus/       # Hardware-specific guides
 ├── blog/                    # Blog posts and tutorials
 ├── src/                     # Source code
 │   ├── components/          # Custom React components
@@ -147,6 +158,7 @@ phucscareembedded/
 ## 🎯 Target Audience
 
 - **Embedded Systems Engineers**: Professionals working with ARM-based systems
+- **RTOS Developers**: Engineers working with Zephyr RTOS and real-time systems
 - **Rust Developers**: Learning embedded Rust programming and systems development
 - **Linux Kernel Developers**: Developers working on device drivers and kernel modules
 - **GPU Programmers**: Developers working with Mali GPUs and OpenCL/Vulkan
