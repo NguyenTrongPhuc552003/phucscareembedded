@@ -1,8 +1,0 @@
-{
-	"label": "GPU Development",
-	"position": 4,
-	"link": {
-		"type": "generated-index",
-		"description": "Learn GPU programming with Mali GPU, OpenCL, and Vulkan on embedded systems."
-	}
-}
