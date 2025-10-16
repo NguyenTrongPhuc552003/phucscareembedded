@@ -339,16 +339,6 @@ const sidebars = {
 		},
 		{
 			type: 'category',
-			label: 'GPU Development',
-			items: [
-				'gpu-development/mali-gpu',
-				'gpu-development/opencl-programming',
-				'gpu-development/performance-optimization',
-				'gpu-development/vulkan-development',
-			],
-		},
-		{
-			type: 'category',
 			label: 'Rust Programming',
 			items: [
 				{
@@ -658,15 +648,6 @@ const sidebars = {
 						},
 					],
 				},
-			],
-		},
-		{
-			type: 'category',
-			label: 'Rock 5B+ Setup',
-			items: [
-				'rock-5b-setup/hardware-overview',
-				'rock-5b-setup/os-installation',
-				'rock-5b-setup/peripheral-setup',
 			],
 		},
 	],
