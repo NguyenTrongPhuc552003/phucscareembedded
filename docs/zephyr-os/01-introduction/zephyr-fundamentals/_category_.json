@@ -1,0 +1,8 @@
+{
+	"label": "Zephyr OS Fundamentals",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Core concepts and architecture of Zephyr RTOS."
+	}
+}

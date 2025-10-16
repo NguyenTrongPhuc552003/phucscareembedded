@@ -1,0 +1,8 @@
+{
+	"label": "01. Introduction to Zephyr OS",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Introduction to Zephyr RTOS fundamentals and embedded systems concepts."
+	}
+}
