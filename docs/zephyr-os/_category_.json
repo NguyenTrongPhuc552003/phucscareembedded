@@ -1,8 +1,0 @@
-{
-	"label": "Zephyr OS Development",
-	"position": 3,
-	"link": {
-		"type": "generated-index",
-		"description": "A comprehensive guide to Zephyr RTOS development for embedded systems and IoT applications."
-	}
-}

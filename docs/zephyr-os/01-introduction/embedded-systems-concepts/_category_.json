@@ -1,8 +1,0 @@
-{
-	"label": "Embedded Systems Concepts",
-	"position": 2,
-	"link": {
-		"type": "generated-index",
-		"description": "Essential embedded systems concepts for Zephyr development."
-	}
-}
