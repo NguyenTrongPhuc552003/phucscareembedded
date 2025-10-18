@@ -339,6 +339,380 @@ const sidebars = {
 		},
 		{
 			type: 'category',
+			label: 'Linux Kernel Development',
+			items: [
+				{
+					type: 'category',
+					label: '01. Linux Kernel Fundamentals',
+					items: [
+						{
+							type: 'category',
+							label: 'Kernel Architecture Overview',
+							items: [
+								'linux-kernel/01-kernel-fundamentals/kernel-architecture/linux-kernel-introduction',
+								'linux-kernel/01-kernel-fundamentals/kernel-architecture/kernel-subsystems',
+								'linux-kernel/01-kernel-fundamentals/kernel-architecture/kernel-boot-process',
+								'linux-kernel/01-kernel-fundamentals/kernel-architecture/rock5b-kernel-setup',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Process and Thread Management',
+							items: [
+								'linux-kernel/01-kernel-fundamentals/process-thread-management/process-lifecycle',
+								'linux-kernel/01-kernel-fundamentals/process-thread-management/scheduling-algorithms',
+								'linux-kernel/01-kernel-fundamentals/process-thread-management/context-switching',
+								'linux-kernel/01-kernel-fundamentals/process-thread-management/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Memory Management Basics',
+							items: [
+								'linux-kernel/01-kernel-fundamentals/memory-management-basics/virtual-memory-concepts',
+								'linux-kernel/01-kernel-fundamentals/memory-management-basics/page-allocation',
+								'linux-kernel/01-kernel-fundamentals/memory-management-basics/memory-mapping',
+								'linux-kernel/01-kernel-fundamentals/memory-management-basics/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'System Calls and Interrupts',
+							items: [
+								'linux-kernel/01-kernel-fundamentals/system-calls-interrupts/system-call-interface',
+								'linux-kernel/01-kernel-fundamentals/system-calls-interrupts/interrupt-handling',
+								'linux-kernel/01-kernel-fundamentals/system-calls-interrupts/exception-handling',
+								'linux-kernel/01-kernel-fundamentals/system-calls-interrupts/practical-exercises',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '02. Kernel Development Environment',
+					items: [
+						{
+							type: 'category',
+							label: 'Development Environment Setup',
+							items: [
+								'linux-kernel/02-kernel-dev-environment/dev-environment-setup/cross-compilation-toolchain',
+								'linux-kernel/02-kernel-dev-environment/dev-environment-setup/kernel-build-system',
+								'linux-kernel/02-kernel-dev-environment/dev-environment-setup/rock5b-development-setup',
+								'linux-kernel/02-kernel-dev-environment/dev-environment-setup/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Kernel Configuration and Compilation',
+							items: [
+								'linux-kernel/02-kernel-dev-environment/kernel-config-compilation/kconfig-system',
+								'linux-kernel/02-kernel-dev-environment/kernel-config-compilation/kernel-compilation',
+								'linux-kernel/02-kernel-dev-environment/kernel-config-compilation/module-compilation',
+								'linux-kernel/02-kernel-dev-environment/kernel-config-compilation/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Debugging Tools and Techniques',
+							items: [
+								'linux-kernel/02-kernel-dev-environment/debugging-tools-techniques/gdb-kgdb-debugging',
+								'linux-kernel/02-kernel-dev-environment/debugging-tools-techniques/kernel-logging',
+								'linux-kernel/02-kernel-dev-environment/debugging-tools-techniques/crash-analysis',
+								'linux-kernel/02-kernel-dev-environment/debugging-tools-techniques/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Testing and Validation',
+							items: [
+								'linux-kernel/02-kernel-dev-environment/testing-validation/kernel-testing',
+								'linux-kernel/02-kernel-dev-environment/testing-validation/static-analysis',
+								'linux-kernel/02-kernel-dev-environment/testing-validation/code-review',
+								'linux-kernel/02-kernel-dev-environment/testing-validation/practical-exercises',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '03. Kernel Modules and Device Drivers',
+					items: [
+						{
+							type: 'category',
+							label: 'Loadable Kernel Modules (LKMs)',
+							items: [
+								'linux-kernel/03-kernel-modules-device-drivers/lkm-basics/module-structure',
+								'linux-kernel/03-kernel-modules-device-drivers/lkm-basics/module-loading-unloading',
+								'linux-kernel/03-kernel-modules-device-drivers/lkm-basics/module-parameters',
+								'linux-kernel/03-kernel-modules-device-drivers/lkm-basics/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Character Device Drivers',
+							items: [
+								'linux-kernel/03-kernel-modules-device-drivers/character-device-drivers/char-device-framework',
+								'linux-kernel/03-kernel-modules-device-drivers/character-device-drivers/device-file-operations',
+								'linux-kernel/03-kernel-modules-device-drivers/character-device-drivers/ioctl-implementation',
+								'linux-kernel/03-kernel-modules-device-drivers/character-device-drivers/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Platform and Bus Drivers',
+							items: [
+								'linux-kernel/03-kernel-modules-device-drivers/platform-bus-drivers/platform-device-model',
+								'linux-kernel/03-kernel-modules-device-drivers/platform-bus-drivers/device-tree-integration',
+								'linux-kernel/03-kernel-modules-device-drivers/platform-bus-drivers/pci-usb-drivers',
+								'linux-kernel/03-kernel-modules-device-drivers/platform-bus-drivers/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Advanced Driver Development',
+							items: [
+								'linux-kernel/03-kernel-modules-device-drivers/advanced-driver-development/dma-operations',
+								'linux-kernel/03-kernel-modules-device-drivers/advanced-driver-development/interrupt-handling',
+								'linux-kernel/03-kernel-modules-device-drivers/advanced-driver-development/power-management',
+								'linux-kernel/03-kernel-modules-device-drivers/advanced-driver-development/practical-exercises',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '04. Real-Time Linux Kernel',
+					items: [
+						{
+							type: 'category',
+							label: 'Real-Time Concepts and PREEMPT_RT',
+							items: [
+								'linux-kernel/04-realtime-linux-kernel/realtime-concepts-preempt-rt/real-time-fundamentals',
+								'linux-kernel/04-realtime-linux-kernel/realtime-concepts-preempt-rt/preempt-rt-patch',
+								'linux-kernel/04-realtime-linux-kernel/realtime-concepts-preempt-rt/latency-optimization',
+								'linux-kernel/04-realtime-linux-kernel/realtime-concepts-preempt-rt/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Real-Time Scheduling',
+							items: [
+								'linux-kernel/04-realtime-linux-kernel/realtime-scheduling/scheduling-policies',
+								'linux-kernel/04-realtime-linux-kernel/realtime-scheduling/priority-inheritance',
+								'linux-kernel/04-realtime-linux-kernel/realtime-scheduling/deadline-scheduling',
+								'linux-kernel/04-realtime-linux-kernel/realtime-scheduling/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Real-Time Performance Analysis',
+							items: [
+								'linux-kernel/04-realtime-linux-kernel/realtime-performance-analysis/latency-measurement',
+								'linux-kernel/04-realtime-linux-kernel/realtime-performance-analysis/jitter-analysis',
+								'linux-kernel/04-realtime-linux-kernel/realtime-performance-analysis/performance-tuning',
+								'linux-kernel/04-realtime-linux-kernel/realtime-performance-analysis/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Real-Time Applications on Rock 5B+',
+							items: [
+								'linux-kernel/04-realtime-linux-kernel/realtime-applications-rock5b/industrial-control',
+								'linux-kernel/04-realtime-linux-kernel/realtime-applications-rock5b/audio-processing',
+								'linux-kernel/04-realtime-linux-kernel/realtime-applications-rock5b/robotics-control',
+								'linux-kernel/04-realtime-linux-kernel/realtime-applications-rock5b/practical-exercises',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '05. Advanced Memory Management',
+					items: [
+						{
+							type: 'category',
+							label: 'Virtual Memory Management',
+							items: [
+								'linux-kernel/05-advanced-memory-management/virtual-memory-management/vma-management',
+								'linux-kernel/05-advanced-memory-management/virtual-memory-management/page-tables',
+								'linux-kernel/05-advanced-memory-management/virtual-memory-management/memory-mapping',
+								'linux-kernel/05-advanced-memory-management/virtual-memory-management/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Memory Allocation Strategies',
+							items: [
+								'linux-kernel/05-advanced-memory-management/memory-allocation-strategies/slab-allocator',
+								'linux-kernel/05-advanced-memory-management/memory-allocation-strategies/page-allocator',
+								'linux-kernel/05-advanced-memory-management/memory-allocation-strategies/memory-compaction',
+								'linux-kernel/05-advanced-memory-management/memory-allocation-strategies/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'DMA and Coherent Memory',
+							items: [
+								'linux-kernel/05-advanced-memory-management/dma-coherent-memory/dma-fundamentals',
+								'linux-kernel/05-advanced-memory-management/dma-coherent-memory/coherent-memory-allocation',
+								'linux-kernel/05-advanced-memory-management/dma-coherent-memory/dma-mapping',
+								'linux-kernel/05-advanced-memory-management/dma-coherent-memory/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Memory Debugging and Profiling',
+							items: [
+								'linux-kernel/05-advanced-memory-management/memory-debugging-profiling/memory-leak-detection',
+								'linux-kernel/05-advanced-memory-management/memory-debugging-profiling/memory-profiling',
+								'linux-kernel/05-advanced-memory-management/memory-debugging-profiling/oom-handling',
+								'linux-kernel/05-advanced-memory-management/memory-debugging-profiling/practical-exercises',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '06. Kernel Synchronization and Concurrency',
+					items: [
+						{
+							type: 'category',
+							label: 'Synchronization Primitives',
+							items: [
+								'linux-kernel/06-kernel-synchronization-concurrency/sync-primitives/spinlocks-mutexes',
+								'linux-kernel/06-kernel-synchronization-concurrency/sync-primitives/semaphores-completion',
+								'linux-kernel/06-kernel-synchronization-concurrency/sync-primitives/read-write-locks',
+								'linux-kernel/06-kernel-synchronization-concurrency/sync-primitives/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Lock-Free Programming',
+							items: [
+								'linux-kernel/06-kernel-synchronization-concurrency/lock-free-programming/atomic-operations',
+								'linux-kernel/06-kernel-synchronization-concurrency/lock-free-programming/memory-barriers',
+								'linux-kernel/06-kernel-synchronization-concurrency/lock-free-programming/rcu-mechanism',
+								'linux-kernel/06-kernel-synchronization-concurrency/lock-free-programming/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Per-CPU Variables and Workqueues',
+							items: [
+								'linux-kernel/06-kernel-synchronization-concurrency/per-cpu-workqueues/per-cpu-variables',
+								'linux-kernel/06-kernel-synchronization-concurrency/per-cpu-workqueues/workqueue-framework',
+								'linux-kernel/06-kernel-synchronization-concurrency/per-cpu-workqueues/timer-management',
+								'linux-kernel/06-kernel-synchronization-concurrency/per-cpu-workqueues/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Deadlock Prevention and Debugging',
+							items: [
+								'linux-kernel/06-kernel-synchronization-concurrency/deadlock-prevention-debugging/deadlock-detection',
+								'linux-kernel/06-kernel-synchronization-concurrency/deadlock-prevention-debugging/lockdep-framework',
+								'linux-kernel/06-kernel-synchronization-concurrency/deadlock-prevention-debugging/debugging-techniques',
+								'linux-kernel/06-kernel-synchronization-concurrency/deadlock-prevention-debugging/practical-exercises',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '07. Kernel Security and Hardening',
+					items: [
+						{
+							type: 'category',
+							label: 'Kernel Security Fundamentals',
+							items: [
+								'linux-kernel/07-kernel-security-hardening/security-fundamentals/security-models',
+								'linux-kernel/07-kernel-security-hardening/security-fundamentals/access-control',
+								'linux-kernel/07-kernel-security-hardening/security-fundamentals/capability-system',
+								'linux-kernel/07-kernel-security-hardening/security-fundamentals/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Security Frameworks',
+							items: [
+								'linux-kernel/07-kernel-security-hardening/security-frameworks/selinux-integration',
+								'linux-kernel/07-kernel-security-hardening/security-frameworks/apparmor-integration',
+								'linux-kernel/07-kernel-security-hardening/security-frameworks/secure-boot',
+								'linux-kernel/07-kernel-security-hardening/security-frameworks/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Kernel Hardening Techniques',
+							items: [
+								'linux-kernel/07-kernel-security-hardening/kernel-hardening-techniques/stack-protection',
+								'linux-kernel/07-kernel-security-hardening/kernel-hardening-techniques/aslr-kaslr',
+								'linux-kernel/07-kernel-security-hardening/kernel-hardening-techniques/smep-smap',
+								'linux-kernel/07-kernel-security-hardening/kernel-hardening-techniques/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Security Monitoring and Auditing',
+							items: [
+								'linux-kernel/07-kernel-security-hardening/security-monitoring-auditing/audit-framework',
+								'linux-kernel/07-kernel-security-hardening/security-monitoring-auditing/security-events',
+								'linux-kernel/07-kernel-security-hardening/security-monitoring-auditing/intrusion-detection',
+								'linux-kernel/07-kernel-security-hardening/security-monitoring-auditing/practical-exercises',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '08. Advanced Kernel Topics and Projects',
+					items: [
+						{
+							type: 'category',
+							label: 'Kernel Performance Optimization',
+							items: [
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-performance-optimization/profiling-tools',
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-performance-optimization/performance-tuning',
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-performance-optimization/scalability-optimization',
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-performance-optimization/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Power Management',
+							items: [
+								'linux-kernel/08-advanced-kernel-topics-projects/power-management/cpu-frequency-scaling',
+								'linux-kernel/08-advanced-kernel-topics-projects/power-management/sleep-states',
+								'linux-kernel/08-advanced-kernel-topics-projects/power-management/device-power-management',
+								'linux-kernel/08-advanced-kernel-topics-projects/power-management/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Kernel Contribution and Community',
+							items: [
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-contribution-community/contribution-process',
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-contribution-community/code-review',
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-contribution-community/maintainer-guidelines',
+								'linux-kernel/08-advanced-kernel-topics-projects/kernel-contribution-community/practical-exercises',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Capstone Projects on Rock 5B+',
+							items: [
+								'linux-kernel/08-advanced-kernel-topics-projects/capstone-projects-rock5b/custom-device-driver',
+								'linux-kernel/08-advanced-kernel-topics-projects/capstone-projects-rock5b/realtime-application',
+								'linux-kernel/08-advanced-kernel-topics-projects/capstone-projects-rock5b/performance-optimization',
+								'linux-kernel/08-advanced-kernel-topics-projects/capstone-projects-rock5b/practical-exercises',
+							],
+						},
+					],
+				},
+			],
+		},
+		{
+			type: 'category',
 			label: 'Rust Programming',
 			items: [
 				{
