@@ -1,0 +1,8 @@
+{
+	"label": "03. Kernel Modules and Device Drivers",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master kernel module development and device driver programming, including character devices, platform drivers, and advanced driver techniques."
+	}
+}

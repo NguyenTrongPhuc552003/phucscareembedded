@@ -1,0 +1,8 @@
+{
+	"label": "Real-Time Concepts and PREEMPT_RT",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master real-time Linux concepts and the PREEMPT_RT patch."
+	}
+}

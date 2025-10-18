@@ -1,0 +1,8 @@
+{
+	"label": "Platform and Bus Drivers",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Create platform drivers and integrate with device tree."
+	}
+}

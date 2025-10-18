@@ -1,0 +1,8 @@
+{
+	"label": "Per-CPU Variables and Workqueues",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master per-CPU variables, workqueue framework, and timer management."
+	}
+}

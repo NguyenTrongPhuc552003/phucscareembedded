@@ -1,0 +1,8 @@
+{
+	"label": "Memory Allocation Strategies",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn slab allocator, page allocator, and memory compaction techniques."
+	}
+}

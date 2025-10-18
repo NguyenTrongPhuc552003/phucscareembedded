@@ -1,0 +1,8 @@
+{
+	"label": "02. Kernel Development Environment",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Set up and master the Linux kernel development environment, including cross-compilation, debugging tools, and testing frameworks."
+	}
+}

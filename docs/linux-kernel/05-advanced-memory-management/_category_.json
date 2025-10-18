@@ -1,0 +1,8 @@
+{
+	"label": "05. Advanced Memory Management",
+	"position": 5,
+	"link": {
+		"type": "generated-index",
+		"description": "Master advanced memory management techniques including virtual memory, allocation strategies, DMA operations, and memory debugging."
+	}
+}

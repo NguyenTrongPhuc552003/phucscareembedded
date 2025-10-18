@@ -1,0 +1,8 @@
+{
+	"label": "Synchronization Primitives",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master spinlocks, mutexes, semaphores, and read-write locks."
+	}
+}

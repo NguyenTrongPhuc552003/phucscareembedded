@@ -1,0 +1,8 @@
+{
+	"label": "Real-Time Applications on Rock 5B+",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Implement real-time applications for industrial control, audio processing, and robotics."
+	}
+}

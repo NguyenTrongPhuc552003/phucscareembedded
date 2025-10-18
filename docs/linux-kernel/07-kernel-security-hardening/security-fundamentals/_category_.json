@@ -1,0 +1,8 @@
+{
+	"label": "Kernel Security Fundamentals",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn security models, access control, and capability systems."
+	}
+}

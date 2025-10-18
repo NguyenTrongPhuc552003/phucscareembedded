@@ -1,0 +1,8 @@
+{
+	"label": "Process and Thread Management",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Master process creation, scheduling, and thread management in the Linux kernel."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "Kernel Contribution and Community",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master the kernel contribution process, code review, and maintainer guidelines."
+	}
+}

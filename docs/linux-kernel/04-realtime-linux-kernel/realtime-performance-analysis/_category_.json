@@ -1,0 +1,8 @@
+{
+	"label": "Real-Time Performance Analysis",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master latency measurement, jitter analysis, and performance tuning."
+	}
+}

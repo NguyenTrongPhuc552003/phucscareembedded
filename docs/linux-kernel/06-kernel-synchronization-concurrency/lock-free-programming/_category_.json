@@ -1,0 +1,8 @@
+{
+	"label": "Lock-Free Programming",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn atomic operations, memory barriers, and RCU mechanisms."
+	}
+}

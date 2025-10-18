@@ -1,0 +1,8 @@
+{
+	"label": "Memory Management Basics",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand virtual memory, page allocation, and memory mapping in the kernel."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "Deadlock Prevention and Debugging",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn deadlock detection, lockdep framework, and debugging techniques."
+	}
+}

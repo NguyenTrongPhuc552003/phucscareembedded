@@ -1,0 +1,8 @@
+{
+	"label": "08. Advanced Kernel Topics and Projects",
+	"position": 8,
+	"link": {
+		"type": "generated-index",
+		"description": "Master advanced kernel topics including performance optimization, power management, kernel contribution, and capstone projects on Rock 5B+."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "Kernel Performance Optimization",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master profiling tools, performance tuning, and scalability optimization."
+	}
+}

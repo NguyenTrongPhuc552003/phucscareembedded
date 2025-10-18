@@ -1,0 +1,8 @@
+{
+	"label": "Debugging Tools and Techniques",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn kernel debugging tools, techniques, and crash analysis."
+	}
+}

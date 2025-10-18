@@ -1,0 +1,8 @@
+{
+	"label": "Kernel Configuration and Compilation",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Master kernel configuration, compilation, and module development."
+	}
+}

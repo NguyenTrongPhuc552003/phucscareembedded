@@ -1,0 +1,8 @@
+{
+	"label": "Advanced Driver Development",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Master advanced driver techniques including DMA, interrupts, and power management."
+	}
+}

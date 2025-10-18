@@ -1,0 +1,8 @@
+{
+	"label": "DMA and Coherent Memory",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master DMA operations, coherent memory allocation, and memory mapping."
+	}
+}

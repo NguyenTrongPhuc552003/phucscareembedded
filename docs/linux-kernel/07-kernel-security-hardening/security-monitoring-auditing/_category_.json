@@ -1,0 +1,8 @@
+{
+	"label": "Security Monitoring and Auditing",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Master audit framework, security events, and intrusion detection."
+	}
+}

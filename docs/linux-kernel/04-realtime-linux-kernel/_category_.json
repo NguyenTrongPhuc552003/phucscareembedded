@@ -1,0 +1,8 @@
+{
+	"label": "04. Real-Time Linux Kernel",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Master real-time Linux kernel development with PREEMPT_RT, real-time scheduling, and performance analysis for Rock 5B+."
+	}
+}

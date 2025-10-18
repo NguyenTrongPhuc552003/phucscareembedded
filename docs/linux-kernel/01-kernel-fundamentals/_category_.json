@@ -1,0 +1,8 @@
+{
+	"label": "01. Linux Kernel Fundamentals",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the fundamental concepts of the Linux kernel, including architecture, process management, memory management, and system calls."
+	}
+}

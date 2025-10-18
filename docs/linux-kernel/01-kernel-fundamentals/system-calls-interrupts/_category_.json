@@ -1,0 +1,8 @@
+{
+	"label": "System Calls and Interrupts",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the interface between user space and kernel space through system calls and interrupts."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "Virtual Memory Management",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master virtual memory management, VMA handling, and page tables."
+	}
+}
