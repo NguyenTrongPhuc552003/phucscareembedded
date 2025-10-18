@@ -4,7 +4,7 @@ A comprehensive documentation website for embedded Linux, GPU development, and R
 
 ## 🌟 Features
 
-- **Comprehensive Documentation**: Complete guides for embedded Linux development, Zephyr OS, GPU programming, and Rust programming
+- **Comprehensive Documentation**: Complete guides for embedded Linux development, Linux kernel development, Zephyr OS, GPU programming, and Rust programming
 - **Multi-language Support**: Available in 8 languages (English, Vietnamese, Chinese, Spanish, French, German, Japanese, Korean)
 - **Interactive Search**: Powered by Algolia DocSearch for fast content discovery
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
@@ -17,6 +17,17 @@ A comprehensive documentation website for embedded Linux, GPU development, and R
 Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareembedded/](https://nguyentrongphuc552003.github.io/phucscareembedded/)
 
 ## 📚 Documentation Topics
+
+### Linux Kernel Development
+
+- **Phase 1 - Linux Kernel Fundamentals**: Master kernel architecture, process management, memory management, and system calls with Rock 5B+ focus.
+- **Phase 2 - Kernel Development Environment**: Set up cross-compilation toolchains, kernel build systems, debugging tools, and testing frameworks for ARM64 development.
+- **Phase 3 - Kernel Modules and Device Drivers**: Develop loadable kernel modules, character devices, platform drivers, and advanced driver techniques.
+- **Phase 4 - Real-Time Linux Kernel**: Master PREEMPT_RT, real-time scheduling, performance analysis, and real-time applications on Rock 5B+.
+- **Phase 5 - Advanced Memory Management**: Learn virtual memory management, allocation strategies, DMA operations, and memory debugging techniques.
+- **Phase 6 - Kernel Synchronization and Concurrency**: Master synchronization primitives, lock-free programming, workqueues, and deadlock prevention.
+- **Phase 7 - Kernel Security and Hardening**: Implement security fundamentals, frameworks, hardening techniques, and security monitoring.
+- **Phase 8 - Advanced Kernel Topics and Projects**: Performance optimization, power management, kernel contribution, and capstone projects on Rock 5B+.
 
 ### Rust Programming
 
@@ -140,7 +151,8 @@ yarn deploy
 phucscareembedded/
 ├── docs/                    # Documentation content
 │   ├── getting-started/     # Introduction and setup guides
-│   ├── embedded-linux/      # Linux kernel and drivers
+│   ├── embedded-linux/      # Embedded Linux development
+│   ├── linux-kernel/        # Linux kernel development
 │   ├── zephyr-os/           # Zephyr RTOS development
 │   ├── gpu-development/     # GPU programming guides
 │   ├── rust-programming/    # Rust programming guide
@@ -160,7 +172,7 @@ phucscareembedded/
 - **Embedded Systems Engineers**: Professionals working with ARM-based systems
 - **RTOS Developers**: Engineers working with Zephyr RTOS and real-time systems
 - **Rust Developers**: Learning embedded Rust programming and systems development
-- **Linux Kernel Developers**: Developers working on device drivers and kernel modules
+- **Linux Kernel Developers**: Developers working on device drivers, kernel modules, and kernel development
 - **GPU Programmers**: Developers working with Mali GPUs and OpenCL/Vulkan
 - **Students**: Learning embedded systems and Rust programming
 - **Hobbyists**: DIY enthusiasts working with single-board computers
@@ -170,6 +182,7 @@ phucscareembedded/
 ### Technical Tutorials
 
 - Step-by-step guides for embedded development
+- Linux kernel development from fundamentals to advanced topics
 - Rust programming from basics to advanced embedded systems
 - Code examples and best practices
 - Hardware interfacing techniques
@@ -178,6 +191,7 @@ phucscareembedded/
 ### Project Showcases
 
 - Real-world embedded projects
+- Linux kernel modules and device drivers
 - IoT applications with Rock 5B+
 - Smart home automation systems
 - Industrial control solutions
@@ -185,6 +199,7 @@ phucscareembedded/
 ### Tool Reviews
 
 - Development IDEs and environments
+- Kernel debugging tools and techniques
 - Hardware debugging tools
 - Performance profiling software
 - Version control for embedded projects
@@ -193,7 +208,8 @@ phucscareembedded/
 
 - Latest trends in edge computing
 - New ARM processor releases
-- Linux kernel updates
+- Linux kernel updates and new features
+- Real-time Linux developments
 - Embedded security best practices
 
 ## 🌐 Internationalization
@@ -246,7 +262,9 @@ This project is licensed under the GNU General Public License v2.0 - see the [LI
 - [The Rust Book](https://doc.rust-lang.org/book/) - Comprehensive Rust programming guide
 - [Embedded Rust Book](https://docs.rust-embedded.org/book/) - Embedded systems with Rust
 - [ARM Mali GPU Programming](https://developer.arm.com/ip-products/graphics-and-multimedia/mali-gpus)
-- [Linux Kernel Documentation](https://www.kernel.org/doc/)
+- [Linux Kernel Documentation](https://www.kernel.org/doc/) - Comprehensive kernel documentation
+- [ARM64 Linux Kernel](https://www.kernel.org/doc/html/latest/arm64/) - ARM64-specific kernel documentation
+- [PREEMPT_RT Documentation](https://www.kernel.org/doc/html/latest/scheduler/) - Real-time Linux documentation
 - [OpenCL Specification](https://www.khronos.org/opencl/)
 - [Yocto Project Documentation](https://docs.yoctoproject.org/)
 
