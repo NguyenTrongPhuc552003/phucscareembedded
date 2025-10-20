@@ -48,17 +48,17 @@ struct task_struct {
 // Scheduler class interface
 struct sched_class {
     const struct sched_class *next;
-    
+
     void (*enqueue_task) (struct rq *rq, struct task_struct *p, int flags);
     void (*dequeue_task) (struct rq *rq, struct task_struct *p, int flags);
     void (*yield_task)   (struct rq *rq);
     bool (*yield_to_task)(struct rq *rq, struct task_struct *p, bool preempt);
-    
+
     void (*check_preempt_curr)(struct rq *rq, struct task_struct *p, int flags);
-    
+
     struct task_struct *(*pick_next_task)(struct rq *rq, struct task_struct *prev);
     void (*put_prev_task)(struct rq *rq, struct task_struct *p);
-    
+
     void (*set_curr_task)(struct rq *rq);
     void (*task_tick)(struct rq *rq, struct task_struct *p, int queued);
     // ... more methods
@@ -133,10 +133,10 @@ static void enqueue_task_fair(struct rq *rq, struct task_struct *p, int flags)
 {
     struct cfs_rq *cfs_rq;
     struct sched_entity *se = &p->se;
-    
+
     cfs_rq = cfs_rq_of(se);
     enqueue_entity(cfs_rq, se, flags);
-    
+
     if (!curr)
         resched_curr(rq);
 }
@@ -147,13 +147,13 @@ static struct task_struct *pick_next_task_fair(struct rq *rq, struct task_struct
     struct cfs_rq *cfs_rq = &rq->cfs;
     struct sched_entity *se;
     struct task_struct *p;
-    
+
     if (!cfs_rq->nr_running)
         return NULL;
-    
+
     se = pick_next_entity(cfs_rq);
     p = task_of(se);
-    
+
     return p;
 }
 
@@ -162,7 +162,7 @@ static void task_tick_fair(struct rq *rq, struct task_struct *curr, int queued)
 {
     struct cfs_rq *cfs_rq;
     struct sched_entity *se = &curr->se;
-    
+
     cfs_rq = cfs_rq_of(se);
     entity_tick(cfs_rq, se, queued);
 }
@@ -232,12 +232,12 @@ struct sched_rt_entity {
 static void enqueue_task_rt(struct rq *rq, struct task_struct *p, int flags)
 {
     struct sched_rt_entity *rt_se = &p->rt;
-    
+
     if (flags & ENQUEUE_HEAD)
         list_add(&rt_se->run_list, &rq->rt.queue);
     else
         list_add_tail(&rt_se->run_list, &rq->rt.queue);
-    
+
     __enqueue_rt_entity(rt_se);
     inc_nr_running(rq);
 }
@@ -248,13 +248,13 @@ static struct task_struct *pick_next_task_rt(struct rq *rq, struct task_struct *
     struct sched_rt_entity *rt_se;
     struct task_struct *p;
     struct rt_rq *rt_rq = &rq->rt;
-    
+
     if (!rt_rq->rt_nr_running)
         return NULL;
-    
+
     rt_se = pick_next_rt_entity(rt_rq);
     p = rt_task_of(rt_se);
-    
+
     return p;
 }
 
@@ -262,15 +262,15 @@ static struct task_struct *pick_next_task_rt(struct rq *rq, struct task_struct *
 static void task_tick_rt(struct rq *rq, struct task_struct *p, int queued)
 {
     struct sched_rt_entity *rt_se = &p->rt;
-    
+
     if (p->policy != SCHED_RR)
         return;
-    
+
     if (--p->rt.time_slice)
         return;
-    
+
     p->rt.time_slice = sched_rr_timeslice;
-    
+
     if (p->rt.run_list.prev != p->rt.run_list.next) {
         requeue_task_rt(rq, p, 0);
         resched_curr(rq);
@@ -343,9 +343,9 @@ static int load_balance(int this_cpu, struct rq *this_rq,
     struct sched_group *group;
     struct rq *busiest;
     unsigned long flags;
-    
+
     *balance = 0;
-    
+
     if (sd->flags & SD_LOAD_BALANCE) {
         group = find_busiest_group(sd, this_cpu, &imbalance, idle,
                                   &cpus, &balance);
@@ -362,7 +362,7 @@ static int load_balance(int this_cpu, struct rq *this_rq,
             }
         }
     }
-    
+
     return 0;
 }
 
@@ -372,15 +372,15 @@ static int set_cpus_allowed_ptr(struct task_struct *p,
 {
     struct rq *rq = task_rq(p);
     int ret = 0;
-    
+
     if (cpumask_equal(&p->cpus_allowed, new_mask))
         return 0;
-    
+
     if (!cpumask_intersects(new_mask, cpu_active_mask))
         return -EINVAL;
-    
+
     do_set_cpus_allowed(p, new_mask);
-    
+
     if (cpumask_intersects(&p->cpus_allowed, cpu_active_mask)) {
         if (p->sched_class->set_cpus_allowed)
             p->sched_class->set_cpus_allowed(p, new_mask);
@@ -388,7 +388,7 @@ static int set_cpus_allowed_ptr(struct task_struct *p,
     } else {
         p->nr_cpus_allowed = 0;
     }
-    
+
     return ret;
 }
 ```
@@ -445,31 +445,31 @@ context_switch(struct rq *rq, struct task_struct *prev,
                struct task_struct *next, struct rq_flags *rf)
 {
     struct mm_struct *mm, *oldmm;
-    
+
     prepare_task_switch(rq, prev, next);
-    
+
     mm = next->mm;
     oldmm = prev->active_mm;
-    
+
     if (!mm) {
         next->active_mm = oldmm;
         atomic_inc(&oldmm->mm_count);
         enter_lazy_tlb(oldmm, next);
     } else
         switch_mm_irqs_off(oldmm, mm, next);
-    
+
     if (!prev->mm) {
         prev->active_mm = NULL;
         rq->prev_mm = oldmm;
     }
-    
+
     rq->clock_update_flags &= ~(RQCF_ACT_SKIP|RQCF_REQ_SKIP);
-    
+
     prepare_lock_switch(rq, next, rf);
-    
+
     switch_to(prev, next, prev);
     barrier();
-    
+
     return finish_task_switch(prev);
 }
 
@@ -484,7 +484,7 @@ static inline struct task_struct *__switch_to(struct task_struct *prev,
                                              struct task_struct *next)
 {
     struct task_struct *last;
-    
+
     fpsimd_thread_switch(next);
     tls_thread_switch(next);
     hw_breakpoint_thread_switch(next);
@@ -492,9 +492,9 @@ static inline struct task_struct *__switch_to(struct task_struct *prev,
     entry_task_switch(next);
     uao_thread_switch(next);
     ptrauth_thread_switch(next);
-    
+
     last = cpu_switch_to(prev, next);
-    
+
     return last;
 }
 ```

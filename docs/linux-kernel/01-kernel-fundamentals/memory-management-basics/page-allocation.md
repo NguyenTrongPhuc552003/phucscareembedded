@@ -45,17 +45,17 @@ struct page *alloc_pages(gfp_t gfp_mask, unsigned int order)
     struct page *page;
     unsigned int alloc_flags = ALLOC_WMARK_LOW;
     gfp_t alloc_gfp;
-    
+
     alloc_gfp = gfp_mask;
     if (alloc_flags & ALLOC_WMARK_LOW)
         alloc_gfp |= __GFP_HIGHMEM;
-    
+
     page = __alloc_pages(alloc_gfp, order, NULL);
-    
+
     if (unlikely(!page)) {
         page = __alloc_pages_compaction(alloc_gfp, order);
     }
-    
+
     return page;
 }
 
@@ -120,17 +120,17 @@ static struct page *__alloc_pages(gfp_t gfp_mask, unsigned int order,
     struct page *page;
     unsigned int alloc_flags = ALLOC_WMARK_LOW;
     gfp_t alloc_gfp;
-    
+
     alloc_gfp = gfp_mask;
     if (alloc_flags & ALLOC_WMARK_LOW)
         alloc_gfp |= __GFP_HIGHMEM;
-    
+
     page = get_page_from_freelist(alloc_gfp, order, alloc_flags, zonelist);
-    
+
     if (unlikely(!page)) {
         page = __alloc_pages_slowpath(alloc_gfp, order, zonelist);
     }
-    
+
     return page;
 }
 
@@ -198,16 +198,16 @@ void *kmalloc(size_t size, gfp_t flags)
 {
     struct kmem_cache *cachep;
     void *ret;
-    
+
     if (unlikely(size > KMALLOC_MAX_CACHE_SIZE))
         return kmalloc_large(size, flags);
-    
+
     cachep = kmem_cache_find(size);
     if (cachep)
         ret = kmem_cache_alloc(cachep, flags);
     else
         ret = __kmalloc(size, flags);
-    
+
     return ret;
 }
 
@@ -216,10 +216,10 @@ void kfree(const void *objp)
 {
     struct kmem_cache *c;
     unsigned long flags;
-    
+
     if (unlikely(ZERO_OR_NULL_PTR(objp)))
         return;
-    
+
     c = virt_to_cache(objp);
     kmem_cache_free(c, (void *)objp);
 }
@@ -266,14 +266,14 @@ typedef struct {
 static inline struct page *alloc_pages_arm64(gfp_t gfp_mask, unsigned int order)
 {
     struct page *page;
-    
+
     page = alloc_pages(gfp_mask, order);
-    
+
     if (page) {
         // ARM64 specific initialization
         arm64_page_init(page, order);
     }
-    
+
     return page;
 }
 

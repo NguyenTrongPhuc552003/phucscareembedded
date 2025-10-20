@@ -52,14 +52,14 @@ context_switch(struct rq *rq, struct task_struct *prev,
                struct task_struct *next, struct rq_flags *rf)
 {
     struct mm_struct *mm, *oldmm;
-    
+
     // Prepare for context switch
     prepare_task_switch(rq, prev, next);
-    
+
     // Get memory context
     mm = next->mm;
     oldmm = prev->active_mm;
-    
+
     // Handle memory context switch
     if (!mm) {
         next->active_mm = oldmm;
@@ -67,23 +67,23 @@ context_switch(struct rq *rq, struct task_struct *prev,
         enter_lazy_tlb(oldmm, next);
     } else
         switch_mm_irqs_off(oldmm, mm, next);
-    
+
     // Clean up previous process memory context
     if (!prev->mm) {
         prev->active_mm = NULL;
         rq->prev_mm = oldmm;
     }
-    
+
     // Update run queue
     rq->clock_update_flags &= ~(RQCF_ACT_SKIP|RQCF_REQ_SKIP);
-    
+
     // Prepare lock switch
     prepare_lock_switch(rq, next, rf);
-    
+
     // Perform the actual context switch
     switch_to(prev, next, prev);
     barrier();
-    
+
     // Finish context switch
     return finish_task_switch(prev);
 }
@@ -170,7 +170,7 @@ void wake_up_process(struct task_struct *p)
 void __sched schedule(void)
 {
     struct task_struct *tsk = current;
-    
+
     sched_submit_work(tsk);
     do {
         preempt_disable();
@@ -219,10 +219,10 @@ static inline void switch_to_thread(struct task_struct *prev,
 {
     // Save thread-specific state
     save_thread_state(prev);
-    
+
     // Restore thread-specific state
     restore_thread_state(next);
-    
+
     // Switch stack pointer
     switch_stack(prev, next);
 }
@@ -233,13 +233,13 @@ static inline void switch_to_process(struct task_struct *prev,
 {
     // Save process state
     save_process_state(prev);
-    
+
     // Switch memory context
     switch_mm(prev->mm, next->mm, next);
-    
+
     // Restore process state
     restore_process_state(next);
-    
+
     // Switch stack pointer
     switch_stack(prev, next);
 }
@@ -250,7 +250,7 @@ static int copy_thread(unsigned long clone_flags, unsigned long stack_start,
                       unsigned long tls)
 {
     struct pt_regs *childregs = task_pt_regs(p);
-    
+
     if (unlikely(p->flags & PF_KTHREAD)) {
         // Kernel thread
         memset(childregs, 0, sizeof(struct pt_regs));
@@ -260,7 +260,7 @@ static int copy_thread(unsigned long clone_flags, unsigned long stack_start,
         childregs->regs[1] = stack_size;
         return 0;
     }
-    
+
     // User thread
     *childregs = *current_pt_regs();
     childregs->regs[0] = 0;
@@ -297,7 +297,7 @@ static int copy_thread(unsigned long clone_flags, unsigned long stack_start,
     childregs->regs[31] = 0;
     childregs->sp = stack_start;
     childregs->pc = (unsigned long)ret_from_fork;
-    
+
     return 0;
 }
 ```
@@ -345,9 +345,9 @@ static inline void context_switch_timing_end(void)
 {
     // Record end time
     current->context_switch_end = ktime_get_ns();
-    
+
     // Calculate duration
-    current->context_switch_duration = 
+    current->context_switch_duration =
         current->context_switch_end - current->context_switch_start;
 }
 
@@ -369,7 +369,7 @@ static inline void optimize_context_switch(struct task_struct *prev,
         // Same memory context, faster switch
         return;
     }
-    
+
     // Optimize for different memory contexts
     if (prev->mm && next->mm) {
         // Both have memory contexts
@@ -393,13 +393,13 @@ static inline void optimize_cache_context_switch(struct task_struct *prev,
     if (prev->mm != next->mm) {
         flush_tlb_mm(prev->mm);
     }
-    
+
     // Optimize cache usage
     if (prev->mm == next->mm) {
         // Same memory context, preserve cache
         return;
     }
-    
+
     // Different memory contexts, flush cache
     flush_cache_all();
 }
@@ -460,31 +460,31 @@ static inline struct task_struct *__switch_to(struct task_struct *prev,
                                              struct task_struct *next)
 {
     struct task_struct *last;
-    
+
     // Save/restore floating point state
     fpsimd_thread_switch(next);
-    
+
     // Save/restore TLS
     tls_thread_switch(next);
-    
+
     // Save/restore hardware breakpoints
     hw_breakpoint_thread_switch(next);
-    
+
     // Save/restore context ID
     contextidr_thread_switch(next);
-    
+
     // Save/restore entry task
     entry_task_switch(next);
-    
+
     // Save/restore UAO
     uao_thread_switch(next);
-    
+
     // Save/restore pointer authentication
     ptrauth_thread_switch(next);
-    
+
     // Perform architecture-specific switch
     last = cpu_switch_to(prev, next);
-    
+
     return last;
 }
 
@@ -500,7 +500,7 @@ ENTRY(cpu_switch_to)
     stp x27, x28, [x8], #16
     stp x29, x9, [x8], #16
     str lr, [x8]
-    
+
     add x8, x1, x10
     ldp x19, x20, [x8], #16
     ldp x21, x22, [x8], #16
@@ -524,7 +524,7 @@ static inline void switch_mm_irqs_off(struct mm_struct *prev,
         if (system_supports_cnp())
             cnp_set_ttbr1(next->pgd);
     }
-    
+
     if (system_supports_cnp())
         cnp_set_ttbr0(tsk->mm->pgd);
 }

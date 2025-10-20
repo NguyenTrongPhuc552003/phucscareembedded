@@ -36,13 +36,13 @@ Master the specific kernel setup and configuration for the Rock 5B+ ARM64 single
 / {
     compatible = "radxa,rock-5b-plus";
     model = "Radxa ROCK 5B+";
-    
+
     // Memory configuration
     memory@0 {
         device_type = "memory";
         reg = <0x0 0x0 0x0 0x80000000>; // 2GB RAM
     };
-    
+
     // CPU configuration
     cpus {
         cpu0: cpu@0 {
@@ -53,7 +53,7 @@ Master the specific kernel setup and configuration for the Rock 5B+ ARM64 single
             cpu-idle-states = <&CPU_SLEEP_0 &CPU_SLEEP_1>;
         };
     };
-    
+
     // Clock configuration
     clocks {
         osc24m: osc24m {
@@ -272,13 +272,13 @@ npu: npu@fdee0000 {
 / {
     compatible = "radxa,rock-5b-plus";
     model = "Radxa ROCK 5B+";
-    
+
     // Memory configuration
     memory@0 {
         device_type = "memory";
         reg = <0x0 0x0 0x0 0x80000000>; // 2GB RAM
     };
-    
+
     // CPU configuration
     cpus {
         cpu0: cpu@0 {
@@ -290,7 +290,7 @@ npu: npu@fdee0000 {
         };
         // ... more CPUs
     };
-    
+
     // Clock configuration
     clocks {
         osc24m: osc24m {
@@ -300,7 +300,7 @@ npu: npu@fdee0000 {
             #clock-cells = <0>;
         };
     };
-    
+
     // UART configuration
     uart0: serial@fdd50000 {
         compatible = "rockchip,rk3588-uart", "snps,dw-apb-uart";
@@ -310,7 +310,7 @@ npu: npu@fdee0000 {
         clock-names = "baudclk", "apb_pclk";
         status = "okay";
     };
-    
+
     // GPIO configuration
     gpio0: gpio@fdd60000 {
         compatible = "rockchip,gpio-bank";
@@ -322,7 +322,7 @@ npu: npu@fdee0000 {
         interrupt-controller;
         #interrupt-cells = <2>;
     };
-    
+
     // I2C configuration
     i2c0: i2c@fdd40000 {
         compatible = "rockchip,rk3588-i2c", "rockchip,rk3399-i2c";
@@ -336,7 +336,7 @@ npu: npu@fdee0000 {
         #size-cells = <0>;
         status = "okay";
     };
-    
+
     // SPI configuration
     spi0: spi@feb00000 {
         compatible = "rockchip,rk3588-spi", "rockchip,rk3066-spi";

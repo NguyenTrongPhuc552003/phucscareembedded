@@ -111,7 +111,7 @@ static inline pte_t pte_mkexec(pte_t pte)
 struct vm_area_struct *vma_alloc(struct mm_struct *mm)
 {
     struct vm_area_struct *vma;
-    
+
     vma = kmem_cache_alloc(vm_area_cachep, GFP_KERNEL);
     if (vma) {
         vma->vm_mm = mm;
@@ -121,7 +121,7 @@ struct vm_area_struct *vma_alloc(struct mm_struct *mm)
         vma->vm_private_data = NULL;
         vma->vm_flags = 0;
     }
-    
+
     return vma;
 }
 
@@ -130,11 +130,11 @@ int insert_vm_struct(struct mm_struct *mm, struct vm_area_struct *vma)
 {
     struct vm_area_struct *prev;
     struct rb_node **rb_link, *rb_parent;
-    
+
     if (find_vma_links(mm, vma->vm_start, vma->vm_end,
                        &prev, &rb_link, &rb_parent))
         return -ENOMEM;
-    
+
     vma_link(mm, vma, prev, rb_link, rb_parent);
     return 0;
 }
@@ -144,14 +144,14 @@ struct vm_area_struct *find_vma(struct mm_struct *mm, unsigned long addr)
 {
     struct vm_area_struct *vma = NULL;
     struct rb_node *rb_node;
-    
+
     if (mm) {
         rb_node = mm->mm_rb.rb_node;
         while (rb_node) {
             struct vm_area_struct *tmp;
-            
+
             tmp = rb_entry(rb_node, struct vm_area_struct, vm_rb);
-            
+
             if (tmp->vm_end > addr) {
                 vma = tmp;
                 if (tmp->vm_start <= addr)
@@ -161,7 +161,7 @@ struct vm_area_struct *find_vma(struct mm_struct *mm, unsigned long addr)
                 rb_node = rb_node->rb_right;
         }
     }
-    
+
     return vma;
 }
 ```

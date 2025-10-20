@@ -116,11 +116,11 @@ ENDPROC(el0_sync)
 asmlinkage long el0_sync_handler(struct pt_regs *regs)
 {
     unsigned int esr = read_sysreg(esr_el1);
-    
+
     if (esr_is_svc(esr)) {
         return el0_svc(regs);
     }
-    
+
     return 0;
 }
 
@@ -129,12 +129,12 @@ asmlinkage long el0_svc(struct pt_regs *regs)
 {
     long ret = 0;
     unsigned int syscallno = regs->syscallno;
-    
+
     if (syscallno >= __NR_syscalls)
         return -ENOSYS;
-    
+
     ret = sys_call_table[syscallno](regs);
-    
+
     return ret;
 }
 ```
@@ -175,12 +175,12 @@ asmlinkage long el0_svc(struct pt_regs *regs)
 asmlinkage long sys_open(const char __user *filename, int flags, umode_t mode)
 {
     long ret;
-    
+
     if (force_o_largefile())
         flags |= O_LARGEFILE;
-    
+
     ret = do_sys_open(AT_FDCWD, filename, flags, mode);
-    
+
     return ret;
 }
 
@@ -190,14 +190,14 @@ static long do_sys_open(int dfd, const char __user *filename, int flags, umode_t
     struct open_flags op;
     int lookup = build_open_flags(flags, mode, &op);
     struct filename *tmp;
-    
+
     if (lookup)
         return lookup;
-    
+
     tmp = getname(filename);
     if (IS_ERR(tmp))
         return PTR_ERR(tmp);
-    
+
     return do_filp_open(dfd, tmp, &op);
 }
 
@@ -211,7 +211,7 @@ int main() {
         perror("open");
         return 1;
     }
-    
+
     close(fd);
     return 0;
 }
@@ -290,7 +290,7 @@ asmlinkage long sys_read(unsigned int fd, char __user *buf, size_t count)
 {
     struct fd f;
     ssize_t ret = -EBADF;
-    
+
     f = fdget_pos(fd);
     if (f.file) {
         loff_t pos = file_pos_read(f.file);
@@ -299,7 +299,7 @@ asmlinkage long sys_read(unsigned int fd, char __user *buf, size_t count)
             file_pos_write(f.file, pos);
         fdput_pos(f);
     }
-    
+
     return ret;
 }
 
@@ -314,7 +314,7 @@ int main() {
         printf("Error code: %d\n", errno);
         return 1;
     }
-    
+
     close(fd);
     return 0;
 }
@@ -379,11 +379,11 @@ END(vectors)
 asmlinkage long el0_sync_handler(struct pt_regs *regs)
 {
     unsigned int esr = read_sysreg(esr_el1);
-    
+
     if (esr_is_svc(esr)) {
         return el0_svc(regs);
     }
-    
+
     return 0;
 }
 
@@ -392,12 +392,12 @@ asmlinkage long el0_svc(struct pt_regs *regs)
 {
     long ret = 0;
     unsigned int syscallno = regs->syscallno;
-    
+
     if (syscallno >= __NR_syscalls)
         return -ENOSYS;
-    
+
     ret = sys_call_table[syscallno](regs);
-    
+
     return ret;
 }
 

@@ -35,13 +35,13 @@ Master the Linux kernel boot process from power-on to a running system, understa
 void u_boot_main(void) {
     // Initialize hardware
     hardware_init();
-    
+
     // Load device tree
     load_device_tree();
-    
+
     // Load kernel image
     load_kernel_image();
-    
+
     // Jump to kernel
     jump_to_kernel();
 }
@@ -53,22 +53,22 @@ asmlinkage __visible void __init start_kernel(void) {
 
     // Architecture-specific setup
     setup_arch(&command_line);
-    
+
     // Initialize memory management
     mm_init();
-    
+
     // Initialize process management
     sched_init();
-    
+
     // Initialize interrupt handling
     init_IRQ();
-    
+
     // Initialize timers
     time_init();
-    
+
     // Initialize file systems
     vfs_caches_init();
-    
+
     // Start rest of kernel
     rest_init();
 }
@@ -127,13 +127,13 @@ struct fdt_header {
 void setup_arch(char **cmdline_p) {
     // Parse command line
     parse_cmdline(cmdline_p);
-    
+
     // Parse device tree
     parse_device_tree();
-    
+
     // Initialize memory
     setup_memory();
-    
+
     // Initialize CPU
     setup_cpu();
 }
@@ -176,22 +176,22 @@ asmlinkage __visible void __init start_kernel(void) {
 
     // 1. Architecture-specific setup
     setup_arch(&command_line);
-    
+
     // 2. Memory management initialization
     mm_init();
-    
+
     // 3. Process management initialization
     sched_init();
-    
+
     // 4. Interrupt handling initialization
     init_IRQ();
-    
+
     // 5. Timer subsystem initialization
     time_init();
-    
+
     // 6. Virtual file system initialization
     vfs_caches_init();
-    
+
     // 7. Device driver initialization
     rest_init();
 }
@@ -200,13 +200,13 @@ asmlinkage __visible void __init start_kernel(void) {
 void __init setup_arch(char **cmdline_p) {
     // Parse command line
     parse_cmdline(cmdline_p);
-    
+
     // Parse device tree
     parse_device_tree();
-    
+
     // Setup memory
     setup_memory();
-    
+
     // Initialize CPU
     setup_cpu();
 }
@@ -214,10 +214,10 @@ void __init setup_arch(char **cmdline_p) {
 void __init mm_init(void) {
     // Initialize page allocator
     page_allocator_init();
-    
+
     // Initialize slab allocator
     slab_init();
-    
+
     // Initialize memory zones
     zone_init();
 }
@@ -229,7 +229,7 @@ void __init sched_init(void) {
         raw_spin_lock_init(&rq->lock);
         rq->nr_running = 0;
     }
-    
+
     // Initialize scheduler classes
     init_sched_fair_class();
     init_rt_class();
@@ -295,10 +295,10 @@ struct property {
 void __init parse_device_tree(void) {
     // Find device tree in memory
     struct fdt_header *fdt = find_device_tree();
-    
+
     // Parse device tree
     unflatten_device_tree();
-    
+
     // Initialize device tree
     of_alias_scan();
 }
@@ -307,12 +307,12 @@ void __init parse_device_tree(void) {
 / {
     compatible = "radxa,rock-5b-plus";
     model = "Radxa ROCK 5B+";
-    
+
     memory@0 {
         device_type = "memory";
         reg = <0x0 0x0 0x0 0x80000000>; // 2GB RAM
     };
-    
+
     cpus {
         cpu0: cpu@0 {
             compatible = "arm,cortex-a76";
@@ -321,7 +321,7 @@ void __init parse_device_tree(void) {
             enable-method = "psci";
         };
     };
-    
+
     uart0: serial@fdd50000 {
         compatible = "rockchip,rk3588-uart", "snps,dw-apb-uart";
         reg = <0x0 0xfdd50000 0x0 0x100>;
@@ -398,10 +398,10 @@ struct device {
 static int __init driver_init(void) {
     // Register driver
     driver_register(&my_driver);
-    
+
     // Probe devices
     bus_for_each_dev(&my_bus, NULL, NULL, my_probe);
-    
+
     return 0;
 }
 
@@ -409,13 +409,13 @@ static int __init driver_init(void) {
 static int my_probe(struct device *dev) {
     // Initialize device
     device_init(dev);
-    
+
     // Allocate resources
     allocate_resources(dev);
-    
+
     // Register device
     device_add(dev);
-    
+
     return 0;
 }
 ```
@@ -458,7 +458,7 @@ ENTRY(_start)
     mov x29, #0
     mov x30, #0
     mov sp, x0
-    
+
     // Jump to kernel
     bl start_kernel
 
@@ -466,12 +466,12 @@ ENTRY(_start)
 / {
     compatible = "radxa,rock-5b-plus";
     model = "Radxa ROCK 5B+";
-    
+
     memory@0 {
         device_type = "memory";
         reg = <0x0 0x0 0x0 0x80000000>; // 2GB RAM
     };
-    
+
     cpus {
         cpu0: cpu@0 {
             compatible = "arm,cortex-a76";
@@ -487,7 +487,7 @@ ENTRY(_start)
         };
         // ... more CPUs
     };
-    
+
     // UART for console
     uart0: serial@fdd50000 {
         compatible = "rockchip,rk3588-uart", "snps,dw-apb-uart";
@@ -497,7 +497,7 @@ ENTRY(_start)
         clock-names = "baudclk", "apb_pclk";
         status = "okay";
     };
-    
+
     // GPIO controller
     gpio0: gpio@fdd60000 {
         compatible = "rockchip,gpio-bank";

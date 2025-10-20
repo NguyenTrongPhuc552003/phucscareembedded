@@ -134,7 +134,7 @@ static void handle_irq(struct irq_desc *desc)
 {
     struct irqaction *action;
     irqreturn_t res;
-    
+
     action = desc->action;
     if (action) {
         res = action->handler(desc->irq_data.irq, action->dev_id);
@@ -208,14 +208,14 @@ static void bottom_half_handler(struct work_struct *work)
 static int register_interrupt_handler(void)
 {
     int ret;
-    
+
     ret = request_irq(IRQ_NUMBER, isr_handler, IRQF_SHARED,
                      "my_device", &my_device);
     if (ret) {
         printk(KERN_ERR "Failed to register interrupt\n");
         return ret;
     }
-    
+
     return 0;
 }
 ```
@@ -293,15 +293,15 @@ asmlinkage void el1_irq_handler(struct pt_regs *regs)
 static void gic_handle_irq(struct pt_regs *regs)
 {
     u32 irqnr;
-    
+
     do {
         irqnr = gic_read_iar();
-        
+
         if (likely(irqnr < 1020)) {
             handle_domain_irq(gic_data.domain, irqnr, regs);
             continue;
         }
-        
+
         if (irqnr != GIC_INTID_SPURIOUS)
             pr_err("Unexpected interrupt: %d\n", irqnr);
     } while (irqnr != GIC_INTID_SPURIOUS);
