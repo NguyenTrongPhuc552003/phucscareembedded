@@ -201,7 +201,7 @@ bool capable_wrt_inode_uidgid(const struct inode *inode, int cap)
 
 - **CAP_CHOWN** - Change file ownership
 - **CAP_DAC_OVERRIDE** - Bypass file permission checks
-- **CAP_NET_BIND_SERVICE** - Bind to privileged ports (<1024)
+- **CAP_NET_BIND_SERVICE** - Bind to privileged ports (\< 1024)
 - **CAP_SYS_ADMIN** - Various administrative operations
 - **CAP_SYS_TIME** - Set system clock
 - **File capabilities** - Capabilities stored in file extended attributes
