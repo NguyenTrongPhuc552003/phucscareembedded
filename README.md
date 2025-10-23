@@ -1,10 +1,10 @@
 # Phuc's Embedded Development Guide
 
-A comprehensive documentation website for Linux kernel development, Rust programming, and embedded Linux development, built with Docusaurus and deployed on GitHub Pages.
+A comprehensive documentation website for computer architecture, Linux kernel development, Rust programming, and embedded Linux development, built with Docusaurus and deployed on GitHub Pages.
 
 ## 🌟 Features
 
-- **Comprehensive Documentation**: Complete guides for Linux kernel development, Rust programming, and embedded Linux development
+- **Comprehensive Documentation**: Complete guides for computer architecture, Linux kernel development, Rust programming, and embedded Linux development
 - **Multi-language Support**: Available in English and Vietnamese
 - **Interactive Search**: Powered by Algolia DocSearch for fast content discovery
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
@@ -17,6 +17,10 @@ A comprehensive documentation website for Linux kernel development, Rust program
 Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareembedded/](https://nguyentrongphuc552003.github.io/phucscareembedded/)
 
 ## 📚 Documentation Topics
+
+### Computer Architecture
+
+Master computer architecture from digital logic to modern SoC design, with focus on ARM64 architecture and Rock 5B+ platform. Covers ISA, processor design, memory hierarchy, multi-core systems, I/O, performance optimization, and hardware accelerators (GPU, NPU).
 
 ### Linux Kernel Development
 
@@ -102,6 +106,7 @@ yarn deploy
 phucscareembedded/
 ├── docs/                    # Documentation content
 │   ├── getting-started/     # Introduction and setup guides
+│   ├── computer-architecture/ # Computer architecture (8 phases)
 │   ├── linux-kernel/        # Linux kernel development (8 phases)
 │   ├── rust-programming/    # Rust programming guide (7 phases)
 │   └── embedded-linux/      # Embedded Linux development (8 phases)
@@ -117,10 +122,11 @@ phucscareembedded/
 
 ## 🎯 Target Audience
 
+- **Computer Architecture Students**: Learning how computers work from digital logic to modern SoCs
 - **Linux Kernel Developers**: Developers working on device drivers, kernel modules, real-time systems, and kernel development
 - **Embedded Systems Engineers**: Professionals working with ARM-based systems and embedded Linux
 - **Rust Developers**: Learning embedded Rust programming and systems development
-- **Students**: Learning embedded systems, kernel development, and Rust programming
+- **Students**: Learning computer architecture, embedded systems, kernel development, and Rust programming
 - **Hobbyists**: DIY enthusiasts working with single-board computers like Rock 5B+
 
 ## 📖 Content Categories
@@ -128,11 +134,13 @@ phucscareembedded/
 ### Technical Tutorials
 
 - Step-by-step guides for embedded development
+- Computer architecture from digital logic to SoC design
 - Linux kernel development from fundamentals to advanced topics
 - Rust programming from basics to advanced embedded systems
 - Code examples and best practices
 - Hardware interfacing techniques
 - Performance optimization strategies
+- Architecture-aware programming
 
 ### Project Showcases
 

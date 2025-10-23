@@ -1,0 +1,8 @@
+{
+	"label": "GPU Architecture",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand GPU architecture, graphics pipeline, ARM Mali-G610, and GPU programming models."
+	}
+}

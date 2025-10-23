@@ -1,0 +1,8 @@
+{
+	"label": "Storage and Network I/O",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn storage hierarchy, SSD architecture, network I/O, and performance optimization."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "Pipelining Fundamentals",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Master instruction pipelining, hazards, forwarding, and ARM Cortex-A76 pipeline stages."
+	}
+}

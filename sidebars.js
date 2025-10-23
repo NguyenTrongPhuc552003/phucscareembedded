@@ -30,6 +30,284 @@ const sidebars = {
 		},
 		{
 			type: 'category',
+			label: 'Computer Architecture',
+			items: [
+				{
+					type: 'category',
+					label: '01. Digital Logic and Computer Organization',
+					items: [
+						{
+							type: 'category',
+							label: 'Boolean Algebra and Logic Gates',
+							items: [
+								'computer-architecture/digital-logic-computer-organization/boolean-algebra-logic-gates/boolean-algebra-fundamentals',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Combinational Logic Circuits',
+							items: [
+								'computer-architecture/digital-logic-computer-organization/combinational-logic/combinational-circuits',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Sequential Logic and Memory Elements',
+							items: [
+								'computer-architecture/digital-logic-computer-organization/sequential-logic-memory/latches-flipflops',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Computer Organization Fundamentals',
+							items: [
+								'computer-architecture/digital-logic-computer-organization/computer-organization-fundamentals/von-neumann-architecture',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '02. Instruction Set Architecture (ISA)',
+					items: [
+						{
+							type: 'category',
+							label: 'ARM64 ISA Fundamentals',
+							items: [
+								'computer-architecture/instruction-set-architecture/arm64-isa-fundamentals/arm64-overview',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Instruction Formats and Addressing Modes',
+							items: [
+								'computer-architecture/instruction-set-architecture/instruction-formats-addressing/instruction-encoding',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Control Flow and Branching',
+							items: [
+								'computer-architecture/instruction-set-architecture/control-flow-branching/branch-instructions',
+							],
+						},
+						{
+							type: 'category',
+							label: 'SIMD and Advanced Instructions',
+							items: [
+								'computer-architecture/instruction-set-architecture/simd-advanced-instructions/neon-simd',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '03. Processor Design and Microarchitecture',
+					items: [
+						{
+							type: 'category',
+							label: 'Single-Cycle and Multi-Cycle Processors',
+							items: [
+								'computer-architecture/processor-design-microarchitecture/single-multi-cycle-processors/processor-design',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Pipelining Fundamentals',
+							items: [
+								'computer-architecture/processor-design-microarchitecture/pipelining-fundamentals/pipelining-basics',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Branch Prediction and Speculation',
+							items: [
+								'computer-architecture/processor-design-microarchitecture/branch-prediction-speculation/branch-prediction',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Superscalar and Out-of-Order Execution',
+							items: [
+								'computer-architecture/processor-design-microarchitecture/superscalar-out-of-order/superscalar-design',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '04. Memory Hierarchy and Cache Systems',
+					items: [
+						{
+							type: 'category',
+							label: 'Memory Hierarchy Fundamentals',
+							items: [
+								'computer-architecture/memory-hierarchy-cache-systems/memory-hierarchy-fundamentals/memory-hierarchy',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Cache Organization and Design',
+							items: [
+								'computer-architecture/memory-hierarchy-cache-systems/cache-organization-design/cache-design',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Multi-Level Caches and Cache Coherence',
+							items: [
+								'computer-architecture/memory-hierarchy-cache-systems/multi-level-cache-coherence/cache-coherence',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Virtual Memory and TLBs',
+							items: [
+								'computer-architecture/memory-hierarchy-cache-systems/virtual-memory-tlbs/virtual-memory',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '05. Parallel Processing and Multi-core Architecture',
+					items: [
+						{
+							type: 'category',
+							label: 'Parallel Processing Fundamentals',
+							items: [
+								'computer-architecture/parallel-processing-multi-core/parallel-processing-fundamentals/parallel-basics',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Multi-Core Architecture',
+							items: [
+								'computer-architecture/parallel-processing-multi-core/multi-core-architecture/multi-core-design',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Cache Coherence and Memory Consistency',
+							items: [
+								'computer-architecture/parallel-processing-multi-core/cache-coherence-consistency/coherence-protocols',
+							],
+						},
+						{
+							type: 'category',
+							label: 'SIMD and Vector Processing',
+							items: [
+								'computer-architecture/parallel-processing-multi-core/simd-vector-processing/simd-programming',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '06. I/O Systems and Interconnects',
+					items: [
+						{
+							type: 'category',
+							label: 'I/O Fundamentals and Interfaces',
+							items: [
+								'computer-architecture/io-systems-interconnects/io-fundamentals-interfaces/io-systems',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Bus Architectures and Protocols',
+							items: [
+								'computer-architecture/io-systems-interconnects/bus-architectures-protocols/amba-protocols',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Peripheral Interfaces',
+							items: [
+								'computer-architecture/io-systems-interconnects/peripheral-interfaces/uart-spi-i2c',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Storage and Network I/O',
+							items: [
+								'computer-architecture/io-systems-interconnects/storage-network-io/storage-systems',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '07. Performance Optimization and Architecture-Aware Programming',
+					items: [
+						{
+							type: 'category',
+							label: 'Performance Measurement and Profiling',
+							items: [
+								'computer-architecture/performance-optimization/performance-measurement-profiling/profiling-tools',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Cache Optimization Techniques',
+							items: [
+								'computer-architecture/performance-optimization/cache-optimization/cache-optimization',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Instruction-Level Optimization',
+							items: [
+								'computer-architecture/performance-optimization/instruction-level-optimization/compiler-optimization',
+							],
+						},
+						{
+							type: 'category',
+							label: 'System-Level Optimization',
+							items: [
+								'computer-architecture/performance-optimization/system-level-optimization/system-optimization',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '08. Advanced Topics and SoC Design',
+					items: [
+						{
+							type: 'category',
+							label: 'GPU Architecture',
+							items: [
+								'computer-architecture/advanced-topics-soc-design/gpu-architecture/gpu-fundamentals',
+							],
+						},
+						{
+							type: 'category',
+							label: 'NPU and AI Acceleration',
+							items: [
+								'computer-architecture/advanced-topics-soc-design/npu-ai-acceleration/npu-architecture',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Power Management and Energy Efficiency',
+							items: [
+								'computer-architecture/advanced-topics-soc-design/power-management-energy-efficiency/power-management',
+							],
+						},
+						{
+							type: 'category',
+							label: 'SoC Design and Capstone Project',
+							items: [
+								'computer-architecture/advanced-topics-soc-design/soc-design-capstone-project/soc-design',
+							],
+						},
+					],
+				},
+			],
+		},
+		{
+			type: 'category',
 			label: 'Embedded Linux',
 			items: [
 				{

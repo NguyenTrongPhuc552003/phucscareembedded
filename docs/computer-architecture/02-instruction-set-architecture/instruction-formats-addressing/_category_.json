@@ -1,0 +1,8 @@
+{
+	"label": "Instruction Formats and Addressing Modes",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn ARM64 instruction encoding, addressing modes, and data processing instructions."
+	}
+}

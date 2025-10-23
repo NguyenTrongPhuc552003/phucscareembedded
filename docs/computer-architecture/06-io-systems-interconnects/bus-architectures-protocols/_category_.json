@@ -1,0 +1,8 @@
+{
+	"label": "Bus Architectures and Protocols",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Master ARM AMBA protocols (AXI, AHB, APB) and interconnect fabric design."
+	}
+}

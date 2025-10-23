@@ -4,11 +4,22 @@ sidebar_position: 1
 
 # Introduction to Embedded Development
 
-Welcome to Phuc's comprehensive guide for Linux kernel development, Rust programming, and embedded Linux development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
+Welcome to Phuc's comprehensive guide for computer architecture, Linux kernel development, Rust programming, and embedded Linux development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
 
 ## What You'll Learn
 
 This comprehensive guide provides structured learning paths across multiple domains:
+
+### Computer Architecture
+
+- **Phase 1 - Digital Logic and Computer Organization**: Master Boolean algebra, logic gates, combinational/sequential circuits, memory elements, and basic computer organization from von Neumann to ARM64 architecture
+- **Phase 2 - Instruction Set Architecture (ISA)**: Learn ARM64 ISA fundamentals, instruction formats, addressing modes, control flow, NEON SIMD, and advanced assembly programming on Rock 5B+
+- **Phase 3 - Processor Design and Microarchitecture**: Understand single-cycle/multi-cycle processors, pipelining, hazards, branch prediction, superscalar execution, and Cortex-A76/A55 microarchitecture
+- **Phase 4 - Memory Hierarchy and Cache Systems**: Master memory hierarchy, cache organization, multi-level caches, cache coherence (MESI), virtual memory, TLBs, and ARM64 MMU on Rock 5B+
+- **Phase 5 - Parallel Processing and Multi-core Architecture**: Learn parallel processing fundamentals, multi-core design, big.LITTLE architecture, cache coherence protocols, memory consistency, and SIMD/vector processing
+- **Phase 6 - I/O Systems and Interconnects**: Understand I/O fundamentals, interrupt handling, DMA, AMBA protocols (AXI/AHB/APB), peripheral interfaces (UART/SPI/I2C), and RK3588 I/O subsystems
+- **Phase 7 - Performance Optimization**: Master performance measurement, profiling tools, cache optimization, instruction-level optimization, multi-threading, NUMA optimization, and power/thermal management
+- **Phase 8 - Advanced Topics and SoC Design**: Explore GPU architecture (Mali-G610), NPU and AI acceleration, power management, energy efficiency, and complete SoC design with capstone projects
 
 ### Linux Kernel Development
 

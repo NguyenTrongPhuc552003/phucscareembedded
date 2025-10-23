@@ -1,0 +1,8 @@
+{
+	"label": "I/O Fundamentals and Interfaces",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn I/O system organization, interrupt handling, DMA, and performance metrics."
+	}
+}

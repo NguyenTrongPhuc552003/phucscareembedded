@@ -1,0 +1,8 @@
+{
+	"label": "SIMD and Advanced Instructions",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Explore ARM64 NEON SIMD, floating-point operations, and cryptographic extensions."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "Sequential Logic and Memory Elements",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn latches, flip-flops, registers, counters, and memory fundamentals for state storage in digital systems."
+	}
+}

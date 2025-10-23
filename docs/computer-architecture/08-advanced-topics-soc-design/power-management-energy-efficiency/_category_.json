@@ -1,0 +1,8 @@
+{
+	"label": "Power Management and Energy Efficiency",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Master power consumption analysis, DVFS, power gating, and energy-efficient computing."
+	}
+}

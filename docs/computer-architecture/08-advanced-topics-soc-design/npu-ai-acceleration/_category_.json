@@ -1,0 +1,8 @@
+{
+	"label": "NPU and AI Acceleration",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn NPU architecture, AI workload acceleration, and RK3588 NPU programming."
+	}
+}

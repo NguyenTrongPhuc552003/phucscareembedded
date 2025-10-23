@@ -1,0 +1,9 @@
+{
+	"label": "03. Processor Design and Microarchitecture",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand processor design, pipelining, hazards, branch prediction, superscalar execution, and Cortex-A76/A55 microarchitecture."
+	}
+}
+

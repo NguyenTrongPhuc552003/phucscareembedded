@@ -1,0 +1,8 @@
+{
+	"label": "Parallel Processing Fundamentals",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn types of parallelism, parallel programming models, and Amdahl's Law."
+	}
+}

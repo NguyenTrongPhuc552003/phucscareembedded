@@ -1,0 +1,8 @@
+{
+	"label": "Superscalar and Out-of-Order Execution",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand superscalar architecture, out-of-order execution, and register renaming."
+	}
+}

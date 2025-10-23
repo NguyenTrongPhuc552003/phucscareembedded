@@ -1,0 +1,8 @@
+{
+	"label": "Performance Measurement and Profiling",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Master performance metrics, hardware counters, profiling tools, and analysis techniques."
+	}
+}
