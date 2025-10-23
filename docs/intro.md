@@ -4,18 +4,32 @@ sidebar_position: 1
 
 # Welcome to Embedded Development
 
-Welcome to Phuc's comprehensive guide for embedded Linux, Linux kernel development, and GPU development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
+Welcome to Phuc's comprehensive guide for Linux kernel development, Rust programming, and embedded Linux development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
 
 ## What You'll Learn
 
 This guide covers:
 
-- **Linux Kernel Development**: Master kernel architecture, process management, memory management, device drivers, real-time systems, and advanced kernel topics
-- **Embedded Linux Development**: Kernel development, device drivers, and system programming
-- **GPU Programming**: Mali GPU development, OpenCL, and Vulkan programming
-- **Rust Programming**: Complete Rust programming guide from basics to embedded systems
-- **Yocto Project**: Building custom Linux distributions
-- **Rock 5B+ Setup**: Hardware configuration and development environment
+### Linux Kernel Development
+
+- **Kernel Fundamentals**: Architecture, process/memory management, system calls, and ARM64 specifics
+- **Device Drivers**: Character devices, platform drivers, DMA, interrupts, and power management
+- **Real-Time Systems**: PREEMPT_RT kernel, scheduling policies, latency optimization, and real-time applications
+- **Advanced Topics**: Synchronization, security hardening, performance optimization, and kernel contribution
+
+### Rust Programming
+
+- **Core Concepts**: Ownership, borrowing, lifetimes, and memory safety without garbage collection
+- **Systems Programming**: Unsafe Rust, FFI, concurrency primitives, and async programming
+- **Embedded Development**: no_std programming, bare-metal development, and hardware abstraction layers
+- **Testing & Optimization**: Unit testing, profiling, benchmarking, and production applications
+
+### Embedded Linux Development
+
+- **System Fundamentals**: Linux architecture, cross-compilation, device drivers, and kernel development
+- **Build Systems**: U-Boot bootloader, Buildroot, Yocto Project, and custom image creation
+- **Networking & Protocols**: Socket programming, I2C/SPI/UART, CAN bus, and industrial protocols
+- **Production Deployment**: Real-time optimization, security hardening, debugging, and case studies
 
 ## Prerequisites
 

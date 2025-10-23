@@ -1,11 +1,11 @@
 # Phuc's Embedded Development Guide
 
-A comprehensive documentation website for embedded Linux, GPU development, and Rust programming, built with Docusaurus and deployed on GitHub Pages.
+A comprehensive documentation website for Linux kernel development, Rust programming, and embedded Linux development, built with Docusaurus and deployed on GitHub Pages.
 
 ## 🌟 Features
 
-- **Comprehensive Documentation**: Complete guides for embedded Linux development, Linux kernel development, Zephyr OS, GPU programming, and Rust programming
-- **Multi-language Support**: Available in 8 languages (English, Vietnamese, Chinese, Spanish, French, German, Japanese, Korean)
+- **Comprehensive Documentation**: Complete guides for Linux kernel development, Rust programming, and embedded Linux development
+- **Multi-language Support**: Available in English and Vietnamese
 - **Interactive Search**: Powered by Algolia DocSearch for fast content discovery
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Dark/Light Mode**: Toggle between themes with persistent user preferences
@@ -20,64 +20,15 @@ Visit the live website at: [https://nguyentrongphuc552003.github.io/phucscareemb
 
 ### Linux Kernel Development
 
-- **Phase 1 - Linux Kernel Fundamentals**: Master kernel architecture, process management, memory management, and system calls with Rock 5B+ focus.
-- **Phase 2 - Kernel Development Environment**: Set up cross-compilation toolchains, kernel build systems, debugging tools, and testing frameworks for ARM64 development.
-- **Phase 3 - Kernel Modules and Device Drivers**: Develop loadable kernel modules, character devices, platform drivers, and advanced driver techniques.
-- **Phase 4 - Real-Time Linux Kernel**: Master PREEMPT_RT, real-time scheduling, performance analysis, and real-time applications on Rock 5B+.
-- **Phase 5 - Advanced Memory Management**: Learn virtual memory management, allocation strategies, DMA operations, and memory debugging techniques.
-- **Phase 6 - Kernel Synchronization and Concurrency**: Master synchronization primitives, lock-free programming, workqueues, and deadlock prevention.
-- **Phase 7 - Kernel Security and Hardening**: Implement security fundamentals, frameworks, hardening techniques, and security monitoring.
-- **Phase 8 - Advanced Kernel Topics and Projects**: Performance optimization, power management, kernel contribution, and capstone projects on Rock 5B+.
+Comprehensive Linux kernel development from fundamentals to advanced topics, including real-time systems (PREEMPT_RT), device drivers, memory management, synchronization, security hardening, and production deployment on Rock 5B+ ARM64 platform.
 
 ### Rust Programming
 
-- **Rust Basics**: Variables, functions, ownership, and control flow
-- **Rust Fundamentals**: Structs, enums, pattern matching, and error handling
-- **Advanced Concepts**: Generics, traits, lifetimes, and smart pointers
-- **Embedded Rust Development**: no_std programming, hardware abstraction layers, interrupts, and communication protocols
+Complete Rust programming guide from basics to embedded systems development, covering ownership, borrowing, lifetimes, concurrency, unsafe code, FFI, performance optimization, and bare-metal programming for ARM-based platforms.
 
 ### Embedded Linux Development
 
-- **Phase 1 - Introduction to Embedded Linux**: Comprehensive overview of embedded systems, Linux fundamentals, development environment setup, and cross-compilation toolchains for ARM-based platforms.
-- **Phase 2 - Linux Kernel and Device Drivers**: Deep dive into kernel architecture, device driver development, interrupt handling, memory management, and advanced driver programming techniques.
-- **Phase 3 - Bootloaders and Build Systems**: Master U-Boot configuration, Buildroot and Yocto Project build systems, secure boot implementation, and advanced build optimization techniques.
-- **Phase 4 - Filesystems and Storage**: Explore filesystem fundamentals, flash memory management, MTD subsystem, JFFS2/UBIFS, block devices, and advanced storage optimization strategies.
-- **Phase 5 - Networking and Communication Protocols**: Learn network configuration, socket programming, I2C/SPI/UART protocols, CAN bus, Modbus, and industrial communication standards.
-- **Phase 6 - Real-Time Systems and Performance Optimization**: Implement real-time Linux with PREEMPT_RT, system profiling, performance tuning, power management, and advanced optimization techniques.
-- **Phase 7 - Security and Debugging**: Master embedded security fundamentals, secure boot, cryptographic key management, system hardening, debugging tools, and comprehensive monitoring systems.
-- **Phase 8 - Project Development and Case Studies**: Complete capstone project planning, implementation methodologies, industry case studies analysis, and professional portfolio development.
-
-### Zephyr OS Development
-
-- **Phase 1 - Introduction to Zephyr OS**: Zephyr RTOS fundamentals, embedded systems concepts, and real-time programming principles.
-- **Phase 2 - Zephyr Kernel Architecture**: Kernel components, thread management, memory management, and interrupt handling.
-- **Phase 3 - Zephyr Development Environment**: SDK setup, build system, device tree integration, and testing frameworks.
-- **Phase 4 - Zephyr Application Development**: Application architecture, thread communication, power management, and real-time programming.
-- **Phase 5 - Device Drivers and Hardware Interface**: Driver framework, GPIO, serial communication, and sensor interfaces.
-- **Phase 6 - Advanced Zephyr Topics**: Networking, security, file systems, and multi-core programming.
-- **Phase 7 - Debugging, Profiling, and Performance**: Debugging tools, performance analysis, system optimization, and testing.
-- **Phase 8 - Zephyr Project Development**: Complete embedded project implementation from planning to deployment.
-
-### GPU Development
-
-- **Embedded GPU Ecosystem**: Grasp the architecture and programming paradigms of modern embedded GPUs, with hands-on guides for Mali GPUs and practical use of graphics standards like OpenGL ES and Vulkan.
-- **Parallel Computing with OpenCL**: Learn how to offload compute workloads to GPUs, analyze memory hierarchies, and apply kernel optimization tactics for accelerating embedded applications.
-- **Advanced Vulkan Programming**: Delve into low-level graphics and compute with Vulkan, focusing on maximizing performance, cross-platform compatibility, and efficient resource management.
-- **Sophisticated Memory Management**: Master explicit control over GPU memory, synchronization, and data transfer, essential for high-performance graphics and compute applications in resource-constrained devices.
-
-### Yocto Project
-
-- **Building Tailored Linux Images**: Navigate every step of crafting custom embedded Linux images, understanding metadata, layer structure, and configuration best practices in Yocto.
-- **Recipe and Layer Development**: Develop, extend, and maintain custom recipes and layers—optimizing for modularity, maintainability, and reusability across multiple projects.
-- **SDK and Toolchain Provisioning**: Generate and distribute robust cross-compilation SDKs, empowering seamless application development for target architectures.
-- **Streamlined Cross-Compilation**: Set up, troubleshoot, and optimize toolchains and environments, ensuring reproducible builds and smooth developer workflows.
-
-### Rock 5B+ Development
-
-- **System-Level Hardware Insight**: Get an in-depth look at the Rock 5B+ platform—from board architecture and SoC features to power management and connectivity options.
-- **Operating System Deployment**: Step-by-step guides for selecting, flashing, and debugging embedded operating systems specialized for the Rock 5B+.
-- **Customizing and Using Peripherals**: Interface with on-board peripherals (GPIO, SPI, I2C, etc.), tune system performance, and create robust, real-world hardware integrations.
-- **Diagnostics, Debugging, and Optimization**: Adopt proven strategies for isolating hardware and software faults, optimizing performance, and ensuring system reliability in production deployments.
+End-to-end embedded Linux development covering kernel drivers, bootloaders (U-Boot), build systems (Buildroot, Yocto), filesystems, networking protocols, real-time optimization, security practices, and production deployment.
 
 ## 🛠️ Technology Stack
 
@@ -151,12 +102,9 @@ yarn deploy
 phucscareembedded/
 ├── docs/                    # Documentation content
 │   ├── getting-started/     # Introduction and setup guides
-│   ├── embedded-linux/      # Embedded Linux development
-│   ├── linux-kernel/        # Linux kernel development
-│   ├── zephyr-os/           # Zephyr RTOS development
-│   ├── gpu-development/     # GPU programming guides
-│   ├── rust-programming/    # Rust programming guide
-│   ├── yocto-projects/      # Yocto build system
+│   ├── linux-kernel/        # Linux kernel development (8 phases)
+│   ├── rust-programming/    # Rust programming guide (7 phases)
+│   └── embedded-linux/      # Embedded Linux development (8 phases)
 ├── blog/                    # Blog posts and tutorials
 ├── src/                     # Source code
 │   ├── components/          # Custom React components
@@ -169,13 +117,11 @@ phucscareembedded/
 
 ## 🎯 Target Audience
 
-- **Embedded Systems Engineers**: Professionals working with ARM-based systems
-- **RTOS Developers**: Engineers working with Zephyr RTOS and real-time systems
+- **Linux Kernel Developers**: Developers working on device drivers, kernel modules, real-time systems, and kernel development
+- **Embedded Systems Engineers**: Professionals working with ARM-based systems and embedded Linux
 - **Rust Developers**: Learning embedded Rust programming and systems development
-- **Linux Kernel Developers**: Developers working on device drivers, kernel modules, and kernel development
-- **GPU Programmers**: Developers working with Mali GPUs and OpenCL/Vulkan
-- **Students**: Learning embedded systems and Rust programming
-- **Hobbyists**: DIY enthusiasts working with single-board computers
+- **Students**: Learning embedded systems, kernel development, and Rust programming
+- **Hobbyists**: DIY enthusiasts working with single-board computers like Rock 5B+
 
 ## 📖 Content Categories
 
@@ -258,15 +204,13 @@ This project is licensed under the GNU General Public License v2.0 - see the [LI
 
 ## 🔗 Related Resources
 
-- [Rock 5B+ Official Documentation](https://wiki.radxa.com/Rock5)
-- [The Rust Book](https://doc.rust-lang.org/book/) - Comprehensive Rust programming guide
-- [Embedded Rust Book](https://docs.rust-embedded.org/book/) - Embedded systems with Rust
-- [ARM Mali GPU Programming](https://developer.arm.com/ip-products/graphics-and-multimedia/mali-gpus)
-- [Linux Kernel Documentation](https://www.kernel.org/doc/) - Comprehensive kernel documentation
-- [ARM64 Linux Kernel](https://www.kernel.org/doc/html/latest/arm64/) - ARM64-specific kernel documentation
+- [Linux Kernel Documentation](https://www.kernel.org/doc/) - Official kernel documentation
+- [ARM64 Linux Kernel](https://www.kernel.org/doc/html/latest/arm64/) - ARM64-specific documentation
 - [PREEMPT_RT Documentation](https://www.kernel.org/doc/html/latest/scheduler/) - Real-time Linux documentation
-- [OpenCL Specification](https://www.khronos.org/opencl/)
-- [Yocto Project Documentation](https://docs.yoctoproject.org/)
+- [The Rust Book](https://doc.rust-lang.org/book/) - Official Rust programming guide
+- [Embedded Rust Book](https://docs.rust-embedded.org/book/) - Embedded systems with Rust
+- [Rock 5B+ Official Documentation](https://wiki.radxa.com/Rock5) - Hardware platform documentation
+- [Yocto Project Documentation](https://docs.yoctoproject.org/) - Build system documentation
 
 ---
 
