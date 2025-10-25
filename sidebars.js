@@ -41,15 +41,21 @@ const sidebars = {
 							label: 'Boolean Algebra and Logic Gates',
 							items: [
 								'computer-architecture/digital-logic-computer-organization/boolean-algebra-logic-gates/boolean-algebra-fundamentals',
+								'computer-architecture/digital-logic-computer-organization/boolean-algebra-logic-gates/logic-gates',
+								'computer-architecture/digital-logic-computer-organization/boolean-algebra-logic-gates/hands-on-exercises',
+								'computer-architecture/digital-logic-computer-organization/boolean-algebra-logic-gates/number-systems',
 							],
 						},
-						{
-							type: 'category',
-							label: 'Combinational Logic Circuits',
-							items: [
-								'computer-architecture/digital-logic-computer-organization/combinational-logic/combinational-circuits',
-							],
-						},
+					{
+						type: 'category',
+						label: 'Combinational Logic Circuits',
+						items: [
+							'computer-architecture/digital-logic-computer-organization/combinational-logic/combinational-circuits',
+							'computer-architecture/digital-logic-computer-organization/combinational-logic/arithmetic-circuits',
+							'computer-architecture/digital-logic-computer-organization/combinational-logic/multiplexers-demultiplexers',
+							'computer-architecture/digital-logic-computer-organization/combinational-logic/encoders-decoders',
+						],
+					},
 						{
 							type: 'category',
 							label: 'Sequential Logic and Memory Elements',
