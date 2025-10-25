@@ -4,18 +4,12 @@ sidebar_position: 1
 
 # Welcome to Embedded Development
 
-Welcome to Phuc's comprehensive guide for computer architecture, Linux kernel development, Rust programming, and embedded Linux development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
+Welcome to Phuc's comprehensive guide for Linux kernel development, Rust programming, and embedded Linux development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
 
 ## What You'll Learn
 
 This guide covers:
 
-### Computer Architecture
-
-- **Hardware Fundamentals**: Digital logic, combinational/sequential circuits, and computer organization
-- **ARM64 ISA**: Instruction set architecture, addressing modes, assembly programming, and SIMD/NEON
-- **Processor Design**: Pipelining, superscalar execution, branch prediction, and Cortex-A76/A55 microarchitecture
-- **System Architecture**: Memory hierarchy, cache optimization, multi-core systems, I/O, GPU/NPU, and performance tuning
 
 ### Linux Kernel Development
 

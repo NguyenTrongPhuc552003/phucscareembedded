@@ -1,9 +1,0 @@
-{
-	"label": "Computer Architecture",
-	"position": 1,
-	"link": {
-		"type": "generated-index",
-		"description": "Master computer architecture from digital logic to modern SoC design, with focus on ARM64 architecture and Rock 5B+ platform."
-	}
-}
-

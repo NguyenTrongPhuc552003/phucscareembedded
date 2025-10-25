@@ -1,8 +1,0 @@
-{
-	"label": "Virtual Memory and TLBs",
-	"position": 4,
-	"link": {
-		"type": "generated-index",
-		"description": "Master ARM64 virtual memory, page tables, TLBs, and MMU operation."
-	}
-}

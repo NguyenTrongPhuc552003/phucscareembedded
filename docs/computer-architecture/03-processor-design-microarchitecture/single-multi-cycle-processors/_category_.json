@@ -1,8 +1,0 @@
-{
-	"label": "Single-Cycle and Multi-Cycle Processors",
-	"position": 1,
-	"link": {
-		"type": "generated-index",
-		"description": "Understand basic processor design, datapath components, and control unit implementation."
-	}
-}

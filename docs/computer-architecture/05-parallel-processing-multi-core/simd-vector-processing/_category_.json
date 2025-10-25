@@ -1,8 +1,0 @@
-{
-	"label": "SIMD and Vector Processing",
-	"position": 4,
-	"link": {
-		"type": "generated-index",
-		"description": "Master ARM NEON optimization, vectorization techniques, and SVE fundamentals."
-	}
-}

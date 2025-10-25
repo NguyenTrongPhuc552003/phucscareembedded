@@ -1,8 +1,0 @@
-{
-	"label": "Multi-Level Caches and Cache Coherence",
-	"position": 3,
-	"link": {
-		"type": "generated-index",
-		"description": "Understand multi-level cache hierarchies, coherence protocols (MESI), and Cortex-A76 cache system."
-	}
-}

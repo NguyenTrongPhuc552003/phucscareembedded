@@ -1,8 +1,0 @@
-{
-	"label": "Branch Prediction and Speculation",
-	"position": 3,
-	"link": {
-		"type": "generated-index",
-		"description": "Learn branch prediction strategies, speculative execution, and Cortex-A76 branch predictor."
-	}
-}

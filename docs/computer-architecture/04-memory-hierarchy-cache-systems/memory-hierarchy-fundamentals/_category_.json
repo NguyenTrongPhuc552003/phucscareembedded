@@ -1,8 +1,0 @@
-{
-	"label": "Memory Hierarchy Fundamentals",
-	"position": 1,
-	"link": {
-		"type": "generated-index",
-		"description": "Master memory hierarchy concepts, locality principles, and Rock 5B+ memory system."
-	}
-}

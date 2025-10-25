@@ -1,8 +1,0 @@
-{
-	"label": "Peripheral Interfaces",
-	"position": 3,
-	"link": {
-		"type": "generated-index",
-		"description": "Understand UART, SPI, I2C, USB, PCIe, and RK3588 peripheral controllers."
-	}
-}

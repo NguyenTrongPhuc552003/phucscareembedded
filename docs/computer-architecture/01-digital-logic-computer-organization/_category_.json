@@ -1,9 +1,0 @@
-{
-	"label": "01. Digital Logic and Computer Organization",
-	"position": 1,
-	"link": {
-		"type": "generated-index",
-		"description": "Master Boolean algebra, logic gates, combinational and sequential circuits, memory elements, and basic computer organization."
-	}
-}
-

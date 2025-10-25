@@ -1,9 +1,0 @@
-{
-	"label": "04. Memory Hierarchy and Cache Systems",
-	"position": 4,
-	"link": {
-		"type": "generated-index",
-		"description": "Master memory hierarchy, cache organization, multi-level caches, cache coherence (MESI), virtual memory, and ARM64 MMU."
-	}
-}
-

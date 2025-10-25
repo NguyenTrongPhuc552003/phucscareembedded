@@ -1,9 +1,0 @@
-{
-	"label": "06. I/O Systems and Interconnects",
-	"position": 6,
-	"link": {
-		"type": "generated-index",
-		"description": "Understand I/O fundamentals, interrupt handling, DMA, AMBA protocols (AXI/AHB/APB), peripheral interfaces, and RK3588 I/O subsystems."
-	}
-}
-

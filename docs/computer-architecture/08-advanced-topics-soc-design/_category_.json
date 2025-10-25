@@ -1,9 +1,0 @@
-{
-	"label": "08. Advanced Topics and SoC Design",
-	"position": 8,
-	"link": {
-		"type": "generated-index",
-		"description": "Explore GPU architecture (Mali-G610), NPU and AI acceleration, power management, energy efficiency, and complete SoC design with capstone projects."
-	}
-}
-

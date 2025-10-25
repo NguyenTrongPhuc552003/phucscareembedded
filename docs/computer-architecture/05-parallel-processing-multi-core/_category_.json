@@ -1,9 +1,0 @@
-{
-	"label": "05. Parallel Processing and Multi-core Architecture",
-	"position": 5,
-	"link": {
-		"type": "generated-index",
-		"description": "Learn parallel processing fundamentals, multi-core design, big.LITTLE architecture, cache coherence, memory consistency, and SIMD processing."
-	}
-}
-

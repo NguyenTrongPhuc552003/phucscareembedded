@@ -1,8 +1,0 @@
-{
-	"label": "Cache Coherence and Memory Consistency",
-	"position": 3,
-	"link": {
-		"type": "generated-index",
-		"description": "Understand coherence protocols, memory consistency models, and ARM memory barriers."
-	}
-}

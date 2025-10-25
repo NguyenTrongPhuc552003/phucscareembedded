@@ -1,8 +1,0 @@
-{
-	"label": "System-Level Optimization",
-	"position": 4,
-	"link": {
-		"type": "generated-index",
-		"description": "Optimize multi-threading, NUMA systems, power/thermal management, and heterogeneous computing."
-	}
-}
