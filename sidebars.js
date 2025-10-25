@@ -61,6 +61,9 @@ const sidebars = {
 							label: 'Sequential Logic and Memory Elements',
 							items: [
 								'computer-architecture/digital-logic-computer-organization/sequential-logic-memory/latches-flipflops',
+								'computer-architecture/digital-logic-computer-organization/sequential-logic-memory/registers',
+								'computer-architecture/digital-logic-computer-organization/sequential-logic-memory/counters',
+								'computer-architecture/digital-logic-computer-organization/sequential-logic-memory/memory-basics',
 							],
 						},
 						{
