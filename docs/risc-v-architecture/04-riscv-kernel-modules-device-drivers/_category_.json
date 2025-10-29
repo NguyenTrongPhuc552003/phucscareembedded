@@ -1,0 +1,8 @@
+{
+	"label": "04. RISC-V Kernel Modules and Device Drivers",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Develop kernel modules and device drivers for RISC-V, including loadable kernel modules, device tree, platform drivers, interrupt controllers, and timer drivers."
+	}
+}

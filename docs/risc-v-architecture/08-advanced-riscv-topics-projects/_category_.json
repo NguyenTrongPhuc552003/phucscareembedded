@@ -1,0 +1,8 @@
+{
+	"label": "08. Advanced RISC-V Topics and Projects",
+	"position": 8,
+	"link": {
+		"type": "generated-index",
+		"description": "Explore advanced RISC-V features including vector extensions, hypervisor support, security extensions, kernel contribution process, and capstone projects on VisionFive 2."
+	}
+}

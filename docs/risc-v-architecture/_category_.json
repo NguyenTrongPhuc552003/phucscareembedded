@@ -1,0 +1,8 @@
+{
+	"label": "Linux Kernel on RISC-V Architecture",
+	"position": 5,
+	"link": {
+		"type": "generated-index",
+		"description": "Comprehensive guide to Linux kernel development on RISC-V architecture. Learn RISC-V ISA, privilege levels, kernel architecture, device drivers, memory management, and system optimization for RISC-V platforms."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "05. RISC-V Memory Management",
+	"position": 5,
+	"link": {
+		"type": "generated-index",
+		"description": "Deep dive into RISC-V virtual memory architecture, page table implementation, TLB management, memory protection mechanisms, and cache management."
+	}
+}

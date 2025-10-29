@@ -1,0 +1,8 @@
+{
+	"label": "03. RISC-V Kernel Development Environment",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Set up your RISC-V kernel development environment, including cross-compilation toolchain, kernel configuration, QEMU emulation, VisionFive 2 board setup, and debugging tools."
+	}
+}
