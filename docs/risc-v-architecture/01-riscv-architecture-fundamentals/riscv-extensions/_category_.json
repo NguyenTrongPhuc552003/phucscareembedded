@@ -1,0 +1,8 @@
+{
+	"label": "RISC-V Extensions",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the extensions of the RISC-V architecture, including the vector extension, hypervisor extension, cryptographic extensions, and custom extensions."
+	}
+}

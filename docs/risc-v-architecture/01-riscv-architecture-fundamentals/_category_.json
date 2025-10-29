@@ -1,0 +1,8 @@
+{
+	"label": "01. RISC-V Architecture Fundamentals",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the fundamental concepts of RISC-V architecture, including ISA specifications, privilege levels, memory model, and standard extensions."
+	}
+}

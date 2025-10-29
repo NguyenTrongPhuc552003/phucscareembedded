@@ -1,0 +1,8 @@
+{
+	"label": "RISC-V Memory Model",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the memory model of the RISC-V architecture, including the memory organization, addressing modes, and memory ordering."
+	}
+}

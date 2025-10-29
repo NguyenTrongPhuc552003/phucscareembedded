@@ -1,0 +1,8 @@
+{
+	"label": "RISC-V Privilege Levels",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the different privilege levels in the RISC-V architecture, including user mode, supervisor mode, and machine mode."
+	}
+}
