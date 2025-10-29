@@ -1,0 +1,8 @@
+{
+	"label": "02. RISC-V Linux Kernel Architecture",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Understand Linux kernel architecture and implementation on RISC-V, including boot process, memory management, exception handling, and system call interface."
+	}
+}

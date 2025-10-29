@@ -1,0 +1,8 @@
+{
+	"label": "Kernel Boot Process",
+	"position": 1,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the process of booting the Linux kernel on a RISC-V architecture."
+	}
+}

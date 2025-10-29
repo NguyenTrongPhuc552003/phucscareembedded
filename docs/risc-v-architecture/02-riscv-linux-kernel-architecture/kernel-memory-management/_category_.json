@@ -1,0 +1,8 @@
+{
+	"label": "Kernel Memory Management",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the memory management of the Linux kernel on a RISC-V architecture."
+	}
+}
