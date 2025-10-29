@@ -971,6 +971,440 @@ const sidebars = {
 				},
 			],
 		},
+		{
+			type: 'category',
+			label: 'Linux Kernel on RISC-V Architecture',
+			items: [
+				{
+					type: 'category',
+					label: '01. RISC-V Architecture Fundamentals',
+					items: [
+						{
+							type: 'category',
+							label: 'RISC-V ISA Introduction',
+							items: [
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-isa-introduction/riscv-overview',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-isa-introduction/base-isa',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-isa-introduction/standard-extensions',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-isa-introduction/instruction-encoding',
+							],
+						},
+						{
+							type: 'category',
+							label: 'RISC-V Privilege Levels',
+							items: [
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-privilege-levels/privilege-levels-overview',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-privilege-levels/privilege-transitions',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-privilege-levels/csr-access',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-privilege-levels/exception-handling',
+							],
+						},
+						{
+							type: 'category',
+							label: 'RISC-V Memory Model',
+							items: [
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-memory-model/memory-organization',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-memory-model/addressing-modes',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-memory-model/memory-ordering',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-memory-model/virtual-memory',
+							],
+						},
+						{
+							type: 'category',
+							label: 'RISC-V Extensions',
+							items: [
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-extensions/vector-extension',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-extensions/hypervisor-extension',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-extensions/cryptographic-extensions',
+								'risc-v-architecture/riscv-architecture-fundamentals/riscv-extensions/custom-extensions',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '02. RISC-V Linux Kernel Architecture',
+					items: [
+						{
+							type: 'category',
+							label: 'Kernel Boot Process',
+							items: [
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-boot-process/boot-sequence',
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-boot-process/bootloader-interface',
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-boot-process/kernel-entry-points',
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-boot-process/early-memory-setup',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Kernel Memory Management',
+							items: [
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-memory-management/virtual-memory-layout',
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-memory-management/page-table-structure',
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-memory-management/memory-allocation',
+								'risc-v-architecture/riscv-linux-kernel-architecture/kernel-memory-management/memory-zones',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Exception and Interrupt Handling',
+							items: [
+								'risc-v-architecture/riscv-linux-kernel-architecture/exception-interrupt-handling/exception-vector',
+								'risc-v-architecture/riscv-linux-kernel-architecture/exception-interrupt-handling/interrupt-controller',
+								'risc-v-architecture/riscv-linux-kernel-architecture/exception-interrupt-handling/exception-context',
+								'risc-v-architecture/riscv-linux-kernel-architecture/exception-interrupt-handling/kernel-entry-exit',
+							],
+						},
+						{
+							type: 'category',
+							label: 'System Call Interface',
+							items: [
+								'risc-v-architecture/riscv-linux-kernel-architecture/system-call-interface/system-call-convention',
+								'risc-v-architecture/riscv-linux-kernel-architecture/system-call-interface/system-call-implementation',
+								'risc-v-architecture/riscv-linux-kernel-architecture/system-call-interface/signal-handling',
+								'risc-v-architecture/riscv-linux-kernel-architecture/system-call-interface/user-kernel-transitions',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '03. RISC-V Kernel Development Environment',
+					items: [
+						{
+							type: 'category',
+							label: 'Cross-Compilation Toolchain',
+							items: [
+								'risc-v-architecture/riscv-kernel-dev-environment/cross-compilation-toolchain/riscv-toolchain-setup',
+								'risc-v-architecture/riscv-kernel-dev-environment/cross-compilation-toolchain/toolchain-components',
+								'risc-v-architecture/riscv-kernel-dev-environment/cross-compilation-toolchain/cross-compilation',
+								'risc-v-architecture/riscv-kernel-dev-environment/cross-compilation-toolchain/toolchain-configuration',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Kernel Configuration and Compilation',
+							items: [
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-config-compilation/kernel-source',
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-config-compilation/kernel-configuration',
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-config-compilation/build-system',
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-config-compilation/compilation-process',
+							],
+						},
+						{
+							type: 'category',
+							label: 'QEMU RISC-V Emulation',
+							items: [
+								'risc-v-architecture/riscv-kernel-dev-environment/qemu-riscv-emulation/qemu-setup',
+								'risc-v-architecture/riscv-kernel-dev-environment/qemu-riscv-emulation/emulating-riscv',
+								'risc-v-architecture/riscv-kernel-dev-environment/qemu-riscv-emulation/hardware-emulation',
+								'risc-v-architecture/riscv-kernel-dev-environment/qemu-riscv-emulation/debugging-with-qemu',
+							],
+						},
+						{
+							type: 'category',
+							label: 'VisionFive 2 Development Board',
+							items: [
+								'risc-v-architecture/riscv-kernel-dev-environment/visionfive2-development-board/hardware-overview',
+								'risc-v-architecture/riscv-kernel-dev-environment/visionfive2-development-board/board-setup',
+								'risc-v-architecture/riscv-kernel-dev-environment/visionfive2-development-board/u-boot-configuration',
+								'risc-v-architecture/riscv-kernel-dev-environment/visionfive2-development-board/serial-console',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Kernel Debugging Tools',
+							items: [
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-debugging-tools/gdb-kgdb',
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-debugging-tools/kdb',
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-debugging-tools/ftrace',
+								'risc-v-architecture/riscv-kernel-dev-environment/kernel-debugging-tools/perf-tools',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '04. RISC-V Kernel Modules and Device Drivers',
+					items: [
+						{
+							type: 'category',
+							label: 'Loadable Kernel Modules',
+							items: [
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/loadable-kernel-modules/module-basics',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/loadable-kernel-modules/module-loading',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/loadable-kernel-modules/module-parameters',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/loadable-kernel-modules/module-dependencies',
+							],
+						},
+						{
+							type: 'category',
+							label: 'RISC-V Device Tree',
+							items: [
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/riscv-device-tree/device-tree-basics',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/riscv-device-tree/device-tree-nodes',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/riscv-device-tree/device-tree-bindings',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/riscv-device-tree/runtime-device-tree',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Platform Device Drivers',
+							items: [
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/platform-device-drivers/platform-bus',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/platform-device-drivers/device-registration',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/platform-device-drivers/driver-matching',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/platform-device-drivers/resource-management',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Interrupt Controller Drivers',
+							items: [
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/interrupt-controller-drivers/plic-driver',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/interrupt-controller-drivers/clint-driver',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/interrupt-controller-drivers/interrupt-registration',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/interrupt-controller-drivers/interrupt-sharing',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Timer and Clock Drivers',
+							items: [
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/timer-clock-drivers/timer-hardware',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/timer-clock-drivers/timer-driver-implementation',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/timer-clock-drivers/clock-source',
+								'risc-v-architecture/riscv-kernel-modules-device-drivers/timer-clock-drivers/clock-events',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '05. RISC-V Memory Management',
+					items: [
+						{
+							type: 'category',
+							label: 'Virtual Memory Architecture',
+							items: [
+								'risc-v-architecture/riscv-memory-management/virtual-memory-architecture/memory-layout',
+								'risc-v-architecture/riscv-memory-management/virtual-memory-architecture/page-table-format',
+								'risc-v-architecture/riscv-memory-management/virtual-memory-architecture/page-table-entries',
+								'risc-v-architecture/riscv-memory-management/virtual-memory-architecture/address-translation',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Page Table Walk Implementation',
+							items: [
+								'risc-v-architecture/riscv-memory-management/page-table-walk-implementation/page-table-walk',
+								'risc-v-architecture/riscv-memory-management/page-table-walk-implementation/software-page-walk',
+								'risc-v-architecture/riscv-memory-management/page-table-walk-implementation/tlb-management',
+								'risc-v-architecture/riscv-memory-management/page-table-walk-implementation/page-fault-handling',
+							],
+						},
+						{
+							type: 'category',
+							label: 'TLB Management',
+							items: [
+								'risc-v-architecture/riscv-memory-management/tlb-management/tlb-invalidation',
+								'risc-v-architecture/riscv-memory-management/tlb-management/asid-support',
+								'risc-v-architecture/riscv-memory-management/tlb-management/tlb-shootdown',
+								'risc-v-architecture/riscv-memory-management/tlb-management/huge-page-support',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Memory Protection Mechanisms',
+							items: [
+								'risc-v-architecture/riscv-memory-management/memory-protection-mechanisms/memory-permissions',
+								'risc-v-architecture/riscv-memory-management/memory-protection-mechanisms/protection-keys',
+								'risc-v-architecture/riscv-memory-management/memory-protection-mechanisms/kernel-memory-protection',
+								'risc-v-architecture/riscv-memory-management/memory-protection-mechanisms/stack-protection',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Cache Management',
+							items: [
+								'risc-v-architecture/riscv-memory-management/cache-management/cache-coherency',
+								'risc-v-architecture/riscv-memory-management/cache-management/cache-flushing',
+								'risc-v-architecture/riscv-memory-management/cache-management/dma-coherency',
+								'risc-v-architecture/riscv-memory-management/cache-management/cache-performance',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '06. RISC-V Interrupts and Exceptions',
+					items: [
+						{
+							type: 'category',
+							label: 'RISC-V Interrupt Architecture',
+							items: [
+								'risc-v-architecture/riscv-interrupts-exceptions/riscv-interrupt-architecture/interrupt-types',
+								'risc-v-architecture/riscv-interrupts-exceptions/riscv-interrupt-architecture/interrupt-priorities',
+								'risc-v-architecture/riscv-interrupts-exceptions/riscv-interrupt-architecture/interrupt-controller',
+								'risc-v-architecture/riscv-interrupts-exceptions/riscv-interrupt-architecture/interrupt-routing',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Platform-Level Interrupt Controller (PLIC)',
+							items: [
+								'risc-v-architecture/riscv-interrupts-exceptions/platform-level-interrupt-controller/plic-architecture',
+								'risc-v-architecture/riscv-interrupts-exceptions/platform-level-interrupt-controller/plic-configuration',
+								'risc-v-architecture/riscv-interrupts-exceptions/platform-level-interrupt-controller/plic-driver',
+								'risc-v-architecture/riscv-interrupts-exceptions/platform-level-interrupt-controller/interrupt-enable-disable',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Core-Local Interruptor (CLINT)',
+							items: [
+								'risc-v-architecture/riscv-interrupts-exceptions/core-local-interruptor/clint-architecture',
+								'risc-v-architecture/riscv-interrupts-exceptions/core-local-interruptor/timer-interrupts',
+								'risc-v-architecture/riscv-interrupts-exceptions/core-local-interruptor/software-interrupts',
+								'risc-v-architecture/riscv-interrupts-exceptions/core-local-interruptor/clint-driver',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Exception Handling Mechanism',
+							items: [
+								'risc-v-architecture/riscv-interrupts-exceptions/exception-handling-mechanism/exception-types',
+								'risc-v-architecture/riscv-interrupts-exceptions/exception-handling-mechanism/exception-causes',
+								'risc-v-architecture/riscv-interrupts-exceptions/exception-handling-mechanism/exception-vectors',
+								'risc-v-architecture/riscv-interrupts-exceptions/exception-handling-mechanism/exception-context',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Interrupt Priorities and Masking',
+							items: [
+								'risc-v-architecture/riscv-interrupts-exceptions/interrupt-priorities-masking/priority-levels',
+								'risc-v-architecture/riscv-interrupts-exceptions/interrupt-priorities-masking/interrupt-masking',
+								'risc-v-architecture/riscv-interrupts-exceptions/interrupt-priorities-masking/critical-sections',
+								'risc-v-architecture/riscv-interrupts-exceptions/interrupt-priorities-masking/interrupt-statistics',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '07. RISC-V System Optimization',
+					items: [
+						{
+							type: 'category',
+							label: 'RISC-V Performance Profiling',
+							items: [
+								'risc-v-architecture/riscv-system-optimization/riscv-performance-profiling/performance-counters',
+								'risc-v-architecture/riscv-system-optimization/riscv-performance-profiling/cache-profiling',
+								'risc-v-architecture/riscv-system-optimization/riscv-performance-profiling/branch-prediction',
+								'risc-v-architecture/riscv-system-optimization/riscv-performance-profiling/instruction-mix',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Cache Optimization',
+							items: [
+								'risc-v-architecture/riscv-system-optimization/cache-optimization/cache-aware-algorithms',
+								'risc-v-architecture/riscv-system-optimization/cache-optimization/data-locality',
+								'risc-v-architecture/riscv-system-optimization/cache-optimization/prefetching',
+								'risc-v-architecture/riscv-system-optimization/cache-optimization/cache-line-optimization',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Instruction Scheduling',
+							items: [
+								'risc-v-architecture/riscv-system-optimization/instruction-scheduling/pipelining',
+								'risc-v-architecture/riscv-system-optimization/instruction-scheduling/instruction-scheduling',
+								'risc-v-architecture/riscv-system-optimization/instruction-scheduling/branch-prediction',
+								'risc-v-architecture/riscv-system-optimization/instruction-scheduling/instruction-latency',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Power Management',
+							items: [
+								'risc-v-architecture/riscv-system-optimization/power-management/power-states',
+								'risc-v-architecture/riscv-system-optimization/power-management/clock-gating',
+								'risc-v-architecture/riscv-system-optimization/power-management/voltage-scaling',
+								'risc-v-architecture/riscv-system-optimization/power-management/idle-management',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Multi-Core Support',
+							items: [
+								'risc-v-architecture/riscv-system-optimization/multi-core-support/smp-architecture',
+								'risc-v-architecture/riscv-system-optimization/multi-core-support/cpu-topology',
+								'risc-v-architecture/riscv-system-optimization/multi-core-support/load-balancing',
+								'risc-v-architecture/riscv-system-optimization/multi-core-support/cpu-affinity',
+							],
+						},
+					],
+				},
+				{
+					type: 'category',
+					label: '08. Advanced RISC-V Topics and Projects',
+					items: [
+						{
+							type: 'category',
+							label: 'RISC-V Vector Extension (RVV)',
+							items: [
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-vector-extension/vector-extension-overview',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-vector-extension/vector-registers',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-vector-extension/vector-instructions',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-vector-extension/kernel-vector-support',
+							],
+						},
+						{
+							type: 'category',
+							label: 'RISC-V Hypervisor Extension',
+							items: [
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-hypervisor-extension/hypervisor-architecture',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-hypervisor-extension/guest-mode',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-hypervisor-extension/virtualization-support',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-hypervisor-extension/kvm-on-riscv',
+							],
+						},
+						{
+							type: 'category',
+							label: 'RISC-V Security Extensions',
+							items: [
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-security-extensions/trusted-execution',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-security-extensions/security-extensions',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-security-extensions/secure-boot',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-security-extensions/memory-protection',
+							],
+						},
+						{
+							type: 'category',
+							label: 'RISC-V Kernel Contribution Process',
+							items: [
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-kernel-contribution-process/kernel-community',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-kernel-contribution-process/code-contribution',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-kernel-contribution-process/code-review-process',
+								'risc-v-architecture/advanced-riscv-topics-projects/riscv-kernel-contribution-process/patch-submission',
+							],
+						},
+						{
+							type: 'category',
+							label: 'Capstone Projects on VisionFive 2',
+							items: [
+								'risc-v-architecture/advanced-riscv-topics-projects/capstone-projects-visionfive2/custom-device-driver',
+								'risc-v-architecture/advanced-riscv-topics-projects/capstone-projects-visionfive2/performance-optimization',
+								'risc-v-architecture/advanced-riscv-topics-projects/capstone-projects-visionfive2/new-feature-implementation',
+								'risc-v-architecture/advanced-riscv-topics-projects/capstone-projects-visionfive2/system-integration',
+							],
+						},
+					],
+				},
+			],
+		},
 	],
 };
 
