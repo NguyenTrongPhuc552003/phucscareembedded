@@ -4,12 +4,11 @@ sidebar_position: 1
 
 # Introduction to Embedded Development
 
-Welcome to Phuc's comprehensive guide for Linux kernel development, Rust programming, and embedded Linux development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
+Welcome to Phuc's comprehensive guide for Linux kernel development, Rust programming, embedded Linux development, and RISC-V architecture! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ (ARM64) and VisionFive 2 (RISC-V) development boards.
 
 ## What You'll Learn
 
 This comprehensive guide provides structured learning paths across multiple domains:
-
 
 ### Linux Kernel Development
 
@@ -21,6 +20,17 @@ This comprehensive guide provides structured learning paths across multiple doma
 - **Phase 6 - Kernel Synchronization and Concurrency**: Master spinlocks, mutexes, RCU, atomic operations, workqueues, and deadlock prevention
 - **Phase 7 - Kernel Security and Hardening**: Implement SELinux, capability system, ASLR/KASLR, secure boot, and security monitoring
 - **Phase 8 - Advanced Kernel Topics and Projects**: Performance profiling, power management, kernel contribution process, and complete capstone projects
+
+### Linux Kernel on RISC-V Architecture
+
+- **Phase 1 - RISC-V Architecture Fundamentals**: Master RISC-V ISA, privilege levels, memory model, and standard extensions (M, A, F, D, C)
+- **Phase 2 - RISC-V Linux Kernel Architecture**: Understand kernel boot process, memory management, exception handling, and system call interface on RISC-V
+- **Phase 3 - RISC-V Kernel Development Environment**: Set up RISC-V cross-compilation toolchain, QEMU emulation, VisionFive 2 board, and debugging tools
+- **Phase 4 - RISC-V Kernel Modules and Device Drivers**: Develop kernel modules, device tree, platform drivers, interrupt controllers (PLIC/CLINT), and timer drivers
+- **Phase 5 - RISC-V Memory Management**: Deep dive into virtual memory, page table walks, TLB management, memory protection, and cache coherency
+- **Phase 6 - RISC-V Interrupts and Exceptions**: Master interrupt architecture, PLIC and CLINT controllers, exception handling, and interrupt priorities
+- **Phase 7 - RISC-V System Optimization**: Optimize performance with profiling, cache optimization, instruction scheduling, power management, and multi-core support
+- **Phase 8 - Advanced RISC-V Topics and Projects**: Vector extensions (RVV), hypervisor extension, security extensions, kernel contribution, and VisionFive 2 projects
 
 ### Rust Programming
 
@@ -50,16 +60,17 @@ Before starting, you should have:
 - Basic knowledge of Linux command line
 - Understanding of programming concepts (C programming recommended for kernel development)
 - Familiarity with version control (Git)
-- Rock 5B+ development board (recommended)
+- Rock 5B+ (ARM64) or VisionFive 2 (RISC-V) development board (recommended)
 - Basic understanding of computer architecture (for kernel development)
 
 ## Development Environment
 
 We'll set up a complete development environment including:
 
-- Cross-compilation toolchains for ARM64
+- Cross-compilation toolchains for ARM64 and RISC-V
 - Kernel development tools and debugging (GDB, KGDB, OpenOCD)
 - Real-time Linux development environment (PREEMPT_RT)
+- QEMU emulation for RISC-V architecture
 - Development boards and peripherals
 - Version control and CI/CD pipelines
 

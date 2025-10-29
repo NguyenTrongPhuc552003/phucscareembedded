@@ -4,12 +4,11 @@ sidebar_position: 1
 
 # Welcome to Embedded Development
 
-Welcome to Phuc's comprehensive guide for Linux kernel development, Rust programming, and embedded Linux development! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ development board.
+Welcome to Phuc's comprehensive guide for Linux kernel development, Rust programming, embedded Linux development, and RISC-V architecture! This documentation covers everything you need to know about developing for embedded systems, with a focus on the Rock 5B+ (ARM64) and VisionFive 2 (RISC-V) development boards.
 
 ## What You'll Learn
 
 This guide covers:
-
 
 ### Linux Kernel Development
 
@@ -32,6 +31,14 @@ This guide covers:
 - **Networking & Protocols**: Socket programming, I2C/SPI/UART, CAN bus, and industrial protocols
 - **Production Deployment**: Real-time optimization, security hardening, debugging, and case studies
 
+### Linux Kernel on RISC-V Architecture
+
+- **RISC-V Fundamentals**: ISA introduction, privilege levels, memory model, and standard extensions
+- **Kernel Architecture**: Boot process, memory management, exception handling, and system call interface
+- **Development Environment**: Cross-compilation toolchain, QEMU emulation, VisionFive 2 setup, and debugging tools
+- **Kernel Modules & Drivers**: Loadable modules, device tree, platform drivers, and interrupt controllers
+- **Advanced Topics**: Vector extensions, hypervisor support, security extensions, and kernel contribution
+
 ## Prerequisites
 
 Before starting, you should have:
@@ -39,16 +46,17 @@ Before starting, you should have:
 - Basic knowledge of Linux command line
 - Understanding of programming concepts (C programming recommended for kernel development)
 - Familiarity with version control (Git)
-- Rock 5B+ development board (recommended)
+- Rock 5B+ (ARM64) or VisionFive 2 (RISC-V) development board (recommended)
 - Basic understanding of computer architecture (for kernel development)
 
 ## Development Environment
 
 We'll set up a complete development environment including:
 
-- Cross-compilation toolchains for ARM64
+- Cross-compilation toolchains for ARM64 and RISC-V
 - Kernel development tools and debugging (GDB, KGDB, OpenOCD)
 - Real-time Linux development environment
+- QEMU emulation for RISC-V
 - Development boards and peripherals
 - Version control and CI/CD pipelines
 
