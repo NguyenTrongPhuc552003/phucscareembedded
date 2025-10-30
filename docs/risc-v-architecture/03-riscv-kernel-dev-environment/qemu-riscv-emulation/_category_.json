@@ -1,0 +1,8 @@
+{
+	"label": "QEMU RISC-V Emulation",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the QEMU RISC-V emulation for the RISC-V architecture."
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"label": "VisionFive 2 Development Board",
+	"position": 4,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn the VisionFive 2 development board for the RISC-V architecture."
+	}
+}
